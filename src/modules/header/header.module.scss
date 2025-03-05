@@ -54,17 +54,17 @@
   }
 }
 
-.logo {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+// .logo {
+//   position: absolute;
+//   left: 50%;
+//   top: 50%;
+//   transform: translate(-50%, -50%);
 
-  @include tablet {
-    position: static;
-    transform: none;
-  }
-}
+//   @include tablet {
+//     position: static;
+//     transform: none;
+//   }
+// }
 
 .button {
   @include tablet {

@@ -117,12 +117,13 @@ const Header: FC<HeaderProps> = ({ className }) => {
     <header className={headerClassName}>
       <Wrapper className={styles.wrapper}>
         <div className={styles.wrapper__container}>
-          <div className={styles.desktop__navigation}>
-            <Navigation />
-          </div>
 
           <div className={styles.logo}>
             <Logo />
+          </div>
+
+          <div className={styles.desktop__navigation}>
+            <Navigation />
           </div>
 
           <div className={styles.buttons__wrapper}>
@@ -132,7 +133,7 @@ const Header: FC<HeaderProps> = ({ className }) => {
                 onClick={() => openWindows('детали')}
                 maxWidth='192px'
               >
-                Обсудить проект
+                Начать работу
               </Button>
             )}
             <div
