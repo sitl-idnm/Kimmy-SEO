@@ -12,6 +12,7 @@ import { Conversion } from '@/modules/conversion'
 import { Case } from '@/modules/case'
 // import { DrawerMenu } from '@/modules/drawerMenu'
 import NewModalContainer from '../../components/newModalContainer/newModalContainer'
+import { RedBoxWork } from '@/modules/redBoxWork'
 
 const Home: FC<HomeProps> = ({ className }) => {
   const rootClassName = classNames(styles.root, className)
@@ -22,6 +23,7 @@ const Home: FC<HomeProps> = ({ className }) => {
       <Wrapper>
         <Introduce />
         <Favour />
+        <RedBoxWork />
         <Case />
         <FormFirst />
         <Conversion />

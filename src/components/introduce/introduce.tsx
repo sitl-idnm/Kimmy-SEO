@@ -13,7 +13,7 @@ const Introduce: FC<IntroduceProps> = ({
   className
 }) => {
   const rootClassName = classNames(styles.root, className)
-  const wordsArray = ['Смыслы', 'Товары', 'Идеи', 'Услуги'];
+  const wordsArray = ['интернет-маркетинга', 'интернет-маркетинга'];
   const setModalContent = useSetAtom(openModalContent)
 
   const openWindows = useCallback((name: string) => {
@@ -23,13 +23,13 @@ const Introduce: FC<IntroduceProps> = ({
   return (
     <div className={rootClassName}>
       <div className={styles.introduce}>
-        <h2 className={styles.introduce__title}>Разрабатываем сайты, которые продают <TypingSpan words={wordsArray} interval={1500} /></h2>
+        <h2 className={styles.introduce__title}>Агентство комплексного <br /> <TypingSpan words={wordsArray} interval={1500} /></h2>
         <Button
           onClick={() => openWindows('детали')}
           tag='button'
-          maxWidth='192px'
+          maxWidth='244px'
         >
-          Заказать сайт
+          Получить консультацию
         </Button>
       </div>
     </div>

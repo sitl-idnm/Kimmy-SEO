@@ -16,12 +16,12 @@ const FormSecond: FC<FormSecondProps> = ({
       <section className={styles.form} id="form">
         <div className={styles.form__circle}>
           <TextForm
-            title={'Начнем сотрудничество?'}
-            paragraph={'Готовы начать погружение в ваш проект! Просто оставьте ваши контактные данные, мы свяжемся с вами, чтобы собрать информацию и предложить решение.'}
+            title={'Готовы к росту? Свяжитесь с нами'}
+            paragraph={'Мы помогаем бизнесу расти и зарабатывать больше. Разрабатываем маркетинговые стратегии, которые приносят результат.'}
             className={styles.form__second}
           />
           <Image
-            src='/images/triangle.png'
+            src='/images/sheeps__form.png'
             width={600}
             height={600}
             quality={80}

@@ -6,7 +6,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-
+	flex-direction: column;
 	position: relative;
 
 	max-width: 1392px;
@@ -17,6 +17,7 @@
 
 	background: center no-repeat url('../../../public/images/redbox_back.png');
 	background-color: var(--color-red-accent);
+	background-size: 95%;
 
 	border-radius: 70px;
 
@@ -32,12 +33,29 @@
 
 	@include tablet-small {
 		margin: 0 8px;
-		
+
+	}
+
+	.title {
+		color: #FFF;
+		font-size: 48px;
+		font-weight: 500;
+		margin-bottom: 40px;
+		text-align: center;
+
+		@include tablet {
+			font-size: 32px;
+			margin-bottom: 24px;
+		}
 	}
 
 	.buttons {
 		display: flex;
 		gap: 20px;
+
+		& + .buttons {
+			margin-top: 20px;
+		}
 
 		@include tablet {
 			gap: 20px;
@@ -45,7 +63,11 @@
 		}
 
 		button {
+			display: flex;
+			align-items: center;
+			gap: 8px;
 			padding: 10px 23px;
+			white-space: nowrap;
 
 			border-radius: 35px;
 			border: 1px solid #FFF;
@@ -54,7 +76,7 @@
 
 			font-family: var(--font-inter);
 			font-weight: 500;
-			font-size: 26px;
+			font-size: 20px;
 			line-height: 130%;
 
 			transition: all 1s ease;
@@ -69,6 +91,17 @@
 				background-color: var(--color-red-accent);
 				color: white;
 				border: 1px solid #FFFFFF32;
+			}
+
+			.icon {
+				width: 24px;
+				height: 24px;
+				fill: currentColor;
+
+				@include tablet {
+					width: 20px;
+					height: 20px;
+				}
 			}
 		}
 	}
