@@ -5,7 +5,7 @@ import classNames from 'classnames'
 import styles from './home.module.scss'
 import { HomeProps } from './home.types'
 import { FormFirst } from '@/modules/formFirst'
-import { Favour, Introduce, Peoples, Treaty } from '@/components'
+import { Favour, Introduce, Treaty } from '@/components'
 import { FormSecond } from '@/modules/formSecond'
 import { Tenet } from '@/modules/tenet'
 import { Conversion } from '@/modules/conversion'
@@ -15,6 +15,8 @@ import NewModalContainer from '../../components/newModalContainer/newModalContai
 import { RedBoxWork } from '@/modules/redBoxWork'
 import Faq from '@/modules/faq/faq'
 import Clients from '@/modules/clients/clients'
+import Why from '@/modules/why/why'
+import HowWeWork from '@/modules/howwework/howwework'
 
 const Home: FC<HomeProps> = ({ className }) => {
   const rootClassName = classNames(styles.root, className)
@@ -25,12 +27,14 @@ const Home: FC<HomeProps> = ({ className }) => {
       <Wrapper>
         <Introduce />
         <Favour />
+        <HowWeWork />
         <RedBoxWork />
         <Case />
         <FormFirst />
         <Conversion />
         <Treaty />
         <Tenet />
+        <Why />
         <Clients />
         <Faq />
         <FormSecond />
