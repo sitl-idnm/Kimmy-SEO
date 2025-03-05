@@ -13,6 +13,7 @@ import { Case } from '@/modules/case'
 // import { DrawerMenu } from '@/modules/drawerMenu'
 import NewModalContainer from '../../components/newModalContainer/newModalContainer'
 import { RedBoxWork } from '@/modules/redBoxWork'
+import Faq from '@/modules/faq/faq'
 
 const Home: FC<HomeProps> = ({ className }) => {
   const rootClassName = classNames(styles.root, className)
@@ -30,6 +31,7 @@ const Home: FC<HomeProps> = ({ className }) => {
         <Treaty />
         <Tenet />
         <Peoples />
+        <Faq />
         <FormSecond />
       </Wrapper>
       {/* <DrawerMenu /> */}
