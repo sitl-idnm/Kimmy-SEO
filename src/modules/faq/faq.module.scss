@@ -85,6 +85,10 @@
 
   &:hover {
     color: var(--color-red-accent);
+
+    .icon {
+      transform: rotate(90deg);
+    }
   }
 
   .icon {

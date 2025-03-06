@@ -1,0 +1,102 @@
+@use "@styles/func";
+@use "@styles/mixins" as *;
+@use "@styles/variables";
+
+.root {
+  max-width: 1392px;
+  margin: 0 auto;
+  padding: 120px 24px;
+
+  @include tablet {
+    padding: 80px 12px;
+  }
+
+  @include tablet-small {
+    padding: 60px 8px;
+  }
+}
+
+.container {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 48px;
+
+  @include tablet {
+    margin-bottom: 32px;
+  }
+}
+
+.title {
+  font-family: var(--font-inter);
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 130%;
+  margin: 0;
+  color: var(--color-black);
+
+  @include tablet {
+    font-size: 32px;
+  }
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+}
+
+.control {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid #E5E7EB;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+
+  &:hover {
+    border-color: #CB172C;
+    background: #FEF2F2;
+
+    svg path {
+      stroke: #CB172C;
+    }
+  }
+
+  &:active {
+    background: #FEE2E2;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+
+    path {
+      stroke: #6B7280;
+      transition: stroke 0.2s ease;
+    }
+  }
+}
+
+.reviews {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 4px 4px 28px;
+  margin: 0 -4px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
