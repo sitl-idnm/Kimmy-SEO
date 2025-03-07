@@ -24,7 +24,7 @@
 		border-radius: 40px;
 
 		display: flex;
-		align-items: flex-end;
+		align-items: center;
 		justify-content: flex-end;
 		position: relative;
 		overflow: hidden;
@@ -33,6 +33,8 @@
 
 		@include tablet {
 			overflow: visible;
+
+			align-items: flex-end;
 		}
 
 		@include tablet-small {
@@ -44,8 +46,8 @@
 		position: absolute;
 		left: -200px;
 		top: 0;
-		width: 100%;
-		height: 100%;
+		width: 810px;
+		height: 807px;
 
 		z-index: 10000;
 

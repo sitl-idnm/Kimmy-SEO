@@ -1,3 +1,4 @@
+'use client'
 import { FC } from 'react'
 import classNames from 'classnames'
 
@@ -5,11 +6,19 @@ import styles from './blackBoxModal.module.scss'
 import { BlackBoxModalProps } from './blackBoxModal.types'
 import { Borders, Button } from '@/ui'
 import Image from 'next/image'
+import { openModalContent } from '@/shared/atoms/openModal'
+import { useSetAtom } from 'jotai'
 
 const BlackBoxModal: FC<BlackBoxModalProps> = ({
   className
 }) => {
   const rootClassName = classNames(styles.root, className)
+
+  const setModalContent = useSetAtom(openModalContent)
+
+  const handleClick = (item: string) => {
+    setModalContent(item)
+  }
 
   return (
     <div className={rootClassName}>
@@ -32,7 +41,7 @@ const BlackBoxModal: FC<BlackBoxModalProps> = ({
               Возьмем на себя ваш маркетинг: от глубокого анализа компании, аудитории и конкурентов до разработки продающего прототипа, дизайна и контента для онлайн-ресурса. Интегрируем CRM-систему для полной автоматизации<br/>бизнес-процессов и приведем заявки из интернета.
             </p>
           </div>
-          <Button maxWidth='244px'>Начать работу</Button>
+          <Button onClick={() => handleClick('Начать')} maxWidth='244px'>Начать работу</Button>
         </div>
       </div>
     </div>

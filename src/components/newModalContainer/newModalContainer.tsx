@@ -39,6 +39,8 @@ const NewModalContainer: FC = () => {
       {modalContent === 'поддержка' && <SupportModal />}
       {modalContent === 'детали' && <DetailsModal />}
       {modalContent === 'стоимость' && <CountModal />}
+      {/* Сверху старые модалки */}
+      {modalContent === 'Начать' && <CountModal />}
     </>
   )
 }
