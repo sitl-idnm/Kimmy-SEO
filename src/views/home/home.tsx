@@ -17,6 +17,7 @@ import Faq from '@/modules/faq/faq'
 import Clients from '@/modules/clients/clients'
 import Why from '@/modules/why/why'
 import HowWeWork from '@/modules/howwework/howwework'
+import { BlogsMain } from '@/modules/blogsMain'
 
 const Home: FC<HomeProps> = ({ className }) => {
   const rootClassName = classNames(styles.root, className)
@@ -35,6 +36,7 @@ const Home: FC<HomeProps> = ({ className }) => {
         <Treaty />
         <Tenet />
         <Why />
+        <BlogsMain />
         <Clients />
         <Faq />
         <FormSecond />
