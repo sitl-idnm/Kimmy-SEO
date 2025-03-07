@@ -9,6 +9,7 @@ import { DevelopModal } from '../developModal'
 import { SupportModal } from '../supportModal'
 import { DetailsModal } from '../detailsModal'
 import { CountModal } from '../countModal'
+import { StartModal } from '../startModal'
 
 const NewModalContainer: FC = () => {
   const modalContent = useAtomValue(openModalContent)
@@ -40,7 +41,7 @@ const NewModalContainer: FC = () => {
       {modalContent === 'детали' && <DetailsModal />}
       {modalContent === 'стоимость' && <CountModal />}
       {/* Сверху старые модалки */}
-      {modalContent === 'Начать' && <CountModal />}
+      {modalContent === 'Начать' && <StartModal />}
     </>
   )
 }

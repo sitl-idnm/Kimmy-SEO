@@ -25,7 +25,7 @@ const isValidEmail = (email: string) => {
 	return emailRegex.test(email);
 };
 
-const ModalForm: FC<ModalFormProps> = ({ className, details, count }) => {
+const ModalForm: FC<ModalFormProps> = ({ className, details, count, start }) => {
 	const rootClassName = classNames(styles.root, className)
 	const [selectedContactMethod, setSelectedContactMethod] = useState('number')
 	const [successMessage, setSuccessMessage] = useState<string | null>(null)
@@ -77,13 +77,13 @@ const ModalForm: FC<ModalFormProps> = ({ className, details, count }) => {
 		<div className={rootClassName} style={details ? {height: '90vh'} : {}}>
 			{
 				details ? <h2 className={styles.root__title}>Заказать сайт</h2>
-				: count ? <h2 className={styles.root__title}>Рассчитать срок и стоимость моего проекта</h2> : <h2 className={styles.root__title}>Получить консультацию</h2>
+				: count ? <h2 className={styles.root__title}>Рассчитать срок и стоимость моего проекта</h2> : start ? <h2 className={styles.root__title}>Начать работу</h2> : <h2 className={styles.root__title}>Получить консультацию</h2>
 			}
 			<div className={styles.root__content}>
 				<div className={styles.root__content__text}>
-					{details ? null : <p className={styles.white}>Готовы начать погружение в ваш проект!</p>}
+					{details ? null : start ? null : <p className={styles.white}>Готовы начать погружение в ваш проект!</p>}
 					<p className={styles.gray}>
-						{details ? 'Заполните краткую форму, чтобы мы связались с вами и обсудили все детали.' : count ? 'Заполните краткую форму, чтобы мы связались с вами и рассчитали сроки и стоимость разработки сайта.' : 'Просто оставьте контактные данные, мы свяжемся с вами, чтобы собрать информацию и предложить решение.'}
+						{details ? 'Заполните краткую форму, чтобы мы связались с вами и обсудили все детали.' : count ? 'Заполните краткую форму, чтобы мы связались с вами и рассчитали сроки и стоимость разработки сайта.' : start ? 'Заполните форму и мы свяжемся с вами в ближайшее время для записи на консультацию' : 'Просто оставьте контактные данные, мы свяжемся с вами, чтобы собрать информацию и предложить решение.'}
 					</p>
 				</div>
 				<form onSubmit={handleSubmit} action="POST" className={styles.root__content__form}>
