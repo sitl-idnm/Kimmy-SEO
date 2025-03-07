@@ -18,6 +18,7 @@ import Clients from '@/modules/clients/clients'
 import Why from '@/modules/why/why'
 import HowWeWork from '@/modules/howwework/howwework'
 import { BlogsMain } from '@/modules/blogsMain'
+import { BlackBoxModal } from '@/modules/blackBoxModal'
 
 const Home: FC<HomeProps> = ({ className }) => {
   const rootClassName = classNames(styles.root, className)
@@ -31,6 +32,7 @@ const Home: FC<HomeProps> = ({ className }) => {
         <HowWeWork />
         <RedBoxWork />
         <Case />
+        <BlackBoxModal />
         {/* <FormFirst /> */}
         {/* <Conversion /> */}
         {/* <Treaty /> */}
