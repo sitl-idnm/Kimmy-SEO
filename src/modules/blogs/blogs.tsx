@@ -12,7 +12,7 @@ const Blogs: FC<BlogsProps> = ({
 
   const { blogs } = blogsData as BlogsData
 
-  const blogsList = count ? blogs.slice(0, count).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()) : blogs
+  const blogsList = count ? blogs.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, count) : blogs
 
   return (
     <div className={styles.blogList}>

@@ -4,11 +4,11 @@ import classNames from 'classnames'
 
 import styles from './home.module.scss'
 import { HomeProps } from './home.types'
-import { FormFirst } from '@/modules/formFirst'
-import { Favour, Introduce, Treaty } from '@/components'
+// import { FormFirst } from '@/modules/formFirst'
+import { Favour, Introduce } from '@/components'
 import { FormSecond } from '@/modules/formSecond'
-import { Tenet } from '@/modules/tenet'
-import { Conversion } from '@/modules/conversion'
+// import { Tenet } from '@/modules/tenet'
+// import { Conversion } from '@/modules/conversion'
 import { Case } from '@/modules/case'
 // import { DrawerMenu } from '@/modules/drawerMenu'
 import NewModalContainer from '../../components/newModalContainer/newModalContainer'
@@ -31,10 +31,10 @@ const Home: FC<HomeProps> = ({ className }) => {
         <HowWeWork />
         <RedBoxWork />
         <Case />
-        <FormFirst />
-        <Conversion />
-        <Treaty />
-        <Tenet />
+        {/* <FormFirst /> */}
+        {/* <Conversion /> */}
+        {/* <Treaty /> */}
+        {/* <Tenet /> */}
         <Why />
         <BlogsMain />
         <Clients />
