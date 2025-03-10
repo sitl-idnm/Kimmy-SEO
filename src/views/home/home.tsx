@@ -19,6 +19,7 @@ import Why from '@/modules/why/why'
 import HowWeWork from '@/modules/howwework/howwework'
 import { BlogsMain } from '@/modules/blogsMain'
 import { BlackBoxModal } from '@/modules/blackBoxModal'
+import { BlackBoxLink } from '@/modules/blackBoxLink'
 
 const Home: FC<HomeProps> = ({ className }) => {
   const rootClassName = classNames(styles.root, className)
@@ -39,6 +40,7 @@ const Home: FC<HomeProps> = ({ className }) => {
         {/* <Tenet /> */}
         <Why />
         <BlogsMain />
+        <BlackBoxLink />
         <Clients />
         <Faq />
         <FormSecond />
