@@ -3,6 +3,7 @@ import classNames from 'classnames'
 
 import styles from './servicePage.module.scss'
 import { ServicePageProps } from './servicePage.types'
+import { Services } from '@/modules/ServicePage/services'
 
 const ServicePage: FC<ServicePageProps> = ({
   className
@@ -11,7 +12,7 @@ const ServicePage: FC<ServicePageProps> = ({
 
   return (
     <main className={rootClassName}>
-      <h1>ServicePage</h1>
+      <Services />
     </main>
   )
 }

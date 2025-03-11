@@ -353,7 +353,7 @@
 						}
 
 						.radio__num::before {
-							/* Удаляем проблемную строку */
+							content: none;
 						}
 					}
 				}
