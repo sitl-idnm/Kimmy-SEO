@@ -6,4 +6,6 @@ export interface FavourItemProps {
   imageSrc?: string
   linkColor: string
   text?: string
+  list?: string[]
+  isTitleLeft?: boolean
 }

@@ -1,0 +1,38 @@
+@use "@styles/func";
+@use "@styles/mixins" as *;
+@use "@styles/variables";
+
+.root {
+  width: 100%;
+  max-width: 1312px;
+
+  @include tablet {
+    padding: 0 12px;
+  }
+
+  @include tablet-small {
+    padding: 0 8px;
+  }
+}
+
+.container {
+  max-width: 1088px;
+  margin: 0 auto;
+}
+
+.text {
+  font-size: 22px;
+  line-height: 160%;
+  color: #16181B;
+  opacity: 0.6;
+  margin: 0 0 24px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include tablet {
+    font-size: 16px;
+    margin: 0 0 16px;
+  }
+}

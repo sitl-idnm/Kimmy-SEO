@@ -3,9 +3,8 @@
 @use "@styles/variables";
 
 .root {
-  max-width: 1392px;
+  max-width: 1312px;
   margin: 0 auto;
-  padding: 80px 24px;
 
   @include tablet {
     padding: 40px 12px;
@@ -91,12 +90,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
-  background: #E30613;
+  width: 32px;
+  height: 32px;
+  background: #CB172C;
   color: #FFFFFF;
   border-radius: 50%;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
 
   @include tablet {
