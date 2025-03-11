@@ -18,6 +18,7 @@ import Clients from '@/modules/clients/clients'
 import Why from '@/modules/why/why'
 import HowWeWork from '@/modules/howwework/howwework'
 import { BlogsMain } from '@/modules/blogsMain'
+import { Services } from '@/modules/ServicePage/services'
 
 const Home: FC<HomeProps> = ({ className }) => {
   const rootClassName = classNames(styles.root, className)
@@ -28,6 +29,7 @@ const Home: FC<HomeProps> = ({ className }) => {
       <Wrapper>
         <Introduce />
         <Favour />
+        <Services mainPage />
         <HowWeWork />
         <RedBoxWork />
         <Case />
