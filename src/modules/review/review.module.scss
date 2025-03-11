@@ -3,9 +3,9 @@
 @use "@styles/variables";
 
 .root {
-  max-width: 1392px;
+  max-width: 1312px;
   margin: 0 auto;
-  padding: 120px 24px;
+  padding: 120px 0;
 
   @include tablet {
     padding: 80px 12px;
@@ -67,7 +67,7 @@
     background: #FEF2F2;
 
     svg path {
-      stroke: #CB172C;
+      stroke: #FFFFFF;
     }
   }
 
@@ -76,11 +76,11 @@
   }
 
   svg {
-    width: 24px;
-    height: 24px;
+    width: 48px;
+    height: 48px;
 
     path {
-      stroke: #6B7280;
+      stroke: #FFFFFF;
       transition: stroke 0.2s ease;
     }
   }

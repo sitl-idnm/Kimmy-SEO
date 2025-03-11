@@ -1,10 +1,10 @@
 import { FC } from 'react'
-import { Wrapper } from '@/ui'
+import { StandartText, Wrapper } from '@/ui'
 import classNames from 'classnames'
 
 import styles from './home.module.scss'
 import { HomeProps } from './home.types'
-import { Favour, Introduce, Treaty } from '@/components'
+import { Favour, Introduce } from '@/components'
 import { FormSecond } from '@/modules/formSecond'
 import { Case } from '@/modules/case'
 // import { DrawerMenu } from '@/modules/drawerMenu'
@@ -37,6 +37,7 @@ const Home: FC<HomeProps> = ({ className }) => {
         <Faq />
         <Review />
         <FormSecond />
+        <StandartText />
       </Wrapper>
       {/* <DrawerMenu /> */}
     </main>
