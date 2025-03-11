@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import ServicePage from '@/views/servicePage/servicePage'
 
 export const metadata: Metadata = {
-  title: 'Services',
-  description: 'Legion Next.js template'
+  title: 'Услуги | K.KIM',
+  description: 'Услуги | K.KIM'
 }
 
 export default function Home() {
