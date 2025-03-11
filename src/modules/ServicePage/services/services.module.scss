@@ -1,0 +1,9 @@
+@use "@styles/func";
+@use "@styles/mixins";
+@use "@styles/variables";
+
+.root {
+	display: flex;
+	row-gap: 28px;
+	column-gap: 28px;
+}
