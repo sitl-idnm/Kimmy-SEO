@@ -3,7 +3,7 @@ import styles from './blogs.module.scss'
 import { BlogsProps } from './blogs.types'
 
 import blogsData from '@/shared/dataBlogs/blogs.json'
-import { BlogsData } from '@/shared/types/blogs'
+import { BlogsData, BlogData } from '@/shared/types/blogs'
 import Link from 'next/link'
 
 const Blogs: FC<BlogsProps> = ({
@@ -16,7 +16,7 @@ const Blogs: FC<BlogsProps> = ({
 
   return (
     <div className={styles.blogList}>
-      {blogsList.map((blog: any) => (
+      {blogsList.map((blog: BlogData) => (
         <div key={blog.id} className={styles.blogItem}>
           <Link
             href={`/blogs/${blog.slug}`}
