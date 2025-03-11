@@ -18,7 +18,6 @@ import Quiz from '@/modules/quiz/quiz'
 import Branch from '@/modules/branch/branch'
 import Review from '@/modules/review/review'
 import { BlogsMain } from '@/modules/blogsMain'
-import { BlackBoxModal } from '@/modules/blackBoxModal'
 import { BlackBoxLink } from '@/modules/blackBoxLink'
 import { Services } from '@/modules/ServicePage/services'
 
