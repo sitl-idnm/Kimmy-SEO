@@ -1,0 +1,37 @@
+@use "@styles/func";
+@use "@styles/mixins";
+@use "@styles/variables";
+
+.blogList {
+	display: flex;
+	gap: 32px;
+	flex-wrap: wrap;
+
+	.blogItem {
+		max-width: 416px;
+		width: 100%;
+
+		.blogLink {
+			display: flex;
+			flex-direction: column;
+
+			gap: 20px;
+
+			.blogTitle {
+				font-family: var(--font-inter);
+				font-size: 24px;
+				font-weight: 500;
+				line-height: 120%;
+				color: var(--color-black);
+			}
+
+			.blogDate {
+				font-family: var(--font-manrope);
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 150%;
+				color: rgba(0, 0, 0, 0.6);
+			}
+		}
+	}
+}
