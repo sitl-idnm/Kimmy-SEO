@@ -10,27 +10,57 @@ import { useSetAtom } from 'jotai/react'
 import { openModalContent } from '@/shared/atoms/openModal'
 
 const Introduce: FC<IntroduceProps> = ({
-  className
+  className,
+  title,
+  hasTypingSpan = false,
+  wordsArray = ['интернет-маркетинга', 'интернет-маркетинга'],
+  typingInterval = 1500,
+  titleVariant = 'large',
+  buttonText = 'Получить консультацию',
+  hasButton = true,
+  buttonPosition = 'center',
+  titleTag = 'h1'
 }) => {
   const rootClassName = classNames(styles.root, className)
-  const wordsArray = ['интернет-маркетинга', 'интернет-маркетинга'];
+  const titleClassName = classNames(
+    titleVariant === 'large' ? styles.introduce__title : styles.introduce__title_medium
+  )
+  const introduceClassName = classNames(
+    styles.introduce,
+    styles[`introduce_${buttonPosition}`]
+  )
   const setModalContent = useSetAtom(openModalContent)
 
   const openWindows = useCallback((name: string) => {
     setModalContent(name)
   }, [setModalContent])
 
+  const TitleTag = titleTag
+
   return (
     <div className={rootClassName}>
-      <div className={styles.introduce}>
-        <h2 className={styles.introduce__title}>Агентство комплексного <br /> <TypingSpan words={wordsArray} interval={1500} /></h2>
-        <Button
-          onClick={() => openWindows('детали')}
-          tag='button'
-          maxWidth='244px'
-        >
-          Получить консультацию
-        </Button>
+      <div className={introduceClassName}>
+        <TitleTag className={titleClassName}>
+          {title}
+          {hasTypingSpan && (
+            <>
+              {' '}
+              <TypingSpan
+                words={wordsArray}
+                interval={typingInterval}
+              />
+            </>
+          )}
+        </TitleTag>
+        {hasButton && (
+          <Button
+            onClick={() => openWindows('детали')}
+            tag='button'
+            maxWidth='244px'
+          >
+            {buttonText}
+          </Button>
+        )}
       </div>
     </div>
   )

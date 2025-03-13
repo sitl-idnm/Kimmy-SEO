@@ -23,7 +23,12 @@ const ServicePage: FC<ServicePageProps> = ({
   return (
     <main className={rootClassName}>
       <Wrapper>
-        <Introduce />
+        <Introduce title={<>Услуги комплексного интернет<br />маркетинга и системного интегратора</>}
+          titleTag="h1"
+          titleVariant="large"
+          hasTypingSpan={false}
+          hasButton={false}
+        />
         <Favour />
         <Why />
         <Services />

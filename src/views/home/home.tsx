@@ -28,8 +28,18 @@ const Home: FC<HomeProps> = ({ className }) => {
     <main className={rootClassName}>
       <NewModalContainer />
       <Wrapper>
-        <Introduce />
-        <Favour />
+        <Introduce
+          title={<>Агентство комплексного<br /></>}
+          titleTag="h1"
+          titleVariant="large"
+          hasTypingSpan={true}
+          wordsArray={['интернет-маркетинга', 'интернет-маркетинга']}
+          typingInterval={1500}
+          hasButton={true}
+          buttonText="Получить консультацию"
+          buttonPosition="center"
+        />
+        <Favour  />
         <Services mainPage />
         <HowWeWork />
         <Branch />
