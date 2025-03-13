@@ -5,7 +5,7 @@ import styles from './favour.module.scss'
 import { FavourProps } from './favour.types'
 import { FavourItem } from '../favourItem'
 
-const itemsData = [
+const defaultItemsData = [
   { title: 'Разработаем сайт,', text: 'основываясь на реальных потребностях пользователей', linkText: 'Подробнее', linkColor: 'var(--color-black)', backgroundColor: 'var(--color-grey)', textColor: 'var(--color-black)', imageSrc: '/images/spiral.png' },
   { title: 'Адаптируем платформу', text: 'под конкретные бизнес-задачи', linkText: 'Подробнее', linkColor: 'var(--color-white-default)', backgroundColor: 'var(--color-black)', textColor: 'var(--color-white-default)', imageSrc: '/images/flower.png' },
   { title: 'Балансируем удобство,', text: 'логику и привлекательный дизайн', linkText: 'Подробнее', linkColor: 'var(--color-black)', backgroundColor: 'var(--color-grey-light)', textColor: 'var(--color-black)', imageSrc: '/images/sheeps.png' },
@@ -13,7 +13,8 @@ const itemsData = [
 ]
 
 const Favour: FC<FavourProps> = ({
-  className
+  className,
+  itemsData = defaultItemsData
 }) => {
   const rootClassName = classNames(styles.root, className)
 

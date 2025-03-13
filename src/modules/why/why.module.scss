@@ -3,9 +3,26 @@
 @use "@styles/variables";
 
 .root {
-  max-width: 1392px;
+  width: 100%;
+}
+
+.container {
+  max-width: 1312px;
   margin: 0 auto;
-  padding: 80px 24px;
+  padding: 80px 0;
+
+  &_row {
+    .content {
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+
+  &_column {
+    .content {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+  }
 
   @include tablet {
     padding: 40px 12px;
@@ -14,10 +31,6 @@
   @include tablet-small {
     padding: 32px 8px;
   }
-}
-
-.container {
-  width: 100%;
 }
 
 .content {
@@ -32,12 +45,46 @@
   }
 }
 
+.titleWrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  &_justify {
+    &_start {
+      justify-content: flex-start;
+    }
+
+    &_center {
+      justify-content: center;
+    }
+
+    &_end {
+      justify-content: flex-end;
+    }
+  }
+
+  &_align {
+    &_start {
+      align-items: flex-start;
+    }
+
+    &_center {
+      align-items: center;
+    }
+
+    &_end {
+      align-items: flex-end;
+    }
+  }
+}
+
 .title {
-	font-family: var(--font-inter);
+  font-family: var(--font-inter);
   font-size: 48px;
   font-weight: 500;
+  line-height: 120%;
   margin: 0;
-  text-align: left;
 
   @include tablet {
     font-size: 32px;
@@ -46,15 +93,27 @@
 
 .advantagesList {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
+
+  &_2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &_3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &_4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
 
   @include tablet {
     gap: 20px;
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 
   @include tablet-small {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     gap: 16px;
   }
 }
@@ -62,10 +121,10 @@
 .advantageItem {
   display: flex;
   flex-direction: column;
-	justify-content: flex-end;
+  justify-content: flex-end;
   gap: 24px;
-  padding: 32px;
-	height: 200px;
+  padding: 89px 32px 32px;
+  min-height: min-content;
   background: #F9F9F9;
   border-radius: 24px;
   transition: transform 0.2s ease-out;
@@ -75,28 +134,27 @@
   }
 
   @include tablet {
-    padding: 24px;
+    padding: 89px 24px 24px;
     gap: 16px;
   }
 }
 
 .iconWrapper {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 
   @include tablet {
     width: 28px;
     height: 28px;
   }
-}
-
-.icon {
-  width: 100%;
-  height: 100%;
-  color: #E30613;
 }
 
 .advantageTitle {
@@ -108,4 +166,13 @@
   @include tablet {
     font-size: 20px;
   }
+}
+
+.advantageDescription {
+  font-family: var(--font-manrope);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 0;
+  color: #161818;
 }

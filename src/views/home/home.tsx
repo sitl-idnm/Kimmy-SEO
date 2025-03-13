@@ -39,13 +39,16 @@ const Home: FC<HomeProps> = ({ className }) => {
           buttonText="Получить консультацию"
           buttonPosition="center"
         />
-        <Favour  />
+        <Favour />
         <Services mainPage />
         <HowWeWork />
         <Branch />
         <RedBoxWork />
         <Case />
-        <Why />
+        <Why
+          titleJustify='start'
+          titleAlign='start'
+        />
         <BlogsMain />
         <BlackBoxLink />
         <Clients />
