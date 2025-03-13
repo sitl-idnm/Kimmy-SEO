@@ -89,6 +89,16 @@
 		}
 	}
 
+	&__subtext {
+		font-size: 16px;
+		line-height: 150%;
+		margin: 0 10px;
+
+		@include tablet {
+			font-size: 14px;
+		}
+	}
+
 	&__item:hover > button {
 		opacity: 0.5;
 	}

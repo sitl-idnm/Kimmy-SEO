@@ -26,7 +26,7 @@ const advantagesList: AdvantageItem[] = [
 	},
 	{
 		icon: PeopleIcon,
-		title: <>Долгосрочные отношения с&nbsp;клиентами</>
+		title: <>Долгосрочные отношения</>
 	},
 	{
 		icon: HeartIcon,

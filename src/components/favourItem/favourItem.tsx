@@ -36,7 +36,7 @@ const FavourItem: FC<FavourItemProps> = ({
         >
           {title}
         </h2>
-        {text && <p style={{ color: textColor }}>{text}</p>}
+        {text && <p className={styles.favour__subtext} style={{ color: textColor }}>{text}</p>}
         {list && (
           <ul className={styles.favour__list}>
             {list.map((item, index) => (

@@ -1,8 +1,18 @@
 import { FC } from 'react'
+import { StandartText, Wrapper } from '@/ui'
 import classNames from 'classnames'
 
 import styles from './servicePage.module.scss'
 import { ServicePageProps } from './servicePage.types'
+import { FormFirst } from '@/modules/formFirst'
+import { Branch } from '@/modules/branch'
+import { Why } from '@/modules/why'
+import { RedBoxWork } from '@/modules/redBoxWork'
+import { Case } from '@/modules/case'
+import { Review } from '@/modules/review'
+import { FormSecond } from '@/modules/formSecond'
+import { Favour } from '@/components/favour'
+import { Introduce } from '@/components/introduce'
 
 const ServicePage: FC<ServicePageProps> = ({
   className
@@ -11,7 +21,19 @@ const ServicePage: FC<ServicePageProps> = ({
 
   return (
     <main className={rootClassName}>
-      <h1>ServicePage</h1>
+      <Wrapper>
+        <Introduce />
+        <Favour />
+        <Why />
+        <FormFirst />
+        <Branch />
+        <Why />
+        <RedBoxWork />
+        <Case />
+        <Review />
+        <FormSecond />
+        <StandartText />
+      </Wrapper>
     </main>
   )
 }
