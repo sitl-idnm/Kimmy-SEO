@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, ReactNode } from 'react'
+import { FC } from 'react'
 import classNames from 'classnames'
 import CheckIcon from '@icons/why/check.svg'
 import FolderIcon from '@icons/why/folder.svg'
@@ -10,47 +10,69 @@ import PeopleIcon from '@icons/why/people.svg'
 import styles from './why.module.scss'
 import { WhyProps } from './why.types'
 
-interface AdvantageItem {
-	icon: FC<{ className?: string }>
-	title: ReactNode
-}
-
-const advantagesList: AdvantageItem[] = [
+const defaultItemsData = [
 	{
-		icon: CheckIcon,
-		title: <>Результативность</>
+		icon: <CheckIcon className={styles.icon} />,
+		title: 'Результативность',
+		description: 'Гарантируем достижение поставленных целей и измеримых результатов'
 	},
 	{
-		icon: FolderIcon,
-		title: <>Широкий спектр услуг</>
+		icon: <FolderIcon className={styles.icon} />,
+		title: 'Широкий спектр услуг',
+		description: 'Предоставляем полный комплекс digital-маркетинговых решений'
 	},
 	{
-		icon: PeopleIcon,
-		title: <>Долгосрочные отношения</>
+		icon: <PeopleIcon className={styles.icon} />,
+		title: 'Долгосрочные отношения',
+		description: 'Выстраиваем надежные партнерские отношения с каждым клиентом'
 	},
 	{
-		icon: HeartIcon,
-		title: <>Индивидуальный подход</>
+		icon: <HeartIcon className={styles.icon} />,
+		title: 'Индивидуальный подход',
+		description: 'Разрабатываем уникальные стратегии под ваши задачи'
 	}
 ]
 
 const WhyComponent: FC<WhyProps> = ({
-	className
+	className,
+	direction = 'row',
+	titleJustify = 'center',
+	titleAlign = 'center',
+	itemsData = defaultItemsData,
+	cardsPerRow = 2
 }) => {
 	const rootClassName = classNames(styles.root, className)
+	const containerClassName = classNames(
+		styles.container,
+		styles[`container_${direction}`]
+	)
+	const titleWrapperClassName = classNames(
+		styles.titleWrapper,
+		styles[`titleWrapper_justify_${titleJustify}`],
+		styles[`titleWrapper_align_${titleAlign}`]
+	)
+	const advantagesListClassName = classNames(
+		styles.advantagesList,
+		styles[`advantagesList_${cardsPerRow}`]
+	)
 
 	return (
 		<div className={rootClassName}>
-			<div className={styles.container}>
+			<div className={containerClassName}>
 				<div className={styles.content}>
-					<h2 className={styles.title}>Почему мы?</h2>
-					<div className={styles.advantagesList}>
-						{advantagesList.map((item, index) => (
+					<div className={titleWrapperClassName}>
+						<h2 className={styles.title}>Почему мы?</h2>
+					</div>
+					<div className={advantagesListClassName}>
+						{itemsData.map((item, index) => (
 							<div key={index} className={styles.advantageItem}>
 								<div className={styles.iconWrapper}>
-									<item.icon className={styles.icon} />
+									{item.icon}
 								</div>
 								<h3 className={styles.advantageTitle}>{item.title}</h3>
+								{item.description && (
+									<p className={styles.advantageDescription}>{item.description}</p>
+								)}
 							</div>
 						))}
 					</div>

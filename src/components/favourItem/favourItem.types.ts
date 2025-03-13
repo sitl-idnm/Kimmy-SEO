@@ -1,11 +1,12 @@
 export interface FavourItemProps {
+  className?: string
   title: string
+  text?: string
   linkText: string
+  linkColor: string
   backgroundColor: string
   textColor: string
   imageSrc?: string
-  linkColor: string
-  text?: string
   list?: string[]
   isTitleLeft?: boolean
 }

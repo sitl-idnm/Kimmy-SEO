@@ -10,9 +10,13 @@ import servicesData from '@/shared/dataServices/services.json'
 import { Button } from '@/ui'
 import Link from 'next/link'
 
+const defaultDescription = '* Наше агентство работает в формате почасовой оплаты труда. Стоимость проекта будет зависеть от количества фактически отработанных часов специалистами агентства.'
+
 const Services: FC<ServicesProps> = ({
   className,
-  mainPage
+  hasCost = false,
+  showDescription = true,
+  descriptionText = defaultDescription
 }) => {
   const rootClassName = classNames(styles.root, className)
   const [isMobile, setIsMobile] = useState<boolean>(false)
@@ -55,7 +59,7 @@ const Services: FC<ServicesProps> = ({
             key={service.id}
             href={`/services/${service.slug}`}
             className={styles.service}
-            style={mainPage ? { height: '273px' } : {}}
+            style={!hasCost ? { height: '273px' } : {}}
           >
             <div className={styles.service__content}>
               <h3 className={styles.service__content__title}>{service.title}</h3>
@@ -63,7 +67,7 @@ const Services: FC<ServicesProps> = ({
             </div>
             <div className={styles.service__footer}>
               {
-                !mainPage &&
+                hasCost &&
                 <p className={styles.service__footer__price}>{service.price}</p>
               }
               <div className={styles.service__footer__line}></div>
@@ -73,14 +77,16 @@ const Services: FC<ServicesProps> = ({
         ))}
       </div>
 
-      {isMobile && mainPage && services.length > 6 && !showAll && (
+      {isMobile && !hasCost && services.length > 6 && !showAll && (
         <div className={styles.showMoreContainer}>
           <Button onClick={handleShowMore} className={styles.showMoreButton}>
             Показать еще
           </Button>
         </div>
       )}
-      <p className={styles.services__description}>* Наше агентство работает в формате почасовой оплаты труда. Стоимость проекта будет зависеть от количества фактически отработанных часов специалистами агентства.</p>
+      {showDescription && (
+        <p className={styles.services__description}>{descriptionText}</p>
+      )}
     </div>
   )
 }

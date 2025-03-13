@@ -56,11 +56,13 @@ const Form: FC<FormProps> = ({
       return
     }
 
-    try {
-      data.project = sanitizeInput(data.project as string)
-    } catch (error) {
-      setSuccessMessage('Ошибка отправки заявки. HTML теги не разрешены.')
-      return
+    if (project) {
+      try {
+        data.project = sanitizeInput(data.project as string)
+      } catch (error) {
+        setSuccessMessage('Ошибка отправки заявки. HTML теги не разрешены.')
+        return
+      }
     }
 
     const token = '7862004029:AAFZ807gLMhUIzqjfh4DB62muUmzWv9JfrY'
@@ -68,8 +70,13 @@ const Form: FC<FormProps> = ({
 
     const quizResults = quizData ? `\n\nРезультаты квиза:\n${formatQuizData(quizData)}` : ''
 
-    const message = `Новая заявка:\nИмя: ${data.name}\nТелефон: ${data.phone}${data.mail ? `\nПочта: ${data.mail}` : ''
-      }${data.project ? `\nРасскажите про свой проект: ${data.project}` : ''}${quizResults}`
+    const message = `🎯 *Пришла новая заявка с SEO-сайта KIM!*
+
+👤 *Контактные данные:*
+• Имя: ${data.name}
+• Телефон: ${data.phone}${data.mail ? `\n• Почта: ${data.mail}` : ''}
+
+${data.project ? `💡 *О проекте:*\n${data.project}\n` : ''}${quizResults ? `\n📋 *Результаты опроса:*${quizResults}` : ''}`
 
     try {
       await axios.post(`https://api.telegram.org/bot${token}/sendMessage`, {

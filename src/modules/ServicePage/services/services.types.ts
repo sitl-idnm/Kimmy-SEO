@@ -1,4 +1,6 @@
 export interface ServicesProps {
   className?: string
-  mainPage?: boolean
+  hasCost?: boolean
+  showDescription?: boolean
+  descriptionText?: string
 }

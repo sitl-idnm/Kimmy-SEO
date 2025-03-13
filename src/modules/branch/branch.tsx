@@ -5,7 +5,7 @@ import styles from './branch.module.scss'
 import { BranchProps } from './branch.types'
 import { FavourItem } from '@/components'
 
-const branchData = [
+const defaultBranchData = [
   {
     title: 'E-commerce и ритейл',
     backgroundColor: '#18181B',
@@ -46,17 +46,21 @@ const branchData = [
 ]
 
 const Branch: FC<BranchProps> = ({
-  className
+  className,
+  branchData = defaultBranchData,
+  showTitle = true
 }) => {
   const rootClassName = classNames(styles.root, className)
 
   return (
     <div className={rootClassName}>
       <div className={styles.container}>
-        <h2 className={styles.title}>
-          Мы предоставляем маркетинговые<br />
-          решения для разных отраслей
-        </h2>
+        {showTitle && (
+          <h2 className={styles.title}>
+            Мы предоставляем маркетинговые<br />
+            решения для разных отраслей
+          </h2>
+        )}
         <div className={styles.content}>
           {branchData.map((item, index) => (
             <FavourItem
