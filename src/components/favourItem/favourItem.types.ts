@@ -1,6 +1,6 @@
 export interface FavourItemProps {
   className?: string
-  title?: string
+  title: string
   text?: string
   linkText: string
   linkColor: string
