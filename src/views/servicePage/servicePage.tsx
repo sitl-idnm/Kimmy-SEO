@@ -13,6 +13,7 @@ import { Review } from '@/modules/review'
 import { FormSecond } from '@/modules/formSecond'
 import { Favour } from '@/components/favour'
 import { Introduce } from '@/components/introduce'
+import { Services } from '@/modules/ServicePage/services'
 
 const ServicePage: FC<ServicePageProps> = ({
   className
@@ -25,6 +26,7 @@ const ServicePage: FC<ServicePageProps> = ({
         <Introduce />
         <Favour />
         <Why />
+        <Services />
         <FormFirst />
         <Branch />
         <Why />
