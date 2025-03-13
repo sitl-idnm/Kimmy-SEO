@@ -21,50 +21,52 @@ const RedBoxWork: FC<RedBoxWorkProps> = ({
 
   return (
     <div className={rootClassName}>
-      <h2 className={styles.title}>Опыт работы в разных сферах бизнеса</h2>
-      <div className={styles.buttons}>
-        <button>
-          <MedicalIcon className={styles.icon} />
-          Медицина
-        </button>
-        <button>
-          <MarketplaceIcon className={styles.icon} />
-          Маркетплейсы
-        </button>
-        <button>
-          <CarIcon className={styles.icon} />
-          Автомобили
-        </button>
-        <button>
-          <HorecaIcon className={styles.icon} />
-          HoReCa
-        </button>
-        <button>
-          <HomeIcon className={styles.icon} />
-          Недвижимость
-        </button>
-      </div>
-      <div className={styles.buttons}>
-        <button>
-          <RepairIcon className={styles.icon} />
-          Ремонт квартир
-        </button>
-        <button>
-          <ConstructionIcon className={styles.icon} />
-          Строительство домов
-        </button>
-        <button>
-          <GiftIcon className={styles.icon} />
-          Подарки
-        </button>
-        <button>
-          <AdvertisingIcon className={styles.icon} />
-          Рекламные агентства
-        </button>
-        <button>
-          <OnlineIcon className={styles.icon} />
-          Онлайн сервисы
-        </button>
+      <div className={styles.container}>
+        <h2 className={styles.title}>Опыт работы в разных сферах бизнеса</h2>
+        <div className={styles.buttons}>
+          <button>
+            <MedicalIcon className={styles.icon} />
+            Медицина
+          </button>
+          <button>
+            <MarketplaceIcon className={styles.icon} />
+            Маркетплейсы
+          </button>
+          <button>
+            <CarIcon className={styles.icon} />
+            Автомобили
+          </button>
+          <button>
+            <OnlineIcon className={styles.icon} />
+            HoReCa
+          </button>
+          <button>
+            <ConstructionIcon className={styles.icon} />
+            Недвижимость
+          </button>
+          <button>
+            <RepairIcon className={styles.icon} />
+            Ремонт квартир
+          </button>
+          <button>
+            <HomeIcon className={styles.icon} />
+            Строительство домов
+          </button>
+          <button>
+            <GiftIcon className={styles.icon} />
+            Подарки
+          </button>
+          <button>
+            <AdvertisingIcon className={styles.icon} />
+            Рекламные агентства
+          </button>
+          <button>
+            <HorecaIcon className={styles.icon} />
+            Онлайн сервисы
+          </button>
+        </div>
+        {/* <div className={styles.buttons}>
+        </div> */}
       </div>
     </div>
   )
