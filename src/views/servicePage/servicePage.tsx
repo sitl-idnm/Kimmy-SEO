@@ -62,7 +62,10 @@ const ServicePage: FC<ServicePageProps> = ({
             description: "Мы сосредоточены на создании стратегий, которые увеличат вашу прибыль и узнаваемость бренда в интернете."
           }]}
         />
-        <Services />
+        <Services
+          hasCost={true}
+          showDescription={false}
+        />
         <FormFirst />
         <Branch
           branchData={[{

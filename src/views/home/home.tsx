@@ -40,7 +40,10 @@ const Home: FC<HomeProps> = ({ className }) => {
           buttonPosition="center"
         />
         <Favour />
-        <Services mainPage />
+        <Services
+          hasCost={false}
+          showDescription={true}
+        />
         <HowWeWork />
         <Branch />
         <RedBoxWork />
