@@ -1,5 +1,5 @@
 export interface BranchItemData {
-  title?: string
+  title: string
   backgroundColor: string
   textColor: string
   linkText: string

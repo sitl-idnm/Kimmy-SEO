@@ -65,12 +65,12 @@ const Branch: FC<BranchProps> = ({
           {branchData.map((item, index) => (
             <FavourItem
               key={index}
+              title={item.title}
               backgroundColor={item.backgroundColor}
               textColor={item.textColor}
               linkText={item.linkText}
               linkColor={item.linkColor}
-              {...(item.title && { title: item.title })}
-              {...(item.list && { list: item.list })}
+              list={item.list}
               isTitleLeft
             />
           ))}
