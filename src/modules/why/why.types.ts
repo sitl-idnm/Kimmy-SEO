@@ -17,4 +17,6 @@ export interface WhyProps {
   titleAlign?: FlexAlignment
   itemsData?: WhyItemData[]
   cardsPerRow?: CardsPerRow
+  title?: string
+  showTitle?: boolean
 }

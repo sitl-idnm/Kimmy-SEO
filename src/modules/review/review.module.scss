@@ -5,15 +5,6 @@
 .root {
   max-width: 1312px;
   margin: 0 auto;
-  padding: 120px 0;
-
-  @include tablet {
-    padding: 80px 12px;
-  }
-
-  @include tablet-small {
-    padding: 60px 8px;
-  }
 }
 
 .container {
@@ -22,7 +13,8 @@
 
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 32px;
   align-items: center;
   margin-bottom: 48px;
 
@@ -33,7 +25,7 @@
 
 .title {
   font-family: var(--font-inter);
-  font-size: 48px;
+  font-size: 54px;
   font-weight: 500;
   line-height: 130%;
   margin: 0;
@@ -50,10 +42,9 @@
 }
 
 .control {
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  border: 1px solid #E5E7EB;
   background: #FFFFFF;
   display: flex;
   align-items: center;
@@ -63,7 +54,7 @@
   padding: 0;
 
   &:hover {
-    border-color: #CB172C;
+    opacity: 0.8;
     background: #FEF2F2;
 
     svg path {
@@ -88,13 +79,21 @@
 
 .reviews {
   display: flex;
-  gap: 24px;
+  gap: 28px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 4px 4px 28px;
+  padding: 4px 4px 80px;
   margin: 0 -4px;
   -ms-overflow-style: none;
   scrollbar-width: none;
+
+  @include tablet {
+    padding: 4px 4px 40px;
+  }
+
+  @include tablet-small {
+    padding: 4px 4px 24px;
+  }
 
   &::-webkit-scrollbar {
     display: none;

@@ -57,8 +57,7 @@ const Branch: FC<BranchProps> = ({
       <div className={styles.container}>
         {showTitle && (
           <h2 className={styles.title}>
-            Мы предоставляем маркетинговые<br />
-            решения для разных отраслей
+            Кому подходят наши услуги?
           </h2>
         )}
         <div className={styles.content}>

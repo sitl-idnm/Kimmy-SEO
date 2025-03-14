@@ -63,7 +63,7 @@ const Review: FC<ReviewProps> = ({
     if (!scrollContainerRef.current) return
 
     const container = scrollContainerRef.current
-    const scrollAmount = 424 // Ширина карточки + отступ
+    const scrollAmount = 556 // Ширина карточки + отступ
     const currentScroll = container.scrollLeft
     const newScroll = direction === 'left'
       ? currentScroll - scrollAmount
