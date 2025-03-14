@@ -39,7 +39,9 @@ const WhyComponent: FC<WhyProps> = ({
 	titleJustify = 'center',
 	titleAlign = 'center',
 	itemsData = defaultItemsData,
-	cardsPerRow = 2
+	cardsPerRow = 2,
+	title = 'Почему мы?',
+	showTitle = true
 }) => {
 	const rootClassName = classNames(styles.root, className)
 	const containerClassName = classNames(
@@ -60,9 +62,11 @@ const WhyComponent: FC<WhyProps> = ({
 		<div className={rootClassName}>
 			<div className={containerClassName}>
 				<div className={styles.content}>
-					<div className={titleWrapperClassName}>
-						<h2 className={styles.title}>Почему мы?</h2>
-					</div>
+					{showTitle && (
+						<div className={titleWrapperClassName}>
+							<h2 className={styles.title}>{title}</h2>
+						</div>
+					)}
 					<div className={advantagesListClassName}>
 						{itemsData.map((item, index) => (
 							<div key={index} className={styles.advantageItem}>

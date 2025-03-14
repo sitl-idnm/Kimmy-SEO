@@ -25,6 +25,10 @@
 		line-height: 120%;
 
 		color: var(--color-black);
+
+		@include tablet-small {
+			font-size: 32px;
+		}
 	}
 }
 
@@ -78,6 +82,14 @@
 			.service__footer__line {
 				background-color: white;
 			}
+
+
+
+			.service__footer__button::after {
+				content: url('../../../shared/assets/icons/service_arrow_white.svg');
+			}
+
+
 		}
 
 		&__content {
@@ -159,10 +171,6 @@
 					text-decoration: underline;
 
 					transition: all 0.3s ease;
-
-					&::after {
-						content: url('../../../shared/assets/icons/service_arrow_white.svg');
-					}
 				}
 			}
 		}

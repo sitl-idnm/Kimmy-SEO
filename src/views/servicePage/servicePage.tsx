@@ -28,9 +28,9 @@ const ServicePage: FC<ServicePageProps> = ({
   return (
     <main className={rootClassName}>
       <Wrapper>
-        <Introduce title={<>Услуги комплексного интернет<br />маркетинга и системного интегратора</>}
+        <Introduce title={<>Услуги комплексного интернет-маркетинга и&nbsp;системного интегратора</>}
           titleTag="h1"
-          titleVariant="large"
+          titleVariant="medium"
           hasTypingSpan={false}
           hasButton={false}
         />
@@ -96,6 +96,7 @@ const ServicePage: FC<ServicePageProps> = ({
           titleJustify='center'
           titleAlign='center'
           cardsPerRow={2}
+          title="Почему нас выбирают?"
           itemsData={[{
             icon: <AcceptIcon />,
             title: "Индивидуальный подход",
@@ -121,7 +122,13 @@ const ServicePage: FC<ServicePageProps> = ({
         <Case />
         <Review />
         <FormSecond />
-        <StandartText />
+        <StandartText
+          texts={[
+            'KIM Agency — это агентство, которое работает в Москве и специализируется на предоставлении digital-решений и услуг для бизнеса.',
+            'Наши услуги предлагают решение задач бизнеса с помощью комплексного подхода в сфере интернет-маркетинга и внедрения ИТ-решений. Как системный интегратор, мы обеспечиваем внедрение всех цифровых процессов, оптимизируя их для достижения максимальной эффективности. Наши специалисты разрабатывают стратегические кампании, которые охватывают SEO, контекстную рекламу, SMM, таргет и контент-маркетинг.',
+            'Благодаря системному подходу и опыту, мы гарантируем стабильную работу всех внедрённых решений и их соответствие бизнес-целям клиента.'
+          ]}
+        />
       </Wrapper>
     </main>
   )
