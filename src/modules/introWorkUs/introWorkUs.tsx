@@ -1,10 +1,7 @@
 import { FC } from 'react'
 import Image from 'next/image'
 import { Borders } from '@/ui'
-import Line from '@icons/linebw.svg'
 import abstrct from '@public/images/abstract1_work.png'
-import abstrct2 from '@public/images/abstract2_work.png'
-import howImage from '@public/images/howWorkUs.png'
 import classNames from 'classnames'
 
 import styles from './introWorkUs.module.scss'

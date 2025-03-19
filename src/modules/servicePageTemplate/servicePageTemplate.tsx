@@ -3,7 +3,6 @@ import classNames from 'classnames'
 
 import styles from './servicePageTemplate.module.scss'
 import { ServicePageTemplateProps } from './servicePageTemplate.types'
-import { RedBoxWork } from '../redBoxWork'
 import { Quiz } from '../quiz'
 import { FormSecond } from '../formSecond'
 import { StandartText } from '@/ui/standartText'
