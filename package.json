@@ -11,6 +11,7 @@
     "prettier": "prettier -w src/**/*.{ts,tsx} --config .prettierrc",
     "check": "prettier -w src/**/*.{ts,tsx} --config .prettierrc && next lint && stylelint src/**/*.scss",
     "gen:component": "node ./util/component/gen-component.mjs",
+    "gen:service": "node util/service/gen-service.mjs",
     "preinstall": "npx only-allow yarn"
   },
   "dependencies": {
