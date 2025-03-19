@@ -91,15 +91,16 @@ export const ${answers.slug.replace(/-/g, '')}Data: ServiceData = {
 
 const generatePageContent = (answers) => {
   const componentName = answers.slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('')
-  return `import { getServiceData } from '@/shared/dataServices'
+  return `'use client'
+
+import { getServiceData } from '@/shared/dataServices'
 import styles from './page.module.scss'
 import { ServicePageTemplate } from '@/modules/servicePageTemplate'
 import classNames from 'classnames'
-import { FC } from 'react'
 import { ${componentName}PageProps } from './page.types'
 import { IntroWorkUs } from '@/modules/introWorkUs'
 
-const ${componentName}Page: FC<${componentName}PageProps> = ({ className }) => {
+export default function ${componentName}Page({ className }: ${componentName}PageProps) {
   const serviceData = getServiceData('${answers.slug}')
 
   if (!serviceData) {
@@ -114,14 +115,11 @@ const ${componentName}Page: FC<${componentName}PageProps> = ({ className }) => {
       <ServicePageTemplate />
     </main>
   )
-}
-
-export default ${componentName}Page`
+}`
 }
 
 const generatePageTypes = (answers) => {
-  const componentName = answers.slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('')
-  return `export interface ${componentName}PageProps {
+  return `export interface ${answers.slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('')}PageProps {
   className?: string
 }`
 }

@@ -1,12 +1,13 @@
+'use client'
+
 import { getServiceData } from '@/shared/dataServices'
 import styles from './page.module.scss'
 import { ServicePageTemplate } from '@/modules/servicePageTemplate'
 import classNames from 'classnames'
-import { FC } from 'react'
 import { NoCodePageProps } from './page.types'
 import { IntroWorkUs } from '@/modules/introWorkUs'
 
-const NoCodePage: FC<NoCodePageProps> = ({ className }) => {
+export default function NoCodePage({ className }: NoCodePageProps) {
   const serviceData = getServiceData('no-code')
 
   if (!serviceData) {
@@ -22,5 +23,3 @@ const NoCodePage: FC<NoCodePageProps> = ({ className }) => {
     </main>
   )
 }
-
-export default NoCodePage
