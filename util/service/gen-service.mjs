@@ -100,6 +100,7 @@ import classNames from 'classnames'
 import { FC } from 'react'
 import { IntroWorkUs } from '@/modules/introWorkUs'
 import { ${componentName}PageProps } from './page.types'
+import type { Metadata } from 'next'
 
 export async function generateMetadata(): Promise<Metadata> {
   const serviceData = getServiceData('${answers.slug}')
