@@ -100,7 +100,7 @@ import classNames from 'classnames'
 import { IntroWorkUs } from '@/modules/introWorkUs'
 import { ${componentName}PageProps } from './page.types'
 
-export default function ${componentName}Page() {
+export default function ${componentName}Page(props: ${componentName}PageProps) {
   const serviceData = getServiceData('${answers.slug}')
 
   if (!serviceData) {
@@ -201,7 +201,7 @@ export const getAllServiceSlugs = (): string[] => {
     // Добавляем импорт, если его нет
     const importLine = `import { ${answers.slug.replace(/-/g, '')}Data } from '@/app/services/${answers.slug}/data'`
     if (!servicesIndexContent.includes(importLine)) {
-      const importIndex = servicesIndexContent.lastIndexOf('import')
+      const importIndex = servicesIndexContent.indexOf('import')
       const endOfImports = servicesIndexContent.indexOf('\n', importIndex)
       servicesIndexContent =
         servicesIndexContent.slice(0, endOfImports) +

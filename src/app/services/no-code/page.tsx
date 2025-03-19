@@ -7,7 +7,7 @@ import classNames from 'classnames'
 import { IntroWorkUs } from '@/modules/introWorkUs'
 import { NoCodePageProps } from './page.types'
 
-export default function NoCodePage() {
+export default function NoCodePage(props: NoCodePageProps) {
   const serviceData = getServiceData('no-code')
 
   if (!serviceData) {
