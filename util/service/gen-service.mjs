@@ -130,7 +130,10 @@ const ${componentName}Page: FC<${componentName}PageProps> = () => {
 
   return (
     <main className={rootClassName}>
-      <IntroWorkUs />
+      <IntroWorkUs
+        title={serviceData?.title}
+        text={serviceData?.description}
+      />
       <ServicePageTemplate />
     </main>
   )

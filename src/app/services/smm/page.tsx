@@ -1,5 +1,3 @@
-
-
 import { getServiceData } from '@/shared/dataServices'
 import styles from './page.module.scss'
 import { ServicePageTemplate } from '@/modules/servicePageTemplate'
@@ -14,15 +12,15 @@ export async function generateMetadata(): Promise<Metadata> {
 
   const customMetadata = {
     // Здесь можно переопределить метаданные вручную
-    // title: 'Кастомный заголовок',
-    // description: 'Кастомное описание',
-    // keywords: ['кастомные', 'ключевые', 'слова']
+    title: 'Кастомный заголовок',
+    description: 'Кастомное описание',
+    keywords: ['кастомные', 'ключевые', 'слова']
   }
 
   return {
-    title: customMetadata.title || serviceData?.title || 'SMM',
-    description: customMetadata.description || serviceData?.description || 'Поможем найти, прогреть и удержать потенциальных и реальных клиентов в ваших аккаунтах в социальных сетях',
-    keywords: customMetadata.keywords || [serviceData?.title?.toLowerCase() || 'smm', 'услуги', 'разработка'].filter(Boolean)
+    title: customMetadata.title,
+    description: customMetadata.description,
+    keywords: customMetadata.keywords.filter(Boolean)
   }
 }
 
@@ -37,7 +35,10 @@ const SmmPage: FC<SmmPageProps> = () => {
 
   return (
     <main className={rootClassName}>
-      <IntroWorkUs />
+      <IntroWorkUs
+        title={serviceData.title}
+        text={serviceData.description}
+      />
       <ServicePageTemplate />
     </main>
   )
