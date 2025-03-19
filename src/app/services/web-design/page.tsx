@@ -6,11 +6,11 @@ import { ServicePageTemplate } from '@/modules/servicePageTemplate'
 import classNames from 'classnames'
 import { FC } from 'react'
 import { IntroWorkUs } from '@/modules/introWorkUs'
-import { SeoPageProps } from './page.types'
+import { WebDesignPageProps } from './page.types'
 import type { Metadata } from 'next'
 
 export async function generateMetadata(): Promise<Metadata> {
-  const serviceData = getServiceData('seo')
+  const serviceData = getServiceData('web-design')
 
   const customMetadata = {
     // Здесь можно переопределить метаданные вручную
@@ -20,14 +20,14 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 
   return {
-    title: customMetadata.title || serviceData?.title || 'SEO',
-    description: customMetadata.description || serviceData?.description || 'Оптимизируем сайты для поисковых систем и выведем их в ТОП10 выдачи',
-    keywords: customMetadata.keywords || [serviceData?.title?.toLowerCase() || 'seo', 'услуги', 'разработка'].filter(Boolean)
+    title: customMetadata.title || serviceData?.title || 'Веб-дизайн',
+    description: customMetadata.description || serviceData?.description || 'Разработаем дизайн веб-ресурса, электронного письма и материалов для онлайн-рекламы',
+    keywords: customMetadata.keywords || [serviceData?.title?.toLowerCase() || 'веб-дизайн', 'услуги', 'разработка'].filter(Boolean)
   }
 }
 
-const SeoPage: FC<SeoPageProps> = () => {
-  const serviceData = getServiceData('seo')
+const WebDesignPage: FC<WebDesignPageProps> = () => {
+  const serviceData = getServiceData('web-design')
 
   if (!serviceData) {
     return null
@@ -47,4 +47,4 @@ const SeoPage: FC<SeoPageProps> = () => {
   )
 }
 
-export default SeoPage
+export default WebDesignPage

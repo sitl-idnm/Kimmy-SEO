@@ -91,7 +91,7 @@ export const ${answers.slug.replace(/-/g, '')}Data: ServiceData = {
 
 const generatePageContent = (answers) => {
   const componentName = answers.slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('')
-  return `'use client'
+  return `
 
 import { getServiceData } from '@/shared/dataServices'
 import styles from './page.module.scss'
@@ -100,6 +100,24 @@ import classNames from 'classnames'
 import { FC } from 'react'
 import { IntroWorkUs } from '@/modules/introWorkUs'
 import { ${componentName}PageProps } from './page.types'
+import type { Metadata } from 'next'
+
+export async function generateMetadata(): Promise<Metadata> {
+  const serviceData = getServiceData('${answers.slug}')
+
+  const customMetadata = {
+    // Здесь можно переопределить метаданные вручную
+    // title: 'Кастомный заголовок',
+    // description: 'Кастомное описание',
+    // keywords: ['кастомные', 'ключевые', 'слова']
+  }
+
+  return {
+    title: customMetadata.title || serviceData?.title || '${answers.title}',
+    description: customMetadata.description || serviceData?.description || '${answers.description}',
+    keywords: customMetadata.keywords || [serviceData?.title?.toLowerCase() || '${answers.title.toLowerCase()}', 'услуги', 'разработка'].filter(Boolean)
+  }
+}
 
 const ${componentName}Page: FC<${componentName}PageProps> = () => {
   const serviceData = getServiceData('${answers.slug}')
@@ -112,7 +130,11 @@ const ${componentName}Page: FC<${componentName}PageProps> = () => {
 
   return (
     <main className={rootClassName}>
-      <IntroWorkUs />
+      <IntroWorkUs
+        title={serviceData?.title}
+        text={serviceData?.description}
+        highlightedText=""
+      />
       <ServicePageTemplate />
     </main>
   )

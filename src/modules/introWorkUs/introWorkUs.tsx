@@ -5,9 +5,25 @@ import abstrct from '@public/images/abstract1_work.png'
 import classNames from 'classnames'
 
 import styles from './introWorkUs.module.scss'
-import { IntroWorkUsProps } from './introWorkUs.types'
 
-const IntroWorkUs: FC<IntroWorkUsProps> = ({ className }) => {
+interface IntroWorkUsProps {
+  title?: string
+  text?: string
+  highlightedText?: string
+  className?: string
+  image?: {
+    src: string
+    alt: string
+  }
+}
+
+const IntroWorkUs: FC<IntroWorkUsProps> = ({
+  title = 'Работа в K.KIM agency',
+  text = 'Создаём сайты, которые не просто существуют, а',
+  highlightedText = 'конвертируют',
+  className,
+  image
+}) => {
   const rootClassName = classNames(styles.root, className)
 
   return (
@@ -21,12 +37,17 @@ const IntroWorkUs: FC<IntroWorkUsProps> = ({ className }) => {
             'bottomLeft'
           ]}
         />
-        <h1 className={styles.box__title}>Работа в K.KIM agency</h1>
+        <h1 className={styles.box__title}>{title}</h1>
         <p className={styles.box__text}>
-          Создаём сайты, которые не просто существуют, а{' '}
-          <span className={styles.box__text__white}>конвертируют</span>
+          {text}{' '}
+          <span className={styles.box__text__white}>{highlightedText}</span>
         </p>
-        <Image src={abstrct} alt="abstrct" className={styles.box__image} quality={100} />
+        <Image
+          src={image?.src || abstrct}
+          alt={image?.alt || 'abstrct'}
+          className={styles.box__image}
+          quality={100}
+        />
       </div>
     </div>
   )
