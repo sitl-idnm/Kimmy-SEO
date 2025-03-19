@@ -1,3 +1,5 @@
+
+
 import { getServiceData } from '@/shared/dataServices'
 import styles from './page.module.scss'
 import { ServicePageTemplate } from '@/modules/servicePageTemplate'
@@ -5,21 +7,22 @@ import classNames from 'classnames'
 import { FC } from 'react'
 import { IntroWorkUs } from '@/modules/introWorkUs'
 import { WebDesignPageProps } from './page.types'
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 
 export async function generateMetadata(): Promise<Metadata> {
   const serviceData = getServiceData('web-design')
 
   const customMetadata = {
-    title: 'Услуга Веб-дизайн',
-    description: 'Профессиональные услуги веб-дизайна',
-    keywords: ['веб-дизайн', 'дизайн сайтов', 'UI/UX дизайн', 'веб-разработка']
+    // Здесь можно переопределить метаданные вручную
+    title: 'Кастомный заголовок',
+    description: 'Кастомное описание',
+    keywords: ['кастомные', 'ключевые', 'слова']
   }
 
   return {
-    title: customMetadata.title || serviceData?.title,
-    description: customMetadata.description || serviceData?.description,
-    keywords: customMetadata.keywords || [serviceData?.title?.toLowerCase() || '', 'услуги', 'разработка'].filter(Boolean)
+    title: customMetadata.title || serviceData?.title || 'Веб-дизайн',
+    description: customMetadata.description || serviceData?.description || 'Разработаем дизайн веб-ресурса, электронного письма и материалов для онлайн-рекламы',
+    keywords: customMetadata.keywords || [serviceData?.title?.toLowerCase() || 'веб-дизайн', 'услуги', 'разработка'].filter(Boolean)
   }
 }
 
@@ -34,7 +37,11 @@ const WebDesignPage: FC<WebDesignPageProps> = () => {
 
   return (
     <main className={rootClassName}>
-      <IntroWorkUs />
+      <IntroWorkUs
+        title={serviceData?.title}
+        text={serviceData?.description}
+        highlightedText=""
+      />
       <ServicePageTemplate />
     </main>
   )

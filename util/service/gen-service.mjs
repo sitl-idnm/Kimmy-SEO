@@ -133,6 +133,7 @@ const ${componentName}Page: FC<${componentName}PageProps> = () => {
       <IntroWorkUs
         title={serviceData?.title}
         text={serviceData?.description}
+        highlightedText=""
       />
       <ServicePageTemplate />
     </main>

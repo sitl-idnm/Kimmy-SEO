@@ -1,18 +1,13 @@
-import { nocodeData } from '@/app/services/no-code/data'
-import { smmData } from '@/app/services/smm/data'
-import { cermData } from '@/app/services/cerm/data'
+import type { ServiceData } from '@/app/services/smm/data'
 import { webdesignData } from '@/app/services/web-design/data'
-import { seoData } from '@/app/services/seo/data'
-import { ServiceData } from '@/app/services/no-code/data'
 
-export type { ServiceData }
+import { smmData } from '@/app/services/smm/data'
+
+
 
 // Объект со всеми услугами
-export const servicesData: Record<string, ServiceData> = {'no-code': nocodeData,
-  'seo': seoData,
-  'web-design': webdesignData,
-  'cerm': cermData,
-  'smm': smmData}
+export const servicesData: Record<string, ServiceData> = {'smm': smmData,
+  'web-design': webdesignData}
 
 // Функция для получения данных конкретной услуги
 export const getServiceData = (slug: string): ServiceData | undefined => {
