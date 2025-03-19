@@ -8,7 +8,6 @@ import { SmmPageProps } from './page.types'
 import type { Metadata } from 'next'
 
 export async function generateMetadata(): Promise<Metadata> {
-  const serviceData = getServiceData('smm')
 
   const customMetadata = {
     // Здесь можно переопределить метаданные вручную
