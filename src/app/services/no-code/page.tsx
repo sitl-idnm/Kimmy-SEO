@@ -4,10 +4,11 @@ import { getServiceData } from '@/shared/dataServices'
 import styles from './page.module.scss'
 import { ServicePageTemplate } from '@/modules/servicePageTemplate'
 import classNames from 'classnames'
+import { FC } from 'react'
 import { IntroWorkUs } from '@/modules/introWorkUs'
 import { NoCodePageProps } from './page.types'
 
-export default function NoCodePage(props: NoCodePageProps) {
+const NoCodePage: FC<NoCodePageProps> = () => {
   const serviceData = getServiceData('no-code')
 
   if (!serviceData) {
@@ -23,3 +24,5 @@ export default function NoCodePage(props: NoCodePageProps) {
     </main>
   )
 }
+
+export default NoCodePage

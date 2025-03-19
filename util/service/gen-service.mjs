@@ -97,10 +97,11 @@ import { getServiceData } from '@/shared/dataServices'
 import styles from './page.module.scss'
 import { ServicePageTemplate } from '@/modules/servicePageTemplate'
 import classNames from 'classnames'
+import { FC } from 'react'
 import { IntroWorkUs } from '@/modules/introWorkUs'
 import { ${componentName}PageProps } from './page.types'
 
-export default function ${componentName}Page(props: ${componentName}PageProps) {
+const ${componentName}Page: FC<${componentName}PageProps> = () => {
   const serviceData = getServiceData('${answers.slug}')
 
   if (!serviceData) {
@@ -115,7 +116,9 @@ export default function ${componentName}Page(props: ${componentName}PageProps) {
       <ServicePageTemplate />
     </main>
   )
-}`
+}
+
+export default ${componentName}Page`
 }
 
 const generatePageTypes = (answers) => {
