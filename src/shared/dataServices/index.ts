@@ -1,12 +1,12 @@
 import { nocodeData } from '@/app/services/no-code/data'
+import { seoData } from '@/app/services/seo/data'
 import { ServiceData } from '@/app/services/no-code/data'
 
 export type { ServiceData }
 
 // Объект со всеми услугами
-export const servicesData: Record<string, ServiceData> = {
-	'no-code': nocodeData
-}
+export const servicesData: Record<string, ServiceData> = {'no-code': nocodeData,
+  'seo': seoData}
 
 // Функция для получения данных конкретной услуги
 export const getServiceData = (slug: string): ServiceData | undefined => {
