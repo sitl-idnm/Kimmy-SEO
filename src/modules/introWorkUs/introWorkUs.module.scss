@@ -43,7 +43,7 @@
 			.text {
 				align-self: flex-end;
 				color: #16181B70;
-				font-size: 32px;
+				font-size: 18px;
 				font-family: var(--font-inter);
 				line-height: 130%;
 				max-width: 819px;
@@ -88,19 +88,24 @@
 
 		&__text {
 			font-family: var(--font-inter);
-			font-size: 24px;
+			font-size: 18px;
 			font-weight: 400;
 			line-height: 130%;
 			text-align: center;
 
 			color: #FAFAFA80;
 
-			max-width: 448px;
+			max-width: 680px;
+
+			@include tablet {
+				max-width: 523px;
+				font-size: 16px;
+			}
 
 			@include tablet-small {
-				font-size: 12px;
-
-				max-width: 200px;
+				font-size: 16px;
+				text-align: left;
+				max-width: 325px;
 			}
 
 			&__white {

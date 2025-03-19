@@ -12,6 +12,7 @@ type CardsPerRow = 2 | 3 | 4
 
 export interface WhyProps {
   className?: string
+  counter?: boolean
   direction?: FlexDirection
   titleJustify?: FlexAlignment
   titleAlign?: FlexAlignment

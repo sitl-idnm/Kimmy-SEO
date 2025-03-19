@@ -187,3 +187,32 @@
   margin: 0;
   color: #161818;
 }
+
+.root--counter {
+  .iconWrapper {
+    display: none;
+  }
+
+  .advantageItem {
+    height: 200px;
+    padding: 16px 20px;
+    gap: 0;
+
+    @include tablet-small {
+      height: 126px;
+      border-radius: 16px;
+      justify-content: center;
+    }
+  }
+
+  .advantageTitle {
+    font-size: 54px;
+    color: #CB172C;
+    margin-bottom: -4px;
+
+    @include tablet-small {
+      font-size: 32px;
+  }
+
+  }
+}

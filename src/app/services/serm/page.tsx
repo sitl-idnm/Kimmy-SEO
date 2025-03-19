@@ -20,9 +20,9 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 
   return {
-    title: customMetadata.title || serviceData?.title || 'SERM',
-    description: customMetadata.description || serviceData?.description || 'Создадим положительное мнение пользователей о вашей компании в поисковых системах',
-    keywords: customMetadata.keywords || [serviceData?.title?.toLowerCase() || 'serm', 'услуги', 'разработка'].filter(Boolean)
+    title: customMetadata.title,
+    description: customMetadata.description,
+    keywords: customMetadata.keywords.filter(Boolean)
   }
 }
 
