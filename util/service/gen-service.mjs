@@ -97,17 +97,17 @@ import { getServiceData } from '@/shared/dataServices'
 import styles from './page.module.scss'
 import { ServicePageTemplate } from '@/modules/servicePageTemplate'
 import classNames from 'classnames'
-import { ${componentName}PageProps } from './page.types'
 import { IntroWorkUs } from '@/modules/introWorkUs'
+import { ${componentName}PageProps } from './page.types'
 
-export default function ${componentName}Page({ className }: ${componentName}PageProps) {
+export default function ${componentName}Page() {
   const serviceData = getServiceData('${answers.slug}')
 
   if (!serviceData) {
     return null
   }
 
-  const rootClassName = classNames(styles.root, className)
+  const rootClassName = classNames(styles.root)
 
   return (
     <main className={rootClassName}>
@@ -119,8 +119,10 @@ export default function ${componentName}Page({ className }: ${componentName}Page
 }
 
 const generatePageTypes = (answers) => {
-  return `export interface ${answers.slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('')}PageProps {
-  className?: string
+  const componentName = answers.slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('')
+  return `export interface ${componentName}PageProps {
+  params: { slug: string }
+  searchParams: { [key: string]: string | string[] | undefined }
 }`
 }
 

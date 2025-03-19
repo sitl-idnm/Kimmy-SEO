@@ -1,3 +1,4 @@
 export interface NoCodePageProps {
-  className?: string
+  params: { slug: string }
+  searchParams: { [key: string]: string | string[] | undefined }
 }
