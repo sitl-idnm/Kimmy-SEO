@@ -5,10 +5,16 @@ export interface BranchItemData {
   linkText: string
   linkColor: string
   list?: string[]
+  imageSrc?: string
 }
 
 export interface BranchProps {
+  title?: string
   className?: string
   branchData?: BranchItemData[]
   showTitle?: boolean
+  itemsPerRow?: 2 | 3 | 4
+  listJustifyContent?: 'flex-start' | 'center' | 'flex-end'
+  listAlignItems?: 'flex-start' | 'center' | 'flex-end'
+  listFlexDirection?: 'row' | 'column'
 }

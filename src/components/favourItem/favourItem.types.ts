@@ -9,4 +9,7 @@ export interface FavourItemProps {
   imageSrc?: string
   list?: string[]
   isTitleLeft?: boolean
+  justifyContent?: 'flex-start' | 'center' | 'flex-end'
+  alignItems?: 'flex-start' | 'center' | 'flex-end'
+  flexDirection?: 'row' | 'column'
 }

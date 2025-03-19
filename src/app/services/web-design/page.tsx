@@ -10,6 +10,7 @@ import { WebDesignPageProps } from './page.types'
 import type { Metadata } from 'next'
 import { Why } from '@/modules/why'
 import { Conversion } from '@/modules/conversion'
+import { Branch } from '@/modules/branch'
 
 export async function generateMetadata(): Promise<Metadata> {
   const serviceData = getServiceData('web-design')
@@ -89,6 +90,62 @@ const WebDesignPage: FC<WebDesignPageProps> = () => {
           title: '4',
           description: "модели ИИ помогают сотрудникам в работе"
         }]}
+      />
+      <Branch
+        title="Кому подходят наши услуги?"
+        itemsPerRow={2}
+        listJustifyContent='center'
+        listAlignItems='flex-start'
+        branchData={[
+          {
+            title: 'Широкий спектр услуг',
+            backgroundColor: '#F9F9F9',
+            textColor: '#18181B',
+            linkText: '',
+            linkColor: '',
+            imageSrc: '/images/star.png',
+            list: [
+              'Разработка веб-ресурсов',
+              'Реализация маркетинговых стратегий',
+              'SEO-оптимизация'
+            ]
+          },
+          {
+            title: 'Долгосрочные отношения с клиентами',
+            backgroundColor: '#CB172C',
+            textColor: '#FFFFFF',
+            linkText: '',
+            linkColor: '',
+            imageSrc: '/images/star.png',
+            list: [
+              'Разработка SMM-стратегий и контент-маркетинга для поддержания активного взаимодействия с целевой аудиторией'
+            ]
+          },
+          {
+            title: 'Результативность',
+            backgroundColor: '#18181B',
+            textColor: '#FFFFFF',
+            linkText: '',
+            linkColor: '',
+            imageSrc: '/images/star.png',
+            list: [
+              'Помощь в достижении высоких результатов в интернете',
+              'Генерация большого количества трафика с различных источников '
+            ]
+          },
+          {
+            title: 'Индивидуальный подход',
+            backgroundColor: '#F9F9F9',
+            textColor: '#18181B',
+            linkText: '',
+            linkColor: '',
+            imageSrc: '/images/star.png',
+            list: [
+              'Внимание к мелким деталям для удовлетворения потребностей клиентов',
+              'Предложение инновационных и эффективных маркетинговых решений'
+            ]
+          }
+        ]}
       />
       <ServicePageTemplate />
     </main>
