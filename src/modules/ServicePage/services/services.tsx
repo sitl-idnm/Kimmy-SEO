@@ -5,8 +5,7 @@ import classNames from 'classnames'
 
 import styles from './services.module.scss'
 import { ServicesProps } from './services.types'
-import { ServicesData } from '@/shared/types/services'
-import servicesData from '@/shared/dataServices/services.json'
+import { getAllServices, ServiceData } from '@/shared/dataServices'
 import { Button } from '@/ui'
 import Link from 'next/link'
 
@@ -40,7 +39,7 @@ const Services: FC<ServicesProps> = ({
     }
   }, [])
 
-  const { services } = servicesData as ServicesData
+  const services: ServiceData[] = getAllServices()
 
   // Определяем, сколько сервисов показывать
   const visibleServices = isMobile && !showAll ? services.slice(0, 6) : services;
@@ -54,9 +53,9 @@ const Services: FC<ServicesProps> = ({
     <div className={styles.container}>
       <h2 className={styles.title}>Услуги</h2>
       <div className={rootClassName}>
-        {visibleServices.map((service) => (
+        {visibleServices.map((service: ServiceData) => (
           <Link
-            key={service.id}
+            key={service.slug}
             href={`/services/${service.slug}`}
             className={styles.service}
             style={!hasCost ? { height: '273px' } : {}}
