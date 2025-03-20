@@ -17,4 +17,5 @@ export interface BranchProps {
   listJustifyContent?: 'flex-start' | 'center' | 'flex-end'
   listAlignItems?: 'flex-start' | 'center' | 'flex-end'
   listFlexDirection?: 'row' | 'column'
+  isTitleLeft?: boolean
 }

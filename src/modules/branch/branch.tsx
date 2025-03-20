@@ -54,7 +54,7 @@ const Branch: FC<BranchProps> = ({
   listJustifyContent = 'flex-start',
   listAlignItems = 'flex-start',
   listFlexDirection = 'row',
-  imageSrc = ''
+  isTitleLeft = false
 }) => {
   const rootClassName = classNames(styles.root, className)
   const contentClassName = classNames(styles.content, styles[`content_${itemsPerRow}`])
@@ -77,7 +77,6 @@ const Branch: FC<BranchProps> = ({
               linkText={item.linkText}
               linkColor={item.linkColor}
               list={item.list}
-              imageSrc={item.imageSrc}
               isTitleLeft
               justifyContent={listJustifyContent}
               alignItems={listAlignItems}
