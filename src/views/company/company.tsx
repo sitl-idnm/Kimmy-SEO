@@ -11,6 +11,8 @@ import { Clients } from '@/modules/clients'
 import Faq from '@/modules/faq/faq'
 import { FormSecond } from '@/modules/formSecond'
 import { StandartText } from '@/ui/standartText'
+import { WeAre } from '@/modules/weAre'
+import { Introduce } from '@/components/introduce'
 
 const FaqData = [
   {
@@ -39,7 +41,17 @@ const Company: FC<CompanyProps> = ({
   return (
     <main className={rootClassName}>
       <Wrapper>
-
+        <Introduce
+          title={<>О маркетинговом<br />агентстве K.KIM</>}
+          titleTag="h1"
+          titleVariant="large"
+          hasTypingSpan={false}
+          description="K.KIM - маркетинговое агентство, которое специализируется на предоставлении digital-решений для вашего бизнеса."
+          hasButton={true}
+          buttonText="Записаться на консультацию"
+          buttonPosition="center"
+        />
+        <WeAre />
         <Services
           hasCost={false}
           showDescription={false}

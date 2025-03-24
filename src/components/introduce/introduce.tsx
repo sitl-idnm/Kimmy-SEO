@@ -19,7 +19,8 @@ const Introduce: FC<IntroduceProps> = ({
   buttonText = 'Получить консультацию',
   hasButton = true,
   buttonPosition = 'center',
-  titleTag = 'h1'
+  titleTag = 'h1',
+  description
 }) => {
   const rootClassName = classNames(styles.root, className)
   const titleClassName = classNames(
@@ -52,6 +53,9 @@ const Introduce: FC<IntroduceProps> = ({
             </>
           )}
         </TitleTag>
+        {description && (
+          <p className={styles.introduce__description}>{description}</p>
+        )}
         {hasButton && (
           <Button
             onClick={() => openWindows('детали')}
