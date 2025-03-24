@@ -11,6 +11,7 @@ import type { Metadata } from 'next'
 import { Why } from '@/modules/why'
 import { Conversion } from '@/modules/conversion'
 import { Branch } from '@/modules/branch'
+import { CardList } from '@/modules/cardList'
 
 export async function generateMetadata(): Promise<Metadata> {
   const serviceData = getServiceData('web-design')
@@ -52,6 +53,7 @@ const WebDesignPage: FC<WebDesignPageProps> = () => {
           height: 411
         }}
       />
+      <CardList />
       <Conversion />
       <Why
         counter
