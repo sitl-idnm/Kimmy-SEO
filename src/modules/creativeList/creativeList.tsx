@@ -27,10 +27,16 @@ const CreativeList: FC<CreativeListProps> = ({
     const cards = cardsRef.current.filter((card): card is HTMLDivElement => card !== null)
 
     // Устанавливаем начальное состояние карточек
-    gsap.set(cards, {
-      yPercent: 100,
+    gsap.set(cards[0], {
+      yPercent: 0,
       opacity: 1,
-      zIndex: (i) => cards.length - i // Задаем z-index чтобы карточки правильно перекрывались
+      zIndex: 1 // Первая карточка имеет минимальный z-index
+    })
+
+    gsap.set(cards.slice(1), {
+      yPercent: 230,
+      opacity: 1,
+      zIndex: (i) => i + 2 // Каждая следующая карточка имеет больший z-index
     })
 
     // Создаем таймлайн для синхронизации пиннинга и анимации
@@ -41,23 +47,16 @@ const CreativeList: FC<CreativeListProps> = ({
         start: 'top top',
         end: '+=400%',
         scrub: 1,
-        anticipatePin: 1 // Помогает избежать рывка при старте пиннинга
+        anticipatePin: 1
       }
     })
 
-    // Добавляем анимации карточек в таймлайн
-    cards.forEach((card, index) => {
-      if (index === 0) {
-        tl.to(card, {
-          yPercent: 0,
-          duration: 1
-        })
-      } else {
-        tl.to(card, {
-          yPercent: 0,
-          duration: 1
-        }, `>-0.5`) // Небольшой оверлап между анимациями
-      }
+    // Анимируем только карточки после первой
+    cards.slice(1).forEach((card) => {
+      tl.to(card, {
+        yPercent: 0,
+        duration: 1
+      }, '>-0.5')
     })
 
     return () => {
@@ -75,6 +74,9 @@ const CreativeList: FC<CreativeListProps> = ({
               cardsRef.current[index] = el
             }}
             className={styles.cardWrapper}
+            style={{
+              zIndex: index + 1 // Добавляем z-index также в разметке для надежности
+            }}
           >
             <CreativeListItem
               {...card}
