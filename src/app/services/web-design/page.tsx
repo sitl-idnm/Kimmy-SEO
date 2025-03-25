@@ -9,10 +9,10 @@ import { IntroWorkUs } from '@/modules/introWorkUs'
 import { WebDesignPageProps } from './page.types'
 import type { Metadata } from 'next'
 import { Why } from '@/modules/why'
-import { Conversion } from '@/modules/conversion'
 import { Branch } from '@/modules/branch'
 import { CardList } from '@/modules/cardList'
 import { CreativeList } from '@/modules/creativeList'
+import { Stages } from '@/modules/stages'
 
 export async function generateMetadata(): Promise<Metadata> {
   const serviceData = getServiceData('web-design')
@@ -56,7 +56,22 @@ const WebDesignPage: FC<WebDesignPageProps> = () => {
       />
       <CardList />
       <CreativeList />
-      <Conversion />
+      {/* <Conversion /> */}
+      <Stages
+        title='Этапы разработки'
+        box1title='Исследование и сбор информации'
+        box1description='Определение целей проекта, изучение сайтов конкурентов'
+        box2title='Прототипирование'
+        box2description='Разработка текстовых прототипов'
+        box3title='Разработка визуальной концепции'
+        box3description='Подбор стиля, цветовой палитры, шрифтов и графических элементов'
+        box4title='Дизайн интерфейса'
+        box4description='Создание макетов для каждой страницы учет адаптивности'
+        box5title='Тестирование и согласование'
+        box5description='Тестирование удобства использования и финальное согласование с заказчиком'
+        titleBlackBox='Закажите оформление веб-ресурса, электронного письма или материалов для рекламы'
+        descriptionBlackBox='Цена от 60 000 рублей'
+      />
       <Why
         counter
         direction="row"

@@ -11,7 +11,7 @@ import { CreativeListProps } from './creativeList.types'
 import { creativeListData } from './creativeList.data'
 import { useGSAP } from '@gsap/react'
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger, useGSAP)
 
 const CreativeList: FC<CreativeListProps> = ({
   className
@@ -28,7 +28,7 @@ const CreativeList: FC<CreativeListProps> = ({
 
     // Устанавливаем начальное состояние карточек
     gsap.set(cards[0], {
-      yPercent: 0,
+      yPercent: -50,
       opacity: 1,
       zIndex: 1 // Первая карточка имеет минимальный z-index
     })
@@ -47,14 +47,13 @@ const CreativeList: FC<CreativeListProps> = ({
         start: 'top top',
         end: '+=400%',
         scrub: 1,
-        anticipatePin: 1
       }
     })
 
     // Анимируем только карточки после первой
     cards.slice(1).forEach((card) => {
       tl.to(card, {
-        yPercent: 0,
+        yPercent: -50,
         duration: 1
       }, '>-0.5')
     })
