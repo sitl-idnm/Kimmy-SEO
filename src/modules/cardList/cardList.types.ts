@@ -1,5 +1,3 @@
-import { ReactNode } from 'react'
-
 interface CardItem {
   title: string
   description: string

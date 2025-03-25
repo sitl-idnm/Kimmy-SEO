@@ -1,7 +1,6 @@
 import { FC } from 'react'
 import classNames from 'classnames'
 import Image from 'next/image'
-import { StandartText } from '@/ui'
 
 import styles from './weAre.module.scss'
 import { WeAreProps } from './weAre.types'

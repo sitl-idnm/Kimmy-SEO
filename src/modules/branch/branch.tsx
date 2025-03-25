@@ -77,7 +77,7 @@ const Branch: FC<BranchProps> = ({
               linkText={item.linkText}
               linkColor={item.linkColor}
               list={item.list}
-              isTitleLeft
+              isTitleLeft={isTitleLeft}
               justifyContent={listJustifyContent}
               alignItems={listAlignItems}
               flexDirection={listFlexDirection}

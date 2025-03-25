@@ -1,5 +1,3 @@
-
-
 import { getServiceData } from '@/shared/dataServices'
 import styles from './page.module.scss'
 import { ServicePageTemplate } from '@/modules/servicePageTemplate'
@@ -12,17 +10,9 @@ import type { Metadata } from 'next'
 export async function generateMetadata(): Promise<Metadata> {
   const serviceData = getServiceData('serm')
 
-  const customMetadata = {
-    // Здесь можно переопределить метаданные вручную
-    title: 'Кастомный заголовок',
-    description: 'Кастомное описание',
-    keywords: ['кастомные', 'ключевые', 'слова']
-  }
-
   return {
-    title: customMetadata.title,
-    description: customMetadata.description,
-    keywords: customMetadata.keywords.filter(Boolean)
+    title: serviceData?.title || 'SERM',
+    description: serviceData?.description || ''
   }
 }
 
