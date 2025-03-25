@@ -7,7 +7,6 @@ import { StagesProps } from './stages.types'
 
 import Icon from '@icons/snowflacke.svg'
 import Timeline from '@icons/timeline.svg'
-import Accept from '@icons/accept.svg'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Button } from '@/ui'
