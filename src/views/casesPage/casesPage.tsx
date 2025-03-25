@@ -15,6 +15,7 @@ import HowWeWork from '@/modules/howwework/howwework'
 import { Step } from '@/modules/howwework/howwework.types'
 import { Why } from '@/modules/why'
 import AcceptIcon from '@icons/accept.svg'
+import Services from '@/modules/ServicePage/services/services'
 
 const faqData = [
   {
@@ -103,6 +104,34 @@ const CasesPage: FC<CasesPageProps> = ({
             title: "Долгосрочные отношения",
             description: "Стремимся к партнерству на основе доверия и взаимовыгодного сотрудничества"
           }]}
+        />
+        <Services
+          title="Маркетинг"
+          categoryId="marketing"
+          isTab={true}
+          hasCost={true}
+          showDescription={false}
+        />
+        <Services
+          title="Дизайн"
+          categoryId="design"
+          isTab={true}
+          hasCost={true}
+          showDescription={false}
+        />
+        <Services
+          title="Трафик"
+          categoryId="traffic"
+          isTab={true}
+          hasCost={true}
+          showDescription={false}
+        />
+        <Services
+          title="Разработка"
+          categoryId="development"
+          isTab={true}
+          hasCost={true}
+          showDescription={false}
         />
         <StandartText
           title="Как мы работаем?"
