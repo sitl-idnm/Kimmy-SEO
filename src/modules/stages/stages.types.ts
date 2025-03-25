@@ -1,9 +1,3 @@
-export interface Stage {
-  id: number
-  title: string
-  description: string
-}
-
 export interface StagesProps {
   className?: string
   title?: string

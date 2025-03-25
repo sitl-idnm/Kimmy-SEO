@@ -370,17 +370,17 @@
 		text-align: left;
 
 		h2 {
-			font-size: 48px;
+			font-size: 32px;
 			font-family: var(--font-inter);
 			font-weight: 500;
 			line-height: 120%;
 
-			@include tablet {
-				font-size: 36px;
-			}
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
 
 			@include tablet-small {
-				font-size: 26px;
+				font-size: 22px;
 			}
 
 			.grey {

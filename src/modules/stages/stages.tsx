@@ -3,7 +3,7 @@ import { FC, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
 import styles from './stages.module.scss'
-import { StagesProps, Stage } from './stages.types'
+import { StagesProps } from './stages.types'
 
 import Icon from '@icons/snowflacke.svg'
 import Timeline from '@icons/timeline.svg'
@@ -127,20 +127,9 @@ const Stages: FC<StagesProps> = ({
               </div>
               {
                 box5title ? <div className={styles.content}>
-                <div className={`${styles.fifth__fact} ${styles.fact}`}>{box5title}<span className={styles.grey}>{box5description}</span></div>
-              </div> : null
+                  <div className={`${styles.fifth__fact} ${styles.fact}`}>{box5title}<span className={styles.grey}>{box5description}</span></div>
+                </div> : null
               }
-            </div>
-          </div>
-        </div>
-        <div className={rootClassName}>
-          <div className={styles.conv}>
-            <div className={styles.conv__svg}>
-              <Accept />
-            </div>
-            <div className={styles.conv__title}>
-              <h2>Конверсионный сайт с сильными&nbsp;офферами,<br />
-                <span className={styles.grey}>основанными на&nbsp;смыслах</span></h2>
             </div>
           </div>
         </div>
