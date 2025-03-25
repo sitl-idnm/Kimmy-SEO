@@ -35,6 +35,7 @@ const defaultItemsData = [
 
 const WhyComponent: FC<WhyProps> = ({
 	className,
+	counter,
 	direction = 'row',
 	titleJustify = 'center',
 	titleAlign = 'center',
@@ -43,7 +44,9 @@ const WhyComponent: FC<WhyProps> = ({
 	title = 'Почему мы?',
 	showTitle = true
 }) => {
-	const rootClassName = classNames(styles.root, className)
+	const rootClassName = classNames(styles.root, className, {
+		[styles['root--counter']]: counter
+	})
 	const containerClassName = classNames(
 		styles.container,
 		styles[`container_${direction}`]

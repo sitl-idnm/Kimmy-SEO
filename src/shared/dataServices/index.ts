@@ -1,4 +1,5 @@
 import type { ServiceData } from '@/app/services/smm/data'
+import { sermData } from '@/app/services/serm/data'
 import { seoData } from '@/app/services/seo/data'
 import { webdesignData } from '@/app/services/web-design/data'
 import { smmData } from '@/app/services/smm/data'
@@ -8,7 +9,8 @@ export type { ServiceData }
 // Объект со всеми услугами
 export const servicesData: Record<string, ServiceData> = {'smm': smmData,
 	'web-design': webdesignData,
-  'seo': seoData}
+  'seo': seoData,
+  'serm': sermData}
 
 // Функция для получения данных конкретной услуги
 export const getServiceData = (slug: string): ServiceData | undefined => {

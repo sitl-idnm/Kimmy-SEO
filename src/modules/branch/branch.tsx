@@ -48,19 +48,26 @@ const defaultBranchData = [
 const Branch: FC<BranchProps> = ({
   className,
   branchData = defaultBranchData,
-  showTitle = true
+  showTitle = true,
+  title = 'Кому подходят наши услуги?',
+  itemsPerRow = 3,
+  listJustifyContent = 'flex-start',
+  listAlignItems = 'flex-start',
+  listFlexDirection = 'row',
+  isTitleLeft = false
 }) => {
   const rootClassName = classNames(styles.root, className)
+  const contentClassName = classNames(styles.content, styles[`content_${itemsPerRow}`])
 
   return (
     <div className={rootClassName}>
       <div className={styles.container}>
         {showTitle && (
           <h2 className={styles.title}>
-            Кому подходят наши услуги?
+            {title}
           </h2>
         )}
-        <div className={styles.content}>
+        <ul className={contentClassName}>
           {branchData.map((item, index) => (
             <FavourItem
               key={index}
@@ -70,10 +77,13 @@ const Branch: FC<BranchProps> = ({
               linkText={item.linkText}
               linkColor={item.linkColor}
               list={item.list}
-              isTitleLeft
+              isTitleLeft={isTitleLeft}
+              justifyContent={listJustifyContent}
+              alignItems={listAlignItems}
+              flexDirection={listFlexDirection}
             />
           ))}
-        </div>
+        </ul>
       </div>
     </div>
   )

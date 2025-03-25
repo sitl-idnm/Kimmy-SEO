@@ -14,6 +14,37 @@
   @include tablet-small {
     padding: 0 8px;
   }
+
+  &--margin {
+    margin-bottom: 80px;
+
+    @include tablet {
+      margin-bottom: 64px;
+    }
+
+    @include tablet-small {
+      margin-bottom: 48px;
+    }
+  }
+}
+
+.title {
+  font-family: var(--font-inter);
+  font-size: 54px;
+  font-weight: 500;
+  line-height: 150%;
+  margin-bottom: 32px;
+  color: #16181B;
+  margin: 0 0 24px;
+
+  @include tablet {
+    font-size: 48px;
+  }
+
+  @include tablet-small {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
 }
 
 .text {

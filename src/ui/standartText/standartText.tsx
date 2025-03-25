@@ -12,13 +12,18 @@ const defaultTexts = [
 
 const StandardText: FC<StandartTextProps> = ({
   className,
-  texts = defaultTexts
+  title = '',
+  texts = defaultTexts,
+  marginBottom
 }) => {
-  const rootClassName = classNames(styles.root, className)
+  const rootClassName = classNames(styles.root, className, {
+    [styles['root--margin']]: marginBottom
+  })
 
   return (
     <div className={rootClassName}>
       <div className={styles.container}>
+        {title && <h2 className={styles.title}>{title}</h2>}
         {texts.map((text, index) => (
           <p key={index} className={styles.text}>
             {text}

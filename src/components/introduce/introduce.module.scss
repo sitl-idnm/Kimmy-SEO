@@ -81,4 +81,16 @@
 			margin-bottom: 16px;
 		}
 	}
+
+	&__description {
+		max-width: 420px;
+		font-size: 16px;
+		line-height: 1.6;
+		margin: -30px 0 20px;
+		text-align: center;
+
+		@include tablet {
+			font-size: 12px;
+		}
+	}
 }

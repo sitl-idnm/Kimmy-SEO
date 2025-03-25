@@ -17,7 +17,10 @@ const FavourItem: FC<FavourItemProps> = ({
   imageSrc,
   text,
   list,
-  isTitleLeft
+  isTitleLeft,
+  justifyContent = 'flex-start',
+  alignItems = 'flex-start',
+  flexDirection = 'row'
 }) => {
   const setModalContent = useSetAtom(openModalContent)
 
@@ -25,8 +28,19 @@ const FavourItem: FC<FavourItemProps> = ({
     setModalContent(name)
   }
 
+  const contentStyle = {
+    backgroundColor,
+    justifyContent,
+    alignItems,
+    flexDirection,
+  }
+
   return (
-    <li className={styles.favour__item} style={{ backgroundColor }} onClick={() => handleOpenModal(title)}>
+    <li
+      className={styles.favour__item}
+      style={{ backgroundColor: contentStyle.backgroundColor, justifyContent: contentStyle.justifyContent, alignItems: contentStyle.alignItems, flexDirection: contentStyle.flexDirection }}
+      onClick={() => handleOpenModal(title)}
+    >
       <div>
         <h2
           className={classNames(styles.favour__title, {
@@ -44,6 +58,9 @@ const FavourItem: FC<FavourItemProps> = ({
             ))}
           </ul>
         )}
+        <button className={styles.favour__description} style={{ color: linkColor }}>
+          {linkText}
+        </button>
       </div>
       {imageSrc && <Image
         src={imageSrc}

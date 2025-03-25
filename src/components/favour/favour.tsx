@@ -25,13 +25,16 @@ const Favour: FC<FavourProps> = ({
           {itemsData.map((item, index) => (
             <FavourItem
               key={index}
-              text={item.text}
               title={item.title}
-              linkText={item.linkText}
-              linkColor={item.linkColor}
+              text={item.text}
               backgroundColor={item.backgroundColor}
               textColor={item.textColor}
+              linkText={item.linkText}
+              linkColor={item.linkColor}
               imageSrc={item.imageSrc}
+              justifyContent='center'
+              alignItems='center'
+              flexDirection='column'
             />
           ))}
         </ul>

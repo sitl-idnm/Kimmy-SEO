@@ -132,3 +132,49 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ## DESIGN
 
  - [Material Core](https://mui.com/material-ui/)
+
+## Утилиты
+
+### Генератор услуг
+
+Для создания новой услуги используйте команду:
+```bash
+yarn gen:service
+```
+
+Утилита создаст следующую структуру файлов:
+```
+src/app/services/[slug]/
+├── data.ts           # Данные услуги
+├── page.tsx          # Страница услуги
+├── page.types.ts     # Типы для страницы
+└── page.module.scss  # Стили страницы
+```
+
+#### Структура данных услуги
+```typescript
+interface ServiceData {
+  slug: string
+  title: string
+  description: string
+  price?: string
+  features?: string[]
+  technologies?: string[]
+}
+```
+
+#### Кастомизация
+- Метаданные можно переопределить в `generateMetadata()`
+- Стили можно настроить в `page.module.scss`
+- Компонент `IntroWorkUs` поддерживает кастомные пропсы:
+  ```typescript
+  <IntroWorkUs
+    title={serviceData.title}
+    text={serviceData.description}
+    highlightedText="конвертируют"
+    image={{
+      src: '/path/to/image.png',
+      alt: 'Описание'
+    }}
+  />
+  ```

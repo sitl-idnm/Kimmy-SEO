@@ -21,6 +21,21 @@ import { BlogsMain } from '@/modules/blogsMain'
 import { BlackBoxLink } from '@/modules/blackBoxLink'
 import { Services } from '@/modules/ServicePage/services'
 
+const faqData = [
+  {
+    title: 'Как понять, какие маркетинговые стратегии мне нужны?',
+    content: 'KIM Agency предлагает комплекс услуг: от анализа рынка и создания performance-кампаний до разработки цифровых продуктов и продвижения бренда в интернете. Мы работаем над каждым проектом индивидуально, подбирая оптимальные стратегии для достижения максимальных результатов.'
+  },
+  {
+    title: 'Чем ваше агентство отличается от других?',
+    content: 'KIM Agency предлагает комплекс услуг: от анализа рынка и создания performance-кампаний до разработки цифровых продуктов и продвижения бренда в интернете. Мы работаем над каждым проектом индивидуально, подбирая оптимальные стратегии для достижения максимальных результатов.'
+  },
+  {
+    title: 'Можно ли работать с вами на разовой основе?',
+    content: 'KIM Agency предлагает комплекс услуг: от анализа рынка и создания performance-кампаний до разработки цифровых продуктов и продвижения бренда в интернете. Мы работаем над каждым проектом индивидуально, подбирая оптимальные стратегии для достижения максимальных результатов.'
+  }
+]
+
 const Home: FC<HomeProps> = ({ className }) => {
   const rootClassName = classNames(styles.root, className)
 
@@ -56,7 +71,7 @@ const Home: FC<HomeProps> = ({ className }) => {
         <BlackBoxLink />
         <Clients />
         <Quiz />
-        <Faq />
+        <Faq faqData={faqData} />
         <Review />
         <FormSecond />
         <StandartText

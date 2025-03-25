@@ -9,6 +9,7 @@ export interface IntroduceProps {
   titleVariant?: 'large' | 'medium'
   buttonText?: string
   hasButton?: boolean
-  buttonPosition?: 'center' | 'left' | 'right'
-  titleTag?: 'h1' | 'h2'
+  buttonPosition?: 'left' | 'center' | 'right'
+  titleTag?: 'h1' | 'h2' | 'h3'
+  description?: string
 }
