@@ -14,6 +14,7 @@ const Services: FC<ServicesProps> = ({
   className,
   hasCost = false,
   showDescription = true,
+  showSubtitle = true,
   descriptionText = defaultDescription,
   categoryId,
   isTab = false,
@@ -67,7 +68,9 @@ const Services: FC<ServicesProps> = ({
             <span className={styles.service__arrow} />
           </div>
           <div className={styles.service__content}>
-            <p className={styles.service__content__description}>{service.description}</p>
+            {showSubtitle && (
+              <p className={styles.service__content__description}>{service.description}</p>
+            )}
             <div className={styles.service__footer}>
               {hasCost && (
                 <p className={styles.service__footer__price}>{service.price}</p>
@@ -91,7 +94,9 @@ const Services: FC<ServicesProps> = ({
       >
         <div className={styles.service__content}>
           <h3 className={styles.service__content__title}>{service.title}</h3>
-          <p className={styles.service__content__description}>{service.description}</p>
+          {showSubtitle && (
+            <p className={styles.service__content__description}>{service.description}</p>
+          )}
         </div>
         <div className={styles.service__footer}>
           {hasCost && (

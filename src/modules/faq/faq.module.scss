@@ -27,6 +27,7 @@
 .title {
   font-size: 48px;
   font-weight: 500;
+  line-height: 120%;
   margin-bottom: 40px;
   text-align: left;
 
@@ -91,6 +92,10 @@
     }
   }
 
+  @include tablet {
+    font-size: 16px;
+  }
+
   .icon {
     flex-shrink: 0;
     width: 32px;
@@ -126,4 +131,8 @@
   line-height: 150%;
   color: #666;
   padding: 0 20px;
+
+  @include tablet {
+    font-size: 12px;
+  }
 }

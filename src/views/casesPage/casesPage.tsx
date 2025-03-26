@@ -108,28 +108,28 @@ const CasesPage: FC<CasesPageProps> = ({
         <Services
           title="Маркетинг"
           categoryId="marketing"
-          isTab={true}
+          showSubtitle={false}
           hasCost={true}
           showDescription={false}
         />
         <Services
           title="Дизайн"
           categoryId="design"
-          isTab={true}
+          showSubtitle={false}
           hasCost={true}
           showDescription={false}
         />
         <Services
           title="Трафик"
           categoryId="traffic"
-          isTab={true}
+          showSubtitle={false}
           hasCost={true}
           showDescription={false}
         />
         <Services
           title="Разработка"
           categoryId="development"
-          isTab={true}
+          showSubtitle={false}
           hasCost={true}
           showDescription={false}
         />
@@ -146,6 +146,7 @@ const CasesPage: FC<CasesPageProps> = ({
         />
         <FormFirst />
         <HowWeWork
+          title="Над проектом работает несколько отделов"
           steps={steps as Step[]}
           hasTopPadding={true}
           hasBottomPadding={true}

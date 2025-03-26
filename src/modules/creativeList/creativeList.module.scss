@@ -4,6 +4,8 @@
 
 .root {
   width: 100%;
+  max-width: 1192px;
+  margin: 0 auto;
   min-height: 100vh;
   position: relative;
   background: #fff;
@@ -30,7 +32,6 @@
 
 .card {
   width: 100%;
-  padding: 0 max(24px, calc((100% - 1200px) / 2));
   display: flex;
   align-items: center;
 }
