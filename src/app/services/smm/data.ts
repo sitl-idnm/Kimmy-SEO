@@ -1,5 +1,7 @@
 import { ServiceData } from '@/shared/types/services'
 
+export type { ServiceData }
+
 export const smmData: ServiceData = {
   id: 'smm-promotion',
   slug: 'smm',
