@@ -20,4 +20,5 @@ export interface WhyProps {
   cardsPerRow?: CardsPerRow
   title?: string
   showTitle?: boolean
+  titleTextAlign?: 'left' | 'center' | 'right'
 }
