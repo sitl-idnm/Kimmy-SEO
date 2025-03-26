@@ -1,5 +1,7 @@
 export type ServiceCategory = {
   id: string
+  name: string
+  slug: string
   title: string
   description?: string
 }

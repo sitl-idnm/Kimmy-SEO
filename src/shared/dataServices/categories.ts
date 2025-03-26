@@ -2,27 +2,31 @@ import { ServiceCategory } from '@/shared/types/services'
 
 export const categories: ServiceCategory[] = [
 	{
-		id: 'seo',
-		slug: 'seo',
-		title: 'SEO оптимизация',
-		description: 'Комплекс мер по оптимизации сайта для поисковых систем'
+		id: 'marketing',
+		name: 'Маркетинг',
+		slug: 'marketing',
+		title: 'Маркетинг',
+		description: 'Комплексное продвижение вашего бизнеса'
 	},
 	{
-		id: 'smm',
-		slug: 'smm',
-		title: 'SMM продвижение',
-		description: 'Продвижение в социальных сетях'
+		id: 'design',
+		name: 'Дизайн',
+		slug: 'design',
+		title: 'Дизайн',
+		description: 'Создание уникального визуального образа'
 	},
 	{
-		id: 'web',
-		slug: 'web-design',
-		title: 'Веб-дизайн',
-		description: 'Создание современного дизайна для вашего сайта'
+		id: 'traffic',
+		name: 'Трафик',
+		slug: 'traffic',
+		title: 'Трафик',
+		description: 'Привлечение целевой аудитории'
 	},
 	{
-		id: 'serm',
-		slug: 'serm',
-		title: 'SERM',
-		description: 'Управление репутацией в поисковых системах'
+		id: 'development',
+		name: 'Разработка',
+		slug: 'development',
+		title: 'Разработка',
+		description: 'Создание и поддержка сайтов'
 	}
 ]
