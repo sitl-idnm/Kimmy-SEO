@@ -41,7 +41,7 @@ const Stages: FC<StagesProps> = ({
       const boxes = gsap.utils.toArray(`.${styles.box}`) as HTMLElement[];
 
       const scrollTween = gsap.to(extraLong, {
-        xPercent: -100,
+        xPercent: -130,
         x: () => window.innerWidth,
         ease: "none",
         scrollTrigger: {
