@@ -9,7 +9,6 @@ import PeopleIcon from '@icons/why/people.svg'
 
 import styles from './why.module.scss'
 import { WhyProps } from './why.types'
-import { CardAnimation } from '@/ui/cardAnimation'
 
 const defaultItemsData = [
 	{
