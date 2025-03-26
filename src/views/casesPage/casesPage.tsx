@@ -16,6 +16,7 @@ import { Step } from '@/modules/howwework/howwework.types'
 import { Why } from '@/modules/why'
 import AcceptIcon from '@icons/accept.svg'
 import Services from '@/modules/ServicePage/services/services'
+import Tools from '@/modules/tools/tools'
 
 const faqData = [
   {
@@ -145,6 +146,9 @@ const CasesPage: FC<CasesPageProps> = ({
           marginBottom
         />
         <FormFirst />
+        <Tools
+          title="Работаем, используя надежные платформы и инструменты"
+        />
         <HowWeWork
           title="Над проектом работает несколько отделов"
           steps={steps as Step[]}
