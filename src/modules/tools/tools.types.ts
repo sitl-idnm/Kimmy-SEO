@@ -1,3 +1,5 @@
+import { FC, SVGProps } from 'react'
+
 export interface ToolsProps {
   className?: string
   title?: string
@@ -6,5 +8,5 @@ export interface ToolsProps {
 export interface Tool {
   id: string
   name: string
-  Icon: any
+  Icon: FC<SVGProps<SVGSVGElement>>
 }
