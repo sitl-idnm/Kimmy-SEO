@@ -1,15 +1,15 @@
 'use client'
 
-import { FC, useRef, useEffect, useState } from 'react'
+import { FC, useRef, useState } from 'react'
 import classNames from 'classnames'
 
 // Импорты иконок
 import figmaIcon from '@icons/tools/figma.svg'
 
 import styles from './tools.module.scss'
-import { ToolsProps } from './tools.types'
+import { ToolsProps, Tool } from './tools.types'
 
-const tools = [
+const tools: Tool[] = [
   { id: 'figma', name: 'Figma', Icon: figmaIcon },
   { id: 'photoshop', name: 'Photoshop', Icon: figmaIcon },
   { id: 'illustrator', name: 'Illustrator', Icon: figmaIcon },
@@ -21,7 +21,7 @@ const tools = [
   { id: 'blender', name: 'Blender', Icon: figmaIcon }
 ]
 
-const platforms = [
+const platforms: Tool[] = [
   { id: 'vk', name: 'VK', Icon: figmaIcon },
   { id: 'telegram', name: 'Telegram', Icon: figmaIcon },
   { id: 'whatsapp', name: 'WhatsApp', Icon: figmaIcon },
