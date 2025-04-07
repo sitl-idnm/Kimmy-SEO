@@ -1,3 +1,7 @@
+import { ReactNode } from 'react'
+
 export interface FormSecondProps {
-  className?: string
+  className?: string;
+  title?: ReactNode;
+  paragraph?: ReactNode;
 }

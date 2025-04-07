@@ -99,6 +99,13 @@
 
   @media (max-width: 1024px) {
     justify-content: center;
+    flex: 0.6;
+    flex-wrap: wrap;
+  }
+
+  @include tablet-small {
+    flex: 1;
+    flex-wrap: nowrap;
   }
 }
 

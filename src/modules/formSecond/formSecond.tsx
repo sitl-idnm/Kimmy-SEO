@@ -6,8 +6,10 @@ import { FormSecondProps } from './formSecond.types'
 import Image from 'next/image'
 import { Form, TextForm } from '@/components'
 
-const FormSecond: FC<FormSecondProps> = ({
-  className
+const FormSecondComponent: FC<FormSecondProps> = ({
+  className,
+  title = 'Готовы к росту? Свяжитесь с нами',
+  paragraph = 'Мы помогаем бизнесу расти и зарабатывать больше. Разрабатываем маркетинговые стратегии, которые приносят результат.'
 }) => {
   const rootClassName = classNames(styles.root, className)
 
@@ -16,8 +18,8 @@ const FormSecond: FC<FormSecondProps> = ({
       <section className={styles.form} id="form">
         <div className={styles.form__circle}>
           <TextForm
-            title={'Готовы к росту? Свяжитесь с нами'}
-            paragraph={'Мы помогаем бизнесу расти и зарабатывать больше. Разрабатываем маркетинговые стратегии, которые приносят результат.'}
+            title={title}
+            paragraph={paragraph}
             className={styles.form__second}
           />
           <Image
@@ -41,4 +43,4 @@ const FormSecond: FC<FormSecondProps> = ({
   )
 }
 
-export default FormSecond
+export default FormSecondComponent

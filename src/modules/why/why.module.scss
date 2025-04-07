@@ -132,6 +132,8 @@
   }
 
   @include tablet-small {
+    display: flex;
+    flex-wrap: wrap;
     gap: 16px;
   }
 }
@@ -154,6 +156,10 @@
   @include tablet {
     padding: 89px 24px 24px;
     gap: 16px;
+  }
+
+  @include tablet-small {
+    width: calc((100% - 24px) / 2);
   }
 }
 

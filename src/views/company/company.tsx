@@ -102,11 +102,15 @@ const Company: FC<CompanyProps> = ({
             description: "модели ИИ помогают сотрудникам в работе"
           }]}
         />
-        <Clients />
+        <Clients title="Нам доверяют" />
         <Faq
           faqData={FaqData}
+          title="Ответы на часто задаваемые вопросы"
         />
-        <FormSecond />
+        <FormSecond
+          title={<>Станьте нашим клиентом<br /> уже сегодня</>}
+          paragraph="Заполните небольшую форму и мы свяжемся с вами в ближайшее время"
+        />
       </Wrapper>
     </main>
   )

@@ -23,7 +23,9 @@ const faqData = [
 ]
 
 const FaqComponent: FC<FaqProps> = ({
-  className
+  className,
+  faqData,
+  title = 'Часто задаваемые вопросы'
 }) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
   const rootClassName = classNames(styles.root, className)
@@ -35,9 +37,9 @@ const FaqComponent: FC<FaqProps> = ({
   return (
     <div className={rootClassName}>
       <div className={styles.container}>
-        <h2 className={styles.title}>Часто задаваемые вопросы</h2>
+        <h2 className={styles.title}>{title}</h2>
         <div className={styles.faqList}>
-          {faqData.map((item, index) => (
+          {faqData.map((item: { title: string; content: string }, index: number) => (
             <div
               key={index}
               className={classNames(styles.faqItem, {

@@ -48,12 +48,13 @@
 		color: var(--color-black);
 
 		@include tablet {
-			font-size: 32px;
+			font-size: 48px;
 			margin-bottom: 24px;
 		}
 
-		@include mobile {
-			font-size: 24px;
+		@include tablet-small {
+			text-align: left;
+			font-size: 38px;
 			margin-bottom: 16px;
 		}
 
@@ -86,11 +87,20 @@
 		max-width: 420px;
 		font-size: 16px;
 		line-height: 1.6;
-		margin: -30px 0 20px;
+		margin: -30px 0 0;
 		text-align: center;
 
 		@include tablet {
 			font-size: 12px;
 		}
+
+		@include tablet-small {
+			text-align: left;
+		}
+	}
+
+	@include tablet-small {
+		margin-left: 8px;
+		align-items: flex-start;
 	}
 }
