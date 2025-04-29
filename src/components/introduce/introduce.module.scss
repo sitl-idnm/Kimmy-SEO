@@ -3,8 +3,9 @@
 @use "@styles/variables";
 
 .root {
+	max-width: 1312px;
 	display: flex;
-	margin: 0 0 80px;
+	margin: 0 auto 80px;
 
 	@include tablet {
 		margin: 0 0 40px;
@@ -13,7 +14,6 @@
 	@include tablet-small {
 		margin: 0 0 24px;
 	}
-
 }
 
 .introduce {
@@ -21,10 +21,16 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-
 	max-width: 1312px;
-	margin: 0 auto;
 	gap: 28px;
+
+	&--auto {
+		margin: 0 auto;
+	}
+
+	&--none {
+		margin: 0;
+	}
 
 	&_left {
 		align-items: flex-start;
@@ -88,7 +94,18 @@
 		font-size: 16px;
 		line-height: 1.6;
 		margin: -30px 0 0;
-		text-align: center;
+
+		&--left {
+			text-align: left;
+		}
+
+		&--center {
+			text-align: center;
+		}
+
+		&--right {
+			text-align: right;
+		}
 
 		@include tablet {
 			font-size: 12px;

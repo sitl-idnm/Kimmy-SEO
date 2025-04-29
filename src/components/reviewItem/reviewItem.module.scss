@@ -54,3 +54,30 @@
   color: #374151;
   margin: 0;
 }
+
+.companyInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.companyLogo {
+  width: auto;
+  height: 24px;
+}
+
+.companyLink {
+  color: var(--color-red-accent);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.originalButton {
+  margin-top: 24px;
+  width: 100%;
+
+  @include mobile {
+    width: auto;
+  }
+}

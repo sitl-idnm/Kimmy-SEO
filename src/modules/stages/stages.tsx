@@ -30,26 +30,31 @@ const Stages: FC<StagesProps> = ({
   descriptionBlackBox,
 }) => {
   const rootClassName = classNames(styles.root, className)
-  const section = useRef(null)
+  const section = useRef<HTMLDivElement>(null)
   const extraL = useRef<HTMLDivElement>(null)
-  const mainContainer = useRef(null)
+  const mainContainer = useRef<HTMLDivElement>(null)
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      const extraLong = extraL.current
       const mainCont = mainContainer.current
-      const boxes = gsap.utils.toArray(`.${styles.box}`) as HTMLElement[];
+      const extraLong = extraL.current
+
+      if (!mainCont || !extraLong) return
+
+      const extraLongWidth = extraLong.offsetWidth
+      const mainContWidth = mainCont.offsetWidth
+      const maxScroll = -(extraLongWidth - mainContWidth)
 
       const scrollTween = gsap.to(extraLong, {
-        xPercent: -130,
-        x: () => window.innerWidth,
+        x: maxScroll,
         ease: "none",
         scrollTrigger: {
           pin: mainCont,
           trigger: mainCont,
           start: 'top 5%',
+          end: `+=${extraLongWidth}`,
           scrub: 1,
-          invalidateOnRefresh: true,
+          invalidateOnRefresh: true
         }
       })
 
@@ -66,6 +71,8 @@ const Stages: FC<StagesProps> = ({
           }
         })
       })
+
+      const boxes = gsap.utils.toArray(`.${styles.box}`) as HTMLElement[];
 
       boxes.forEach((box) => {
         gsap.fromTo(box,

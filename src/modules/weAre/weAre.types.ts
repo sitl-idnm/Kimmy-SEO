@@ -1,3 +1,5 @@
 export interface WeAreProps {
-  className?: string
+  className?: string;
+  title?: string; // Заголовок
+  showText?: boolean; // Флаг отображения текста
 }

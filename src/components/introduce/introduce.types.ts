@@ -12,4 +12,6 @@ export interface IntroduceProps {
   buttonPosition?: 'left' | 'center' | 'right'
   titleTag?: 'h1' | 'h2' | 'h3'
   description?: string
+  margin?: 'auto' | 'none'
+  descriptionAlign?: 'left' | 'center' | 'right'
 }
