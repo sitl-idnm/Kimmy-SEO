@@ -5,8 +5,6 @@ import classNames from 'classnames'
 import styles from './reviewCategories.module.scss'
 import {
   ReviewCategoriesProps,
-  ReviewServiceCategory,
-  ReviewTheme,
 } from './reviewCategories.types'
 import { ReviewItem } from '@/components/reviewItem'
 
