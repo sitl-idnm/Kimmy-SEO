@@ -3,8 +3,9 @@
 @use "@styles/variables";
 
 .root {
+	max-width: 1312px;
 	display: flex;
-	margin: 0 0 80px;
+	margin: 0 auto 80px;
 
 	@include tablet {
 		margin: 0 0 40px;
@@ -13,7 +14,6 @@
 	@include tablet-small {
 		margin: 0 0 24px;
 	}
-
 }
 
 .introduce {
@@ -21,10 +21,16 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-
 	max-width: 1312px;
-	margin: 0 auto;
 	gap: 28px;
+
+	&--auto {
+		margin: 0 auto;
+	}
+
+	&--none {
+		margin: 0;
+	}
 
 	&_left {
 		align-items: flex-start;
@@ -48,12 +54,13 @@
 		color: var(--color-black);
 
 		@include tablet {
-			font-size: 32px;
+			font-size: 48px;
 			margin-bottom: 24px;
 		}
 
-		@include mobile {
-			font-size: 24px;
+		@include tablet-small {
+			text-align: left;
+			font-size: 38px;
 			margin-bottom: 16px;
 		}
 
@@ -86,11 +93,31 @@
 		max-width: 420px;
 		font-size: 16px;
 		line-height: 1.6;
-		margin: -30px 0 20px;
-		text-align: center;
+		margin: -30px 0 0;
+
+		&--left {
+			text-align: left;
+		}
+
+		&--center {
+			text-align: center;
+		}
+
+		&--right {
+			text-align: right;
+		}
 
 		@include tablet {
 			font-size: 12px;
 		}
+
+		@include tablet-small {
+			text-align: left;
+		}
+	}
+
+	@include tablet-small {
+		margin-left: 8px;
+		align-items: flex-start;
 	}
 }

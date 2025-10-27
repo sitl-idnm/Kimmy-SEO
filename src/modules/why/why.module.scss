@@ -84,15 +84,29 @@
 }
 
 .title {
-  font-family: var(--font-inter);
-  font-size: 54px;
-  font-weight: 500;
-  line-height: 120%;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text-primary);
 
-  color: var(--color-black);
+  &_left {
+    text-align: left;
+  }
+
+  &_center {
+    text-align: center;
+  }
+
+  &_right {
+    text-align: right;
+  }
+
+  @include tablet {
+    font-size: 36px;
+  }
 
   @include tablet-small {
-    font-size: 32px;
+    font-size: 28px;
   }
 }
 
@@ -118,6 +132,8 @@
   }
 
   @include tablet-small {
+    display: flex;
+    flex-wrap: wrap;
     gap: 16px;
   }
 }
@@ -140,6 +156,10 @@
   @include tablet {
     padding: 89px 24px 24px;
     gap: 16px;
+  }
+
+  @include tablet-small {
+    width: calc((100% - 24px) / 2);
   }
 }
 

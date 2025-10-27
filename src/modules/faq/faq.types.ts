@@ -5,5 +5,9 @@ export interface FaqItem {
 
 export interface FaqProps {
   className?: string
-  faqData: FaqItem[]
+  faqData: Array<{
+    title: string
+    content: string
+  }>
+  title?: string
 }

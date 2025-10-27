@@ -1,5 +1,7 @@
+import { ReactNode } from 'react'
+
 export interface TextFormProps {
   className?: string
-  title?: string
-  paragraph?: string
+  title?: ReactNode
+  paragraph?: ReactNode
 }

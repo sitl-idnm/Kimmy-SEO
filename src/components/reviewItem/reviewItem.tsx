@@ -1,34 +1,57 @@
 import { FC } from 'react'
 import classNames from 'classnames'
 import Image from 'next/image'
+import Link from 'next/link'
+
 import styles from './reviewItem.module.scss'
 import { ReviewItemProps } from './reviewItem.types'
+import { Button } from '@/ui'
 
 const ReviewItem: FC<ReviewItemProps> = ({
   className,
+  avatar,
   name,
   position,
-  text,
-  avatar
+  reviewText,
+  companyLogo: CompanyLogo,
+  companyUrl,
+  companyLinkText = 'Ссылка на сайт компании',
+  originalReviewUrl,
+  buttonText = 'Посмотреть оригинал',
 }) => {
   const rootClassName = classNames(styles.root, className)
 
   return (
     <div className={rootClassName}>
-      <div className={styles.header}>
-        <Image
-          src={avatar}
-          alt={name}
-          width={48}
-          height={48}
-          className={styles.avatar}
-        />
-        <div className={styles.info}>
-          <h3 className={styles.name}>{name}</h3>
+      <div className={styles.authorInfo}>
+        <Image src={avatar} alt={`Avatar of ${name}`} width={80} height={80} className={styles.avatar} />
+        <div className={styles.authorDetails}>
+          <h4 className={styles.name}>{name}</h4>
           <p className={styles.position}>{position}</p>
         </div>
       </div>
-      <p className={styles.text}>{text}</p>
+      <p className={styles.reviewText}>{reviewText}</p>
+
+      {CompanyLogo && companyUrl && (
+        <div className={styles.companyInfo}>
+          <CompanyLogo className={styles.companyLogo} />
+          <Link href={companyUrl} target="_blank" rel="noopener noreferrer" className={styles.companyLink}>
+            {companyLinkText}
+          </Link>
+        </div>
+      )}
+
+      {originalReviewUrl && (
+        <Button
+          tag='a'
+          href={originalReviewUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.originalButton}
+        >
+          {buttonText}
+        </Button>
+      )}
     </div>
   )
 }

@@ -13,6 +13,10 @@
 	&:hover {
 		background-color: #f8f8f8;
 
+		.item {
+			background-color: #fff;
+		}
+
 		.icon {
 			transform: translateY(calc(var(--content-height) - 32px));
 		}
@@ -72,7 +76,7 @@
 }
 
 .item {
-	background: #fff;
+	background: #f8f8f8;
 	border-radius: 16px;
 	padding: 24px;
 	transition: all 0.3s ease;

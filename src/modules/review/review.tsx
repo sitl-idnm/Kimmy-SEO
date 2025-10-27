@@ -104,7 +104,7 @@ const Review: FC<ReviewProps> = ({
               name={review.name}
               position={review.position}
               avatar={review.avatar}
-              text={review.text}
+              reviewText={review.text}
             />
           ))}
         </div>

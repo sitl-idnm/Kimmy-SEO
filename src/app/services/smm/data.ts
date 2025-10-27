@@ -1,15 +1,27 @@
-export interface ServiceData {
-  slug: string
-  title: string
-  description: string
-  price: string
-  features?: string[]
-  technologies?: string[]
-}
+import { ServiceData } from '@/shared/types/services'
+
+export type { ServiceData }
 
 export const smmData: ServiceData = {
+  id: 'smm-promotion',
   slug: 'smm',
-  title: 'SMM',
-  description: 'Поможем найти, прогреть и удержать потенциальных и реальных клиентов в ваших аккаунтах в социальных сетях',
-  price: 'от 70 000 ₽'
+  title: 'SMM продвижение',
+  description: 'Продвижение вашего бренда в социальных сетях',
+  price: 'от 40 000 ₽',
+  categoryId: 'marketing',
+  features: [
+    'Анализ целевой аудитории',
+    'Разработка контент-стратегии',
+    'Создание и оформление аккаунтов',
+    'Ведение социальных сетей',
+    'Таргетированная реклама',
+    'Работа с блогерами'
+  ],
+  technologies: [
+    'Facebook Ads',
+    'Instagram',
+    'VK Ads',
+    'TikTok',
+    'Telegram'
+  ]
 }

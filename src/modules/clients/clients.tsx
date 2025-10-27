@@ -22,14 +22,15 @@ const clientsList = [
 ]
 
 const ClientsComponent: FC<ClientsProps> = ({
-  className
+  className,
+  title = 'Наши клиенты'
 }) => {
   const rootClassName = classNames(styles.root, className)
 
   return (
     <div className={rootClassName}>
       <div className={styles.container}>
-        <h2 className={styles.title}>Наши клиенты</h2>
+        <h2 className={styles.title}>{title}</h2>
         <p className={styles.description}>
           За время существования нашего агентства мы реализовали<br />
           более 150 проектов и сотрудничали с крупными компаниями.

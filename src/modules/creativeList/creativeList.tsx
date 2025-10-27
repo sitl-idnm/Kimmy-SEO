@@ -29,13 +29,17 @@ const CreativeList: FC<CreativeListProps> = ({
     // Устанавливаем начальное состояние карточек
     gsap.set(cards[0], {
       yPercent: -50,
+      xPercent: 0,
       opacity: 1,
+      scale: 1,
       zIndex: 1 // Первая карточка имеет минимальный z-index
     })
 
     gsap.set(cards.slice(1), {
       yPercent: 230,
+      xPercent: 60,
       opacity: 1,
+      scale: 0.3,
       zIndex: (i) => i + 2 // Каждая следующая карточка имеет больший z-index
     })
 
@@ -54,6 +58,8 @@ const CreativeList: FC<CreativeListProps> = ({
     cards.slice(1).forEach((card) => {
       tl.to(card, {
         yPercent: -50,
+        xPercent: 0,
+        scale: 1,
         duration: 1
       }, '>-0.5')
     })

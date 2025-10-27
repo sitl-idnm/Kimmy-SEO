@@ -20,15 +20,28 @@ const Introduce: FC<IntroduceProps> = ({
   hasButton = true,
   buttonPosition = 'center',
   titleTag = 'h1',
-  description
+  description,
+  margin = 'auto',
+  descriptionAlign = 'center'
 }) => {
-  const rootClassName = classNames(styles.root, className)
+  const rootClassName = classNames(styles.root, className, {
+    [styles['root--auto']]: margin === 'auto',
+    [styles['root--none']]: margin === 'none'
+  })
   const titleClassName = classNames(
     titleVariant === 'large' ? styles.introduce__title : styles.introduce__title_medium
   )
   const introduceClassName = classNames(
     styles.introduce,
-    styles[`introduce_${buttonPosition}`]
+    styles[`introduce_${buttonPosition}`],
+    {
+      [styles['introduce--auto']]: margin === 'auto',
+      [styles['introduce--none']]: margin === 'none'
+    }
+  )
+  const descriptionClassName = classNames(
+    styles.introduce__description,
+    styles[`introduce__description--${descriptionAlign}`]
   )
   const setModalContent = useSetAtom(openModalContent)
 
@@ -54,7 +67,7 @@ const Introduce: FC<IntroduceProps> = ({
           )}
         </TitleTag>
         {description && (
-          <p className={styles.introduce__description}>{description}</p>
+          <p className={descriptionClassName}>{description}</p>
         )}
         {hasButton && (
           <Button

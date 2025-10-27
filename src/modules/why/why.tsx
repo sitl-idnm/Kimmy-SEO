@@ -42,7 +42,8 @@ const WhyComponent: FC<WhyProps> = ({
 	itemsData = defaultItemsData,
 	cardsPerRow = 2,
 	title = 'Почему мы?',
-	showTitle = true
+	showTitle = true,
+	titleTextAlign = 'left'
 }) => {
 	const rootClassName = classNames(styles.root, className, {
 		[styles['root--counter']]: counter
@@ -56,6 +57,10 @@ const WhyComponent: FC<WhyProps> = ({
 		styles[`titleWrapper_justify_${titleJustify}`],
 		styles[`titleWrapper_align_${titleAlign}`]
 	)
+	const titleClassName = classNames(
+		styles.title,
+		styles[`title_${titleTextAlign}`]
+	)
 	const advantagesListClassName = classNames(
 		styles.advantagesList,
 		styles[`advantagesList_${cardsPerRow}`]
@@ -67,19 +72,19 @@ const WhyComponent: FC<WhyProps> = ({
 				<div className={styles.content}>
 					{showTitle && (
 						<div className={titleWrapperClassName}>
-							<h2 className={styles.title}>{title}</h2>
+							<h2 className={titleClassName}>{title}</h2>
 						</div>
 					)}
 					<div className={advantagesListClassName}>
 						{itemsData.map((item, index) => (
+
 							<div key={index} className={styles.advantageItem}>
 								<div className={styles.iconWrapper}>
 									{item.icon}
 								</div>
 								<h3 className={styles.advantageTitle}>{item.title}</h3>
 								{item.description && (
-									<p className={styles.advantageDescription}>{item.description}</p>
-								)}
+									<p className={styles.advantageDescription}>{item.description}</p>)}
 							</div>
 						))}
 					</div>

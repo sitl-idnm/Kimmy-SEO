@@ -1,15 +1,25 @@
-export interface ServiceData {
-  slug: string
-  title: string
-  description: string
-  price: string
-  features?: string[]
-  technologies?: string[]
-}
+import { ServiceData } from '@/shared/types/services'
 
 export const webdesignData: ServiceData = {
+  id: 'web-design',
   slug: 'web-design',
   title: 'Веб-дизайн',
-  description: 'Разработаем дизайн веб-ресурса, электронного письма и материалов для онлайн-рекламы',
-  price: 'от 60 000 ₽'
+  description: 'Создание современного и удобного дизайна для вашего сайта',
+  price: 'от 80 000 ₽',
+  categoryId: 'design',
+  features: [
+    'UI/UX дизайн',
+    'Адаптивный дизайн',
+    'Прототипирование',
+    'Дизайн-система',
+    'Анимации и интерактив',
+    'Редизайн'
+  ],
+  technologies: [
+    'Figma',
+    'Adobe XD',
+    'Sketch',
+    'Principle',
+    'Framer'
+  ]
 }

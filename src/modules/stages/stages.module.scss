@@ -5,6 +5,7 @@
 
 .root {
 	gap: 30px;
+	width: 200vw;
 
 	&:nth-child(3),
 	&:nth-child(4) {
@@ -34,11 +35,7 @@
 	background: top left url('../../../public/images/background__lines__scroll.png');
 
 	@include tablet {
-		width: 680%;
-	}
-
-	@include tablet-small {
-		width: 1400%;
+		width: 150%;
 	}
 }
 
@@ -347,7 +344,7 @@
 	position: absolute;
 	top: 50%;
 	right: 0;
-	transform: translate(-50%, -50%);
+	transform: translate(0%, -50%);
 
 	@include tablet {
 		max-height: 600px;
