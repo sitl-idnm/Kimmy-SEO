@@ -70,29 +70,13 @@ function getCaseSlugs(): string[] {
 	}
 }
 
-const caseSlugToImageDir: Record<string, string> = {
-	'best-wave': 'bestwave',
-	clientpulse: 'clientpulse',
-	gloid: 'gloid',
-	'magiya-vkusa': 'magiyavkusa',
-	'rovnaya-spina': 'rovnayaspina',
-	sweetcorp: 'sweetcorp',
-}
-
-function listCaseImages(slug: string): string[] {
-	const imagesDirName = caseSlugToImageDir[slug]
-	if (!imagesDirName) return []
-
-	const dir = path.join(process.cwd(), 'public', 'images', 'cases', imagesDirName)
+function readImageCounts() {
 	try {
-		const files = fs
-			.readdirSync(dir, { withFileTypes: true })
-			.filter((f) => f.isFile())
-			.map((f) => f.name)
-			.filter((name) => /\.(png|jpe?g|webp|gif|svg)$/i.test(name))
-		return files.map((name) => `/images/cases/${imagesDirName}/${name}`)
+		const filePath = path.join(process.cwd(), 'src', 'shared', 'generated', 'sitemap-image-counts.json')
+		const file = fs.readFileSync(filePath, 'utf-8')
+		return JSON.parse(file) as { cases?: Record<string, number> }
 	} catch {
-		return []
+		return { cases: {} as Record<string, number> }
 	}
 }
 
@@ -122,24 +106,16 @@ export async function GET() {
 		.filter((r) => r !== '/sitemap.xml')
 		.sort()
 
+	const { cases: caseCounts = {} } = readImageCounts()
+
 	const urlEntries = allRoutes
 		.map((routePath) => {
 			const loc = `${baseUrl}${routePath === '/' ? '' : routePath}`
 
-			const images = routePath.startsWith('/cases/')
-				? listCaseImages(routePath.split('/').pop() as string)
-				: []
-
-			const imagesXml = images
-				.map((imgPath) => {
-					const imgLoc = `${baseUrl}${imgPath}`
-					return `    <image:image>\n      <image:loc>${escapeXml(imgLoc)}</image:loc>\n    </image:image>`
-				})
-				.join('\n')
-
-			const imageCountXml = images.length
-				? `\n    <image_count>${images.length}</image_count>`
-				: ''
+			const imageCount = routePath.startsWith('/cases/')
+				? caseCounts[(routePath.split('/').pop() as string) || ''] || 0
+				: 0
+			const imageCountXml = imageCount ? `\n    <image_count>${imageCount}</image_count>` : ''
 
 			return (
 				`  <url>\n` +
@@ -147,7 +123,7 @@ export async function GET() {
 				`    <lastmod>${today}</lastmod>\n` +
 				`    <changefreq>daily</changefreq>\n` +
 				`    <priority>${routePath === '/' ? '1.0' : '0.7'}</priority>\n` +
-				(imagesXml ? imagesXml + imageCountXml + '\n' : '') +
+				(imageCountXml ? imageCountXml + '\n' : '') +
 				`  </url>`
 			)
 		})
