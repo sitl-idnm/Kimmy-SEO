@@ -12,8 +12,6 @@ Disallow: /*search*
 Disallow: /*lk*
 Disallow: /*searcharticle*
 Disallow: /404/
-Host: https://kim.agency/
-Sitemap: https://kim.agency/sitemap.xml
 
 
 User-agent: Yandex
@@ -402,3 +400,6 @@ Disallow: /
 
 User-agent: Google-Extended
 Disallow: /
+
+Host: https://kim-agency.ru/
+Sitemap: https://kim-agency.ru/sitemap.xml
