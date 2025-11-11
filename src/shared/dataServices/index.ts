@@ -3,6 +3,7 @@ import { sermData } from '@/app/services/serm/data'
 import { seoData } from '@/app/services/seo/data'
 import { webdesignData } from '@/app/services/web-design/data'
 import { smmData } from '@/app/services/smm/data'
+import { razrabotkaChatBotovPageData } from '@/app/services/razrabotka-chat-botov/data'
 
 export type { ServiceData }
 
@@ -10,7 +11,9 @@ export type { ServiceData }
 export const servicesData: Record<string, ServiceData> = {'smm': smmData,
 	'web-design': webdesignData,
   'seo': seoData,
-  'serm': sermData}
+	'serm': sermData,
+	'razrabotka-chat-botov': razrabotkaChatBotovPageData,
+}
 
 // Функция для получения данных конкретной услуги
 export const getServiceData = (slug: string): ServiceData | undefined => {
