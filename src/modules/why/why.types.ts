@@ -2,8 +2,8 @@ import { ReactNode } from 'react'
 
 export interface WhyItemData {
   icon: ReactNode
-  title: string
-  description?: string
+  title: string | ReactNode
+  description?: string | ReactNode
 }
 
 type FlexDirection = 'row' | 'column'

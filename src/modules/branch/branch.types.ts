@@ -1,3 +1,5 @@
+import { ReactNode } from "react"
+
 export interface BranchItemData {
   title: string
   backgroundColor: string
@@ -9,7 +11,7 @@ export interface BranchItemData {
 }
 
 export interface BranchProps {
-  title?: string
+  title?: string | ReactNode
   className?: string
   branchData?: BranchItemData[]
   showTitle?: boolean

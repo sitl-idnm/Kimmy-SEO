@@ -8,6 +8,10 @@ import { Form, TextForm } from '@/components'
 
 const FormSecondComponent: FC<FormSecondProps> = ({
   className,
+  widthImg = 600,
+  heightImg = 600,
+  positionRight,
+  positionTop,
   title = 'Готовы к росту? Свяжитесь с нами',
   paragraph = 'Мы помогаем бизнесу расти и зарабатывать больше. Разрабатываем маркетинговые стратегии, которые приносят результат.'
 }) => {
@@ -24,11 +28,12 @@ const FormSecondComponent: FC<FormSecondProps> = ({
           />
           <Image
             src='/images/sheeps__form.png'
-            width={600}
-            height={600}
+            width={widthImg}
+            height={heightImg}
             quality={80}
             alt='abstract__cirle'
             className={styles.image}
+            style={{ right: positionRight, top: positionTop }}
           />
         </div>
         <div className={styles.form__text}>

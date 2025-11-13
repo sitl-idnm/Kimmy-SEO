@@ -68,6 +68,7 @@ const RazrabotkaChatBotovPage: FC<RazrabotkaChatBotovPageProps> = () => {
       />
       <StandartText
         marginBottom={true}
+        className={styles.marginTop}
         title='Чат-боты для бизнеса: автоматизация, которая работает на вас'
         texts={[
           'Разработка чат ботов — это способ упростить коммуникацию и повысить продажи без увеличения штата. Умные чат-боты помогают бизнесу работать эффективнее, автоматизируя ответы, обработку заказов и сбор данных от пользователей. Мы создаем чат-боты под ключ, адаптированные под ваши задачи, платформы и целевую аудиторию. Наши боты помогают компаниям в реализации и внедрении решений, экономя время и ресурсы. Каждый чат интегрируется в рабочие процессы, чтобы пользователь получал точный ответ на вопрос и быстро завершал продажу.'
@@ -147,14 +148,14 @@ const RazrabotkaChatBotovPage: FC<RazrabotkaChatBotovPageProps> = () => {
           <Branch
             showTitle={false}
             branchData={[{
-              title: 'Стоимость работ от х',
+              title: 'Стоимость работ от 10000р.',
               backgroundColor: '#18181B',
               textColor: '#FFFFFF',
               linkText: '',
               linkColor: '',
             },
             {
-              title: 'Срок от х',
+              title: 'Срок от 3х дней.',
               backgroundColor: '#CB172C',
               textColor: '#FFFFFF',
               linkText: '',
@@ -173,27 +174,27 @@ const RazrabotkaChatBotovPage: FC<RazrabotkaChatBotovPageProps> = () => {
         itemsData={[{
           icon: '',
           title: "1.",
-          description: "Анализ целей и задач вашего бизнеса."
+          description: <>Анализ целей и&nbsp;задач вашего бизнеса.</>
         },
         {
           icon: '',
           title: "2.",
-          description: "Проектирование сценариев работы с пользователем."
+          description: <>Проектирование сценариев работы с&nbsp;пользователем.</>
         },
         {
           icon: '',
           title: "3.",
-          description: "Непосредственно разработка функционала."
+          description: <>Непосредственно разработка функционала.</>
         },
         {
           icon: '',
           title: "4.",
-          description: "Тестирование и внедрение решения."
+          description: <>Тестирование и&nbsp;внедрение решения.</>
         },
         {
           icon: '',
           title: "5.",
-          description: "Постоянная поддержка и развитие проекта."
+          description: <>Постоянная поддержка и&nbsp;развитие проекта.</>
         }]}
       />
       <Clients title="Нам доверяют" />
@@ -205,22 +206,22 @@ const RazrabotkaChatBotovPage: FC<RazrabotkaChatBotovPageProps> = () => {
         title="Почему заказывают разработку чат-бота у нас?"
         itemsData={[{
           icon: <AcceptIcon />,
-          title: "Комплексный подход от идеи до внедрения.",
+          title: <>Комплексный подход от&nbsp;идеи до&nbsp;внедрения.</>,
           description: ""
         },
         {
           icon: <AcceptIcon />,
-          title: "Понимание задач вашего бизнеса.",
+          title: <>Понимание задач вашего бизнеса.</>,
           description: ""
         },
         {
           icon: <AcceptIcon />,
-          title: "Боты действительно помогают и работают.",
+          title: <>Боты действительно помогают и&nbsp;работают.</>,
           description: ""
         },
         {
           icon: <AcceptIcon />,
-          title: "Прозрачная разработка и понятные решения.",
+          title: <>Прозрачная разработка и&nbsp;понятные решения.</>,
           description: ""
         }]}
       />
@@ -268,6 +269,10 @@ const RazrabotkaChatBotovPage: FC<RazrabotkaChatBotovPageProps> = () => {
         title="Ответы на часто задаваемые вопросы"
       />
       <FormSecond
+        widthImg={400}
+        heightImg={400}
+        positionRight={'100px'}
+        positionTop={'250px'}
         title='Заказать разработку чат-бота для вашего бизнеса'
         paragraph = 'Закажите разработку чат-бота для бизнеса и он начнет работать эффективнее уже сегодня. Запишитесь на бесплатную консультацию, где мы сможем обсудить ваш проект.'
       />

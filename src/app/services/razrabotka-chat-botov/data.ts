@@ -3,7 +3,7 @@ import { ServiceData } from '@/shared/types/services'
 export const razrabotkaChatBotovPageData: ServiceData = {
   id: 'razrabotka-chat-botov',
   slug: 'razrabotka-chat-botov',
-  title: 'Разработка чат ботов',
+  title: 'Разработка чат-ботов',
   description: 'Комплексное продвижение вашего сайта в поисковых системах',
   price: 'от 50 000 ₽',
   categoryId: 'traffic',
