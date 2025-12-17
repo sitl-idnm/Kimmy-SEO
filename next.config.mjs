@@ -2,6 +2,24 @@
 const nextConfig = {
   // output: 'standalone',
   reactStrictMode: true,
+  async headers() {
+    return [
+      {
+        source: '/sitemap.xml',
+        headers: [
+          { key: 'Content-Type', value: 'application/xml; charset=utf-8' },
+          { key: 'Cache-Control', value: 'public, max-age=0, s-maxage=86400, stale-while-revalidate=43200' }
+        ]
+      },
+      {
+        source: '/schema.json',
+        headers: [
+          { key: 'Content-Type', value: 'application/ld+json; charset=utf-8' },
+          { key: 'Cache-Control', value: 'public, max-age=0, s-maxage=86400, stale-while-revalidate=43200' }
+        ]
+      }
+    ]
+  },
   webpack(config) {
     const fileLoaderRule = config.module.rules.find((rule) =>
       rule.test?.test?.('.svg'),
