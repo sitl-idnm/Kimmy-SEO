@@ -1,0 +1,417 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://kim.agency/#organization",
+      "name": "KIM Agency",
+      "url": "https://kim.agency"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://kim.agency/#website",
+      "url": "https://kim.agency",
+      "name": "KIM Agency",
+      "publisher": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim.agency#webpage",
+      "url": "https://kim.agency",
+      "name": "Главная",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim.agency/approve#webpage",
+      "url": "https://kim.agency/approve",
+      "name": "Approve",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim.agency/blogpage#webpage",
+      "url": "https://kim.agency/blogpage",
+      "name": "Blogpage",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim.agency/blogs#webpage",
+      "url": "https://kim.agency/blogs",
+      "name": "Blogs",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim.agency/blogs/first-post#webpage",
+      "url": "https://kim.agency/blogs/first-post",
+      "name": "Идеальный одностраничный сайт – какой он?",
+      "description": "Описание первого поста",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim.agency/blogs/fourth-post#webpage",
+      "url": "https://kim.agency/blogs/fourth-post",
+      "name": "Четвертый пост",
+      "description": "Описание четвертого поста",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim.agency/blogs/second-post#webpage",
+      "url": "https://kim.agency/blogs/second-post",
+      "name": "Агентство, студия или фрилансеры – у кого лучше заказать разработку сайта",
+      "description": "Описание второго поста",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim.agency/blogs/third-post#webpage",
+      "url": "https://kim.agency/blogs/third-post",
+      "name": "Из чего складывается стоимость разработки веб-ресурса",
+      "description": "Описание третьего поста",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim.agency/cases#webpage",
+      "url": "https://kim.agency/cases",
+      "name": "Cases",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim.agency/cases/best-wave#webpage",
+      "url": "https://kim.agency/cases/best-wave",
+      "name": "Кейс: Best Wave",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim.agency/cases/clientpulse#webpage",
+      "url": "https://kim.agency/cases/clientpulse",
+      "name": "Кейс: Clientpulse",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim.agency/cases/gloid#webpage",
+      "url": "https://kim.agency/cases/gloid",
+      "name": "Кейс: Gloid",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim.agency/cases/magiya-vkusa#webpage",
+      "url": "https://kim.agency/cases/magiya-vkusa",
+      "name": "Кейс: Magiya Vkusa",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim.agency/cases/rovnaya-spina#webpage",
+      "url": "https://kim.agency/cases/rovnaya-spina",
+      "name": "Кейс: Rovnaya Spina",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim.agency/cases/sweetcorp#webpage",
+      "url": "https://kim.agency/cases/sweetcorp",
+      "name": "Кейс: Sweetcorp",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim.agency/company#webpage",
+      "url": "https://kim.agency/company",
+      "name": "Company",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim.agency/contacts#webpage",
+      "url": "https://kim.agency/contacts",
+      "name": "Contacts",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim.agency/privacy-policy#webpage",
+      "url": "https://kim.agency/privacy-policy",
+      "name": "Privacy Policy",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim.agency/reviews#webpage",
+      "url": "https://kim.agency/reviews",
+      "name": "Reviews",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim.agency/services#webpage",
+      "url": "https://kim.agency/services",
+      "name": "Services",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim.agency/services/razrabotka-chat-botov#webpage",
+      "url": "https://kim.agency/services/razrabotka-chat-botov",
+      "name": "Разработка чат-ботов",
+      "description": "Комплексное продвижение вашего сайта в поисковых системах",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim.agency/services/seo#webpage",
+      "url": "https://kim.agency/services/seo",
+      "name": "SEO оптимизация",
+      "description": "Комплексное продвижение вашего сайта в поисковых системах",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim.agency/services/serm#webpage",
+      "url": "https://kim.agency/services/serm",
+      "name": "SERM",
+      "description": "Управление репутацией в поисковых системах",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim.agency/services/smm#webpage",
+      "url": "https://kim.agency/services/smm",
+      "name": "SMM продвижение",
+      "description": "Продвижение вашего бренда в социальных сетях",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim.agency/services/web-design#webpage",
+      "url": "https://kim.agency/services/web-design",
+      "name": "Веб-дизайн",
+      "description": "Создание современного и удобного дизайна для вашего сайта",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim.agency/vacancies#webpage",
+      "url": "https://kim.agency/vacancies",
+      "name": "Vacancies",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim.agency/work#webpage",
+      "url": "https://kim.agency/work",
+      "name": "Work",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kim.agency/blogs/first-post#blogposting",
+      "mainEntityOfPage": {
+        "@id": "https://kim.agency/blogs/first-post#webpage"
+      },
+      "headline": "Идеальный одностраничный сайт – какой он?",
+      "description": "Описание первого поста",
+      "datePublished": "2023-01-01",
+      "author": {
+        "@id": "https://kim.agency/#organization"
+      },
+      "publisher": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kim.agency/blogs/second-post#blogposting",
+      "mainEntityOfPage": {
+        "@id": "https://kim.agency/blogs/second-post#webpage"
+      },
+      "headline": "Агентство, студия или фрилансеры – у кого лучше заказать разработку сайта",
+      "description": "Описание второго поста",
+      "datePublished": "2023-01-05",
+      "author": {
+        "@id": "https://kim.agency/#organization"
+      },
+      "publisher": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kim.agency/blogs/third-post#blogposting",
+      "mainEntityOfPage": {
+        "@id": "https://kim.agency/blogs/third-post#webpage"
+      },
+      "headline": "Из чего складывается стоимость разработки веб-ресурса",
+      "description": "Описание третьего поста",
+      "datePublished": "2023-01-06",
+      "author": {
+        "@id": "https://kim.agency/#organization"
+      },
+      "publisher": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://kim.agency/blogs/fourth-post#blogposting",
+      "mainEntityOfPage": {
+        "@id": "https://kim.agency/blogs/fourth-post#webpage"
+      },
+      "headline": "Четвертый пост",
+      "description": "Описание четвертого поста",
+      "datePublished": "2023-01-04",
+      "author": {
+        "@id": "https://kim.agency/#organization"
+      },
+      "publisher": {
+        "@id": "https://kim.agency/#organization"
+      }
+    }
+  ]
+}

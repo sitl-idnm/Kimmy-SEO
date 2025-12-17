@@ -20,6 +20,7 @@ import Review from '@/modules/review/review'
 import { BlogsMain } from '@/modules/blogsMain'
 import { BlackBoxLink } from '@/modules/blackBoxLink'
 import { Services } from '@/modules/ServicePage/services'
+import { Heading } from '@/ui/heading'
 
 const faqData = [
   {
@@ -41,11 +42,12 @@ const Home: FC<HomeProps> = ({ className }) => {
 
   return (
     <main className={rootClassName}>
+      <Heading tagName="h1" className={styles.hidden}>Агентство комплексного интернет-маркетинга</Heading>
       <NewModalContainer />
       <Wrapper>
         <Introduce
           title={<>Агентство комплексного<br /></>}
-          titleTag="h1"
+          titleTag="h2"
           titleVariant="large"
           hasTypingSpan={true}
           wordsArray={['интернет-маркетинга', 'интернет-маркетинга']}

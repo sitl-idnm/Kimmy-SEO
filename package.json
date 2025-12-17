@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node util/sitemap/gen-image-counts.mjs",
+    "prebuild": "node util/sitemap/gen-image-counts.mjs && node util/seo/gen-seo-files.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -13,6 +13,7 @@
     "check": "prettier -w src/**/*.{ts,tsx} --config .prettierrc && next lint && stylelint src/**/*.scss",
     "gen:component": "node ./util/component/gen-component.mjs",
     "gen:service": "node util/service/gen-service.mjs",
+    "gen:seo": "node util/seo/gen-seo-files.mjs",
     "preinstall": "npx only-allow yarn"
   },
   "dependencies": {
@@ -25,6 +26,7 @@
     "next": "^14",
     "react": "^18",
     "react-dom": "^18",
+    "sharp": "^0.34.5",
     "usehooks-ts": "^3.1.0"
   },
   "devDependencies": {
