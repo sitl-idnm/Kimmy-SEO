@@ -36,16 +36,6 @@ const WeAre: FC<WeAreProps> = ({
             />
             <p className={styles.memberName}>Константин Ким</p>
           </div>
-          <div className={styles.member}>
-            <Image
-              src="/images/pavel.png"
-              alt="Павел Коржуев"
-              width={475}
-              height={475}
-              className={styles.memberImage}
-            />
-            <p className={styles.memberName}>Павел Коржуев</p>
-          </div>
         </div>
       </div>
     </div>
