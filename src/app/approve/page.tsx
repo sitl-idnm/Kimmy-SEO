@@ -3,8 +3,8 @@ import type { Metadata } from 'next'
 
 
 export const metadata: Metadata = {
-  title: 'Approve',
-  description: 'Legion Next.js template'
+  title: 'Подтверждение — K.KIM',
+  description: 'Подтверждение подписки или заявки на сайте K.KIM Agency.'
 }
 
 export default function Home() {

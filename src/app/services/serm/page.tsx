@@ -11,8 +11,9 @@ export async function generateMetadata(): Promise<Metadata> {
   const serviceData = getServiceData('serm')
 
   return {
-    title: serviceData?.title || 'SERM',
-    description: serviceData?.description || ''
+    title: 'SERM — управление репутацией в поиске | K.KIM',
+    description: 'Управление репутацией в поисковых системах: работа с негативом, мониторинг упоминаний. От 60 000 ₽. Защитите репутацию бренда с K.KIM.',
+    keywords: ['serm', 'репутация', 'управление репутацией', 'негатив в поиске'].filter(Boolean)
   }
 }
 

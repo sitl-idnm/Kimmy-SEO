@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import { HomeView } from '@views/home'
 
 export const metadata: Metadata = {
-  title: 'Home',
-  description: 'Legion Next.js template'
+  title: 'Интернет-маркетинг в Москве — K.KIM Agency',
+  description: 'K.KIM — агентство комплексного интернет-маркетинга. Разработка сайтов, SEO, SMM, performance-кампании. 150+ проектов, 10000+ лидов. Получите консультацию.'
 }
 
 export default function Home() {

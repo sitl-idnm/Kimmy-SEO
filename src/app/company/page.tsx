@@ -3,8 +3,8 @@ import type { Metadata } from 'next'
 
 
 export const metadata: Metadata = {
-  title: 'О компании',
-  description: 'Legion Next.js template'
+  title: 'О маркетинговом агентстве K.KIM',
+  description: 'История K.KIM: 15 сотрудников, 5 отделов, 150+ проектов. Digital-решения для бизнеса с 2023 года. Запишитесь на консультацию.'
 }
 
 export default function Home() {

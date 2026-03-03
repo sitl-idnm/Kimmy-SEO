@@ -2,8 +2,8 @@ import RovnayaSpinaPage from '@/views/casesPage/cases/rovnayaSpinaPage/rovnayaSp
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Case rovnaya-spina',
-  description: 'Legion Next.js template'
+  title: 'Кейс: сайт оздоровительного центра «Ровная спина» | K.KIM',
+  description: 'Многостраничный сайт на WordPress с онлайн-записью и SEO. 130+ городов, 8 стран. Кейс K.KIM.'
 }
 
 export default function Home() {

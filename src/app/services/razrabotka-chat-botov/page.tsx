@@ -36,17 +36,10 @@ const FaqData = [
 export async function generateMetadata(): Promise<Metadata> {
   const serviceData = getServiceData('razrabotka-chat-botov')
 
-  const customMetadata = {
-    // Здесь можно переопределить метаданные вручную
-    title: 'Разработка чат-ботов для бизнеса от K.KIM',
-    description: 'Кастомное описание',
-    keywords: ['кастомные', 'ключевые', 'слова']
-  }
-
   return {
-    title: customMetadata.title || serviceData?.title || 'SEO',
-    description: customMetadata.description || serviceData?.description || 'Оптимизируем сайты для поисковых систем и выведем их в ТОП10 выдачи',
-    keywords: customMetadata.keywords || [serviceData?.title?.toLowerCase() || 'seo', 'услуги', 'разработка'].filter(Boolean)
+    title: 'Разработка чат-ботов для бизнеса — K.KIM',
+    description: 'Создание чат-ботов для Telegram, WhatsApp, VK. Автоматизация продаж и поддержки. От 10 000 ₽. Закажите разработку бота у K.KIM.',
+    keywords: ['чат-бот', 'телеграм бот', 'whatsapp бот', 'автоматизация', 'разработка ботов'].filter(Boolean)
   }
 }
 

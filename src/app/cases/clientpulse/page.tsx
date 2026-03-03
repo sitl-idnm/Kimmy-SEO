@@ -2,8 +2,8 @@ import ClientPulsePage from '@/views/casesPage/cases/clientPulsePage/clientPulse
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Case Client Pulse',
-  description: 'Legion Next.js template'
+  title: 'Кейс: многостраничный сайт ClientPulse для CDP | K.KIM',
+  description: 'Разработка сайта для сервиса данных клиентов и программ лояльности. B2B сегмент, фирменный стиль. Кейс K.KIM.'
 }
 
 export default function Home() {

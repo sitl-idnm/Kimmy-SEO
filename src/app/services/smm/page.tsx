@@ -9,17 +9,10 @@ import type { Metadata } from 'next'
 
 export async function generateMetadata(): Promise<Metadata> {
 
-  const customMetadata = {
-    // Здесь можно переопределить метаданные вручную
-    title: 'Кастомный заголовок',
-    description: 'Кастомное описание',
-    keywords: ['кастомные', 'ключевые', 'слова']
-  }
-
   return {
-    title: customMetadata.title,
-    description: customMetadata.description,
-    keywords: customMetadata.keywords.filter(Boolean)
+    title: 'SMM-продвижение в соцсетях — K.KIM Agency',
+    description: 'Продвижение бренда в соцсетях: контент-стратегия, таргет, работа с блогерами. От 40 000 ₽/мес. Закажите SMM для вашего бизнеса.',
+    keywords: ['smm', 'продвижение соцсетей', 'таргет', 'контент-стратегия', 'социальные сети'].filter(Boolean)
   }
 }
 

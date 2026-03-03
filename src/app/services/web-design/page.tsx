@@ -18,17 +18,10 @@ import { Wrapper } from '@/ui/wrapper'
 export async function generateMetadata(): Promise<Metadata> {
   const serviceData = getServiceData('web-design')
 
-  const customMetadata = {
-    // Здесь можно переопределить метаданные вручную
-    title: 'Кастомный заголовок',
-    description: 'Кастомное описание',
-    keywords: ['кастомные', 'ключевые', 'слова']
-  }
-
   return {
-    title: customMetadata.title || serviceData?.title || 'Веб-дизайн',
-    description: customMetadata.description || serviceData?.description || 'Разработаем дизайн веб-ресурса, электронного письма и материалов для онлайн-рекламы',
-    keywords: customMetadata.keywords || [serviceData?.title?.toLowerCase() || 'веб-дизайн', 'услуги', 'разработка'].filter(Boolean)
+    title: 'Веб-дизайн сайтов — UI/UX и редизайн | K.KIM',
+    description: 'Создание современного дизайна сайтов: UI/UX, прототипирование, адаптивность. Редизайн от 80 000 ₽. Закажите оформление веб-ресурса у K.KIM.',
+    keywords: ['веб-дизайн', 'ui ux', 'редизайн', 'дизайн сайта', 'адаптивный дизайн'].filter(Boolean)
   }
 }
 
