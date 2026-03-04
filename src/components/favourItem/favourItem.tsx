@@ -20,7 +20,9 @@ const FavourItem: FC<FavourItemProps> = ({
   isTitleLeft,
   justifyContent = 'flex-start',
   alignItems = 'flex-start',
-  flexDirection = 'row'
+  flexDirection = 'row',
+  footer,
+  footerTitle
 }) => {
   const setModalContent = useSetAtom(openModalContent)
 
@@ -57,6 +59,22 @@ const FavourItem: FC<FavourItemProps> = ({
               <li key={index} style={{ color: textColor }}>{item}</li>
             ))}
           </ul>
+        )}
+        {footer && footer.length > 0 && (
+          <div
+            className={styles.favour__footer}
+            style={{
+              backgroundColor: textColor === '#FFFFFF' || textColor === '#FFF' ? 'rgba(255,255,255,0.12)' : 'rgba(0,0,0,0.06)',
+              color: textColor
+            }}
+          >
+            {footerTitle && <div className={styles.favour__footerTitle}>{footerTitle}</div>}
+            <ul className={styles.favour__footerList}>
+              {footer.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          </div>
         )}
         <button className={styles.favour__description} style={{ color: linkColor }}>
           {linkText}

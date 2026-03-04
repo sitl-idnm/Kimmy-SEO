@@ -11,10 +11,11 @@ import type { Metadata } from 'next'
 
 export async function generateMetadata(): Promise<Metadata> {
   const serviceData = getServiceData('seo')
-
   return {
-    title: 'SEO-оптимизация сайта — продвижение в ТОП | K.KIM',
-    description: 'Комплексное SEO: аудит, семантика, внутренняя и внешняя оптимизация. От 50 000 ₽. Выведем сайт в ТОП-10 Яндекса и Google. Закажите консультацию.',
+    title: serviceData ? `${serviceData.title} — продвижение в ТОП | K.KIM` : 'SEO-оптимизация | K.KIM',
+    description: serviceData?.description
+      ? `${serviceData.description}. Комплексное SEO от ${serviceData.price}. Выведем сайт в ТОП-10. Закажите консультацию.`
+      : 'Комплексное SEO: аудит, семантика, внутренняя и внешняя оптимизация. Закажите консультацию.',
     keywords: ['seo', 'продвижение сайтов', 'оптимизация', 'поисковое продвижение', 'топ выдачи'].filter(Boolean)
   }
 }

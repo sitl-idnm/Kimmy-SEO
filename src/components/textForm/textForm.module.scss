@@ -33,9 +33,37 @@
 		@include text;
 
 		@include tablet-small {
-			&__paragraph {
-				font-size: 14px;
-			}
+			font-size: 14px;
 		}
+	}
+
+	&__list {
+		list-style: none;
+		margin: 12px 0 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	&__listItem {
+		background: rgba(255, 255, 255, 0.12);
+		color: var(--color-white-default);
+		padding: 10px 14px;
+		border-radius: 8px;
+		font-size: 15px;
+		line-height: 1.4;
+
+		@include tablet-small {
+			font-size: 14px;
+			padding: 8px 12px;
+		}
+	}
+
+	&__listClosing {
+		margin: 10px 0 0;
+		@include text;
+		font-size: 15px;
+		opacity: 0.95;
 	}
 }

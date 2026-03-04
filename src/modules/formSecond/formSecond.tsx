@@ -13,13 +13,19 @@ const FormSecondComponent: FC<FormSecondProps> = ({
   positionRight,
   positionTop,
   title = 'Готовы к росту? Свяжитесь с нами',
-  paragraph = 'Мы помогаем бизнесу расти и зарабатывать больше. Разрабатываем маркетинговые стратегии, которые приносят результат.'
+  paragraph = 'Мы помогаем бизнесу расти и зарабатывать больше. Разрабатываем маркетинговые стратегии, которые приносят результат.',
+  submitValue,
+  secondSubmitValue,
+  secondSubmitClassName,
+  mail = true,
+  project = true,
+  anchorId = 'form'
 }) => {
   const rootClassName = classNames(styles.root, className)
 
   return (
     <div className={rootClassName}>
-      <section className={styles.form} id="form">
+      <section className={styles.form} id={anchorId}>
         <div className={styles.form__circle}>
           <TextForm
             title={title}
@@ -38,9 +44,12 @@ const FormSecondComponent: FC<FormSecondProps> = ({
         </div>
         <div className={styles.form__text}>
           <Form
-            mail={true}
-            project={true}
+            mail={mail}
+            project={project}
             className={styles.input}
+            submitValue={submitValue}
+            secondSubmitValue={secondSubmitValue}
+            secondSubmitClassName={secondSubmitClassName}
           />
         </div>
       </section>

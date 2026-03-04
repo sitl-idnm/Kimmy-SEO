@@ -5,6 +5,14 @@ import classNames from 'classnames'
 import styles from './caseForm.module.scss'
 import { CaseFormProps } from './caseForm.types'
 import axios from 'axios'
+import {
+  formatPhoneDisplay,
+  isPhoneValid,
+  getPhoneDigitsOnly,
+  PHONE_PLACEHOLDER,
+  positionAfterDigit,
+  digitsBeforePosition
+} from '@/shared/utils/phoneMask'
 import Image from 'next/image'
 import { Borders } from '@/ui'
 import Link from 'next/link'
@@ -21,10 +29,43 @@ const CaseForm: FC<CaseFormProps> = ({
     event.target.value = value.replace(/\d/g, '');
   };
 
-  const handleNumberInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    event.target.value = value.replace(/\D/g, '');
-  };
+  const handlePhoneInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const input = event.target
+    const formatted = formatPhoneDisplay(input.value)
+    const prevDigits = (input.value.slice(0, input.selectionStart ?? 0).match(/\d/g) || []).length
+    input.value = formatted
+    const newPos = positionAfterDigit(formatted, prevDigits)
+    input.setSelectionRange(newPos, newPos)
+  }
+
+  const handlePhoneKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    const input = event.target as HTMLInputElement
+    const value = input.value
+    const cursor = input.selectionStart ?? 0
+    const digits = getPhoneDigitsOnly(value)
+    const digitsBefore = digitsBeforePosition(value, cursor)
+    if (event.key === 'Backspace' && digitsBefore > 0) {
+      const charBefore = value[cursor - 1]
+      if (charBefore != null && !/\d/.test(charBefore)) {
+        event.preventDefault()
+        const newDigits = digits.slice(0, digitsBefore - 1) + digits.slice(digitsBefore)
+        const raw = newDigits.length > 0 ? '7' + newDigits : ''
+        const formatted = formatPhoneDisplay(raw)
+        input.value = formatted
+        input.setSelectionRange(positionAfterDigit(formatted, digitsBefore - 1), positionAfterDigit(formatted, digitsBefore - 1))
+      }
+    } else if (event.key === 'Delete' && digitsBefore < digits.length) {
+      const charAt = value[cursor]
+      if (charAt != null && !/\d/.test(charAt)) {
+        event.preventDefault()
+        const newDigits = digits.slice(0, digitsBefore) + digits.slice(digitsBefore + 1)
+        const raw = newDigits.length > 0 ? '7' + newDigits : ''
+        const formatted = formatPhoneDisplay(raw)
+        input.value = formatted
+        input.setSelectionRange(positionAfterDigit(formatted, digitsBefore), positionAfterDigit(formatted, digitsBefore))
+      }
+    }
+  }
 
   const sanitizeInput = (input: string) => {
     const sanitized = input.replace(/<[^>]*>/g, '');
@@ -45,6 +86,11 @@ const CaseForm: FC<CaseFormProps> = ({
     const data = Object.fromEntries(formData.entries())
     if (data.mail && !isValidEmail(data.mail as string)) {
       setSuccessMessage('Ошибка отправки заявки. Неправильный email адрес.')
+      return
+    }
+    const phone = (data.phone as string)?.trim() ?? ''
+    if (!isPhoneValid(phone)) {
+      setSuccessMessage('Введите корректный номер телефона: +7 (XXX) XXX-XX-XX')
       return
     }
     try {
@@ -91,7 +137,17 @@ const CaseForm: FC<CaseFormProps> = ({
           <label className={styles.placeholder}>Имя*</label>
         </div>
         <div className={styles.form_wrapper}>
-          <input type="text" name="phone" placeholder='Телефон' required onChange={handleNumberInput} style={{ color: 'black', backgroundColor: '#FAFAFA' }} />
+          <input
+            type="tel"
+            name="phone"
+            placeholder={PHONE_PLACEHOLDER}
+            required
+            onChange={handlePhoneInput}
+            onKeyDown={handlePhoneKeyDown}
+            onFocus={(e) => { if (e.target.value === '') e.target.placeholder = '' }}
+            onBlur={(e) => { if (e.target.value === '') e.target.placeholder = PHONE_PLACEHOLDER }}
+            style={{ color: 'black', backgroundColor: '#FAFAFA' }}
+          />
           <label className={styles.placeholder}>Телефон*</label>
         </div>
         <div className={styles.form_wrapper}>

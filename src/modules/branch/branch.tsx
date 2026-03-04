@@ -2,10 +2,10 @@ import { FC } from 'react'
 import classNames from 'classnames'
 
 import styles from './branch.module.scss'
-import { BranchProps } from './branch.types'
+import { BranchProps, BranchItemData } from './branch.types'
 import { FavourItem } from '@/components'
 
-const defaultBranchData = [
+const defaultBranchData: BranchItemData[] = [
   {
     title: 'E-commerce и ритейл',
     backgroundColor: '#18181B',
@@ -54,7 +54,8 @@ const Branch: FC<BranchProps> = ({
   listJustifyContent = 'flex-start',
   listAlignItems = 'flex-start',
   listFlexDirection = 'row',
-  isTitleLeft = false
+  isTitleLeft = false,
+  actionButton
 }) => {
   const rootClassName = classNames(styles.root, className)
   const contentClassName = classNames(styles.content, styles[`content_${itemsPerRow}`])
@@ -81,9 +82,22 @@ const Branch: FC<BranchProps> = ({
               justifyContent={listJustifyContent}
               alignItems={listAlignItems}
               flexDirection={listFlexDirection}
+              footer={item.footer}
+              footerTitle={item.footerTitle}
             />
           ))}
         </ul>
+        {actionButton && (
+          <div className={styles.actionWrap}>
+            {typeof actionButton === 'object' && actionButton !== null && 'label' in actionButton && 'href' in actionButton ? (
+              <a href={actionButton.href} className={styles.actionButton}>
+                {actionButton.label}
+              </a>
+            ) : (
+              actionButton
+            )}
+          </div>
+        )}
       </div>
     </div>
   )

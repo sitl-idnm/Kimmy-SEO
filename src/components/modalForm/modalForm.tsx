@@ -6,6 +6,14 @@ import classNames from 'classnames'
 import styles from './modalForm.module.scss'
 import { ModalFormProps } from './modalForm.types'
 import axios from 'axios'
+import {
+  formatPhoneDisplay,
+  isPhoneValid,
+  getPhoneDigitsOnly,
+  PHONE_PLACEHOLDER,
+  positionAfterDigit,
+  digitsBeforePosition
+} from '@/shared/utils/phoneMask'
 
 import PhoneDef from '../../shared/assets/icons/phone - default.svg'
 import PhoneActive from '../../shared/assets/icons/phone - active.svg'
@@ -25,14 +33,53 @@ const isValidEmail = (email: string) => {
 	return emailRegex.test(email);
 };
 
-const ModalForm: FC<ModalFormProps> = ({ className, details, count, start }) => {
+const DETAILS_LIDOGENERACIYA = {
+  title: 'Обсудить лидогенерацию',
+  description: 'Оставьте контакты — мы подберём формат под вашу нишу, рассчитаем бюджет и расскажем, как получить первых лидов без переплаты за контекст.',
+  submitValue: 'Обсудить результат'
+} as const
+
+const ModalForm: FC<ModalFormProps> = ({ className, details, count, start, detailsVariant }) => {
 	const rootClassName = classNames(styles.root, className)
 	const [selectedContactMethod, setSelectedContactMethod] = useState('number')
 	const [successMessage, setSuccessMessage] = useState<string | null>(null)
 
-	const handleNumberInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-		const value = event.target.value
-		event.target.value = value.replace(/\D/g, '')
+	const handlePhoneInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+		const input = event.target
+		const formatted = formatPhoneDisplay(input.value)
+		const prevDigits = (input.value.slice(0, input.selectionStart ?? 0).match(/\d/g) || []).length
+		input.value = formatted
+		const newPos = positionAfterDigit(formatted, prevDigits)
+		input.setSelectionRange(newPos, newPos)
+	}
+
+	const handlePhoneKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+		const input = event.target as HTMLInputElement
+		const value = input.value
+		const cursor = input.selectionStart ?? 0
+		const digits = getPhoneDigitsOnly(value)
+		const digitsBefore = digitsBeforePosition(value, cursor)
+		if (event.key === 'Backspace' && digitsBefore > 0) {
+			const charBefore = value[cursor - 1]
+			if (charBefore != null && !/\d/.test(charBefore)) {
+				event.preventDefault()
+				const newDigits = digits.slice(0, digitsBefore - 1) + digits.slice(digitsBefore)
+				const raw = newDigits.length > 0 ? '7' + newDigits : ''
+				const formatted = formatPhoneDisplay(raw)
+				input.value = formatted
+				input.setSelectionRange(positionAfterDigit(formatted, digitsBefore - 1), positionAfterDigit(formatted, digitsBefore - 1))
+			}
+		} else if (event.key === 'Delete' && digitsBefore < digits.length) {
+			const charAt = value[cursor]
+			if (charAt != null && !/\d/.test(charAt)) {
+				event.preventDefault()
+				const newDigits = digits.slice(0, digitsBefore) + digits.slice(digitsBefore + 1)
+				const raw = newDigits.length > 0 ? '7' + newDigits : ''
+				const formatted = formatPhoneDisplay(raw)
+				input.value = formatted
+				input.setSelectionRange(positionAfterDigit(formatted, digitsBefore), positionAfterDigit(formatted, digitsBefore))
+			}
+		}
 	}
 
 	const sanitizeInput = (input: string) => {
@@ -51,11 +98,18 @@ const ModalForm: FC<ModalFormProps> = ({ className, details, count, start }) => 
 			setSuccessMessage('Ошибка отправки заявки. Неправильный email адрес.');
 			return;
 		}
-		try {
-			data.commentModal = sanitizeInput(data.commentModal as string);
-		} catch (error) {
-			setSuccessMessage('Ошибка отправки заявки. HTML теги не разрешены.');
-			return;
+		const phone = (data.phoneModal as string)?.trim() ?? ''
+		if (!isPhoneValid(phone)) {
+			setSuccessMessage('Введите корректный номер телефона: +7 (XXX) XXX-XX-XX')
+			return
+		}
+		if (data.commentModal != null && typeof data.commentModal === 'string') {
+			try {
+				data.commentModal = sanitizeInput(data.commentModal)
+			} catch (error) {
+				setSuccessMessage('Ошибка отправки заявки. HTML теги не разрешены.')
+				return
+			}
 		}
 		const token = '7862004029:AAFZ807gLMhUIzqjfh4DB62muUmzWv9JfrY'
 		const chatId = '-4654232429'
@@ -76,14 +130,17 @@ const ModalForm: FC<ModalFormProps> = ({ className, details, count, start }) => 
 	return (
 		<div className={rootClassName} style={details ? {height: '90vh'} : {}}>
 			{
-				details ? <h2 className={styles.root__title}>Заказать сайт</h2>
-				: count ? <h2 className={styles.root__title}>Рассчитать срок и стоимость моего проекта</h2> : start ? <h2 className={styles.root__title}>Начать работу</h2> : <h2 className={styles.root__title}>Получить консультацию</h2>
+				details
+					? <h2 className={styles.root__title}>{detailsVariant === 'lidogeneraciya' ? DETAILS_LIDOGENERACIYA.title : 'Заказать сайт'}</h2>
+					: count ? <h2 className={styles.root__title}>Рассчитать срок и стоимость моего проекта</h2> : start ? <h2 className={styles.root__title}>Начать работу</h2> : <h2 className={styles.root__title}>Получить консультацию</h2>
 			}
 			<div className={styles.root__content}>
 				<div className={styles.root__content__text}>
 					{details ? null : start ? null : <p className={styles.white}>Готовы начать погружение в ваш проект!</p>}
 					<p className={styles.gray}>
-						{details ? 'Заполните краткую форму, чтобы мы связались с вами и обсудили все детали.' : count ? 'Заполните краткую форму, чтобы мы связались с вами и рассчитали сроки и стоимость разработки сайта.' : start ? 'Заполните форму и мы свяжемся с вами в ближайшее время для записи на консультацию' : 'Просто оставьте контактные данные, мы свяжемся с вами, чтобы собрать информацию и предложить решение.'}
+						{details
+							? (detailsVariant === 'lidogeneraciya' ? DETAILS_LIDOGENERACIYA.description : 'Заполните краткую форму, чтобы мы связались с вами и обсудили все детали.')
+							: count ? 'Заполните краткую форму, чтобы мы связались с вами и рассчитали сроки и стоимость разработки сайта.' : start ? 'Заполните форму и мы свяжемся с вами в ближайшее время для записи на консультацию' : 'Просто оставьте контактные данные, мы свяжемся с вами, чтобы собрать информацию и предложить решение.'}
 					</p>
 				</div>
 				<form onSubmit={handleSubmit} action="POST" className={styles.root__content__form}>
@@ -101,12 +158,15 @@ const ModalForm: FC<ModalFormProps> = ({ className, details, count, start }) => 
 						</div>
 						<div>
 							<input
-								type="text"
+								type="tel"
 								name="phoneModal"
-								placeholder="Телефон"
+								placeholder={PHONE_PLACEHOLDER}
 								className={`${styles.root__content__form__first__line__number} ${styles.input}`}
 								required
-								onChange={handleNumberInput}
+								onChange={handlePhoneInput}
+								onKeyDown={handlePhoneKeyDown}
+								onFocus={(e) => { if (e.target.value === '') e.target.placeholder = '' }}
+								onBlur={(e) => { if (e.target.value === '') e.target.placeholder = PHONE_PLACEHOLDER }}
 							/>
 							<label className={styles.placeholder}>Телефон*</label>
 						</div>
@@ -192,7 +252,7 @@ const ModalForm: FC<ModalFormProps> = ({ className, details, count, start }) => 
 							<label>Согласен на получение email - рассылок</label>
 						</div>
 						<div className={styles.form_wrapper}>
-							{details ? <input type="submit" value={'Заказать сайт'} /> : count ? <input type="submit" value={'Рассчитать '} /> : <input type="submit" value={'Получить консультацию'} />}
+							{details ? <input type="submit" value={detailsVariant === 'lidogeneraciya' ? DETAILS_LIDOGENERACIYA.submitValue : 'Заказать сайт'} /> : count ? <input type="submit" value={'Рассчитать '} /> : <input type="submit" value={'Получить консультацию'} />}
 						</div>
 						{successMessage && (
 							<div className={styles.successMessage}>

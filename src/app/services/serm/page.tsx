@@ -9,10 +9,11 @@ import type { Metadata } from 'next'
 
 export async function generateMetadata(): Promise<Metadata> {
   const serviceData = getServiceData('serm')
-
   return {
-    title: 'SERM — управление репутацией в поиске | K.KIM',
-    description: 'Управление репутацией в поисковых системах: работа с негативом, мониторинг упоминаний. От 60 000 ₽. Защитите репутацию бренда с K.KIM.',
+    title: serviceData ? `${serviceData.title} — репутация в поиске | K.KIM` : 'SERM | K.KIM',
+    description: serviceData?.description
+      ? `${serviceData.description}. От ${serviceData.price}. Защитите репутацию бренда с K.KIM.`
+      : 'Управление репутацией в поисковых системах: работа с негативом, мониторинг упоминаний. Закажите консультацию.',
     keywords: ['serm', 'репутация', 'управление репутацией', 'негатив в поиске'].filter(Boolean)
   }
 }

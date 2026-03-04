@@ -8,10 +8,12 @@ import { SmmPageProps } from './page.types'
 import type { Metadata } from 'next'
 
 export async function generateMetadata(): Promise<Metadata> {
-
+  const serviceData = getServiceData('smm')
   return {
-    title: 'SMM-продвижение в соцсетях — K.KIM Agency',
-    description: 'Продвижение бренда в соцсетях: контент-стратегия, таргет, работа с блогерами. От 40 000 ₽/мес. Закажите SMM для вашего бизнеса.',
+    title: serviceData ? `${serviceData.title} — соцсети | K.KIM` : 'SMM-продвижение | K.KIM',
+    description: serviceData?.description
+      ? `${serviceData.description}. От ${serviceData.price}. Закажите SMM для вашего бизнеса.`
+      : 'Продвижение бренда в соцсетях: контент-стратегия, таргет, работа с блогерами. Закажите консультацию.',
     keywords: ['smm', 'продвижение соцсетей', 'таргет', 'контент-стратегия', 'социальные сети'].filter(Boolean)
   }
 }

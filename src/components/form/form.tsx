@@ -6,13 +6,27 @@ import Link from 'next/link'
 
 import styles from './form.module.scss'
 import { FormProps } from './form.types'
+import {
+  formatPhoneDisplay,
+  isPhoneValid,
+  getPhoneDigitsOnly,
+  PHONE_PLACEHOLDER,
+  positionAfterDigit,
+  digitsBeforePosition
+} from '@/shared/utils/phoneMask'
+
+const defaultProjectPlaceholder = 'Расскажите про свой проект'
 
 const Form: FC<FormProps> = ({
   className,
   mail,
   project,
+  projectPlaceholder = defaultProjectPlaceholder,
   work,
-  quizData
+  quizData,
+  submitValue = 'Отправить',
+  secondSubmitValue,
+  secondSubmitClassName
 }) => {
   const rootClassName = classNames(styles.root, className)
   const [successMessage, setSuccessMessage] = useState<string | null>(null)
@@ -22,9 +36,45 @@ const Form: FC<FormProps> = ({
     event.target.value = value.replace(/\d/g, '')
   }
 
-  const handleNumberInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value
-    event.target.value = value.replace(/\D/g, '')
+  const handlePhoneInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const input = event.target
+    const formatted = formatPhoneDisplay(input.value)
+    const prevDigits = (input.value.slice(0, input.selectionStart ?? 0).match(/\d/g) || []).length
+    input.value = formatted
+    const newPos = positionAfterDigit(formatted, prevDigits)
+    input.setSelectionRange(newPos, newPos)
+  }
+
+  const handlePhoneKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    const input = event.target as HTMLInputElement
+    const value = input.value
+    const cursor = input.selectionStart ?? 0
+    const digits = getPhoneDigitsOnly(value)
+    const digitsBefore = digitsBeforePosition(value, cursor)
+
+    if (event.key === 'Backspace' && digitsBefore > 0) {
+      const charBefore = value[cursor - 1]
+      if (charBefore != null && !/\d/.test(charBefore)) {
+        event.preventDefault()
+        const newDigits = digits.slice(0, digitsBefore - 1) + digits.slice(digitsBefore)
+        const raw = newDigits.length > 0 ? '7' + newDigits : ''
+        const formatted = formatPhoneDisplay(raw)
+        input.value = formatted
+        const newPos = positionAfterDigit(formatted, digitsBefore - 1)
+        input.setSelectionRange(newPos, newPos)
+      }
+    } else if (event.key === 'Delete' && digitsBefore < digits.length) {
+      const charAt = value[cursor]
+      if (charAt != null && !/\d/.test(charAt)) {
+        event.preventDefault()
+        const newDigits = digits.slice(0, digitsBefore) + digits.slice(digitsBefore + 1)
+        const raw = newDigits.length > 0 ? '7' + newDigits : ''
+        const formatted = formatPhoneDisplay(raw)
+        input.value = formatted
+        const newPos = positionAfterDigit(formatted, digitsBefore)
+        input.setSelectionRange(newPos, newPos)
+      }
+    }
   }
 
   const sanitizeInput = (input: string) => {
@@ -56,6 +106,12 @@ const Form: FC<FormProps> = ({
       return
     }
 
+    const phone = (data.phone as string)?.trim() ?? ''
+    if (!isPhoneValid(phone)) {
+      setSuccessMessage('Введите корректный номер телефона: +7 (XXX) XXX-XX-XX')
+      return
+    }
+
     if (project) {
       try {
         data.project = sanitizeInput(data.project as string)
@@ -74,7 +130,7 @@ const Form: FC<FormProps> = ({
 
 👤 *Контактные данные:*
 • Имя: ${data.name}
-• Телефон: ${data.phone}${data.mail ? `\n• Почта: ${data.mail}` : ''}
+• Телефон: ${phone}${data.mail ? `\n• Почта: ${data.mail}` : ''}
 
 ${data.project ? `💡 *О проекте:*\n${data.project}\n` : ''}${quizResults ? `\n📋 *Результаты опроса:*${quizResults}` : ''}`
 
@@ -106,11 +162,14 @@ ${data.project ? `💡 *О проекте:*\n${data.project}\n` : ''}${quizResul
         </div>
         <div className={styles.form_wrapper}>
           <input
-            type="text"
+            type="tel"
             name="phone"
-            placeholder='Телефон'
+            placeholder={PHONE_PLACEHOLDER}
             required
-            onChange={handleNumberInput}
+            onChange={handlePhoneInput}
+            onKeyDown={handlePhoneKeyDown}
+            onFocus={(e) => { if (e.target.value === '') e.target.placeholder = '' }}
+            onBlur={(e) => { if (e.target.value === '') e.target.placeholder = PHONE_PLACEHOLDER }}
             style={work ? { color: 'black', backgroundColor: '#FAFAFA' } : undefined}
           />
           <label className={styles.placeholder}>Телефон*</label>
@@ -130,7 +189,7 @@ ${data.project ? `💡 *О проекте:*\n${data.project}\n` : ''}${quizResul
         )}
 
         {/* Часть формы для второй формы на главной странице */}
-        {mail !== undefined && (
+        {mail === true && (
           <div className={styles.form_wrapper}>
             <input
               type="mail"
@@ -142,15 +201,15 @@ ${data.project ? `💡 *О проекте:*\n${data.project}\n` : ''}${quizResul
             <label className={styles.placeholder}>Почта</label>
           </div>
         )}
-        {project !== undefined && (
+        {project === true && (
           <div className={styles.form_wrapper}>
             <textarea
               name="project"
-              placeholder='Расскажите про свой проект'
+              placeholder={projectPlaceholder}
               onFocus={(e) => e.target.placeholder = ''}
-              onBlur={(e) => e.target.placeholder = 'Расскажите про свой проект'}
+              onBlur={(e) => e.target.placeholder = projectPlaceholder}
             />
-            <label className={styles.placeholder}>Расскажите про свой проект</label>
+            <label className={styles.placeholder}>{projectPlaceholder}</label>
           </div>
         )}
         <div className={styles.form_wrapper}>
@@ -159,7 +218,7 @@ ${data.project ? `💡 *О проекте:*\n${data.project}\n` : ''}${quizResul
             Согласен на обработку <Link href='/privacy-policy' target='_blank' style={work ? { color: '#CB172C' } : undefined}>персональных данных</Link>
           </label>
         </div>
-        {mail !== undefined && (
+        {mail === true && (
           <div className={styles.form_wrapper}>
             <input type="checkbox" />
             <label>Согласен на получение email - рассылок</label>
@@ -172,7 +231,18 @@ ${data.project ? `💡 *О проекте:*\n${data.project}\n` : ''}${quizResul
           </div>
         )}
         <div className={styles.form_wrapper}>
-          <input type="submit" value={'Отправить'} />
+          {secondSubmitValue ? (
+            <div className={styles.form_buttonsRow}>
+              <input type="submit" value={submitValue} />
+              <input
+                type="submit"
+                value={secondSubmitValue}
+                className={secondSubmitClassName}
+              />
+            </div>
+          ) : (
+            <input type="submit" value={submitValue} />
+          )}
         </div>
         {successMessage && (
           <div className={styles.successMessage}>

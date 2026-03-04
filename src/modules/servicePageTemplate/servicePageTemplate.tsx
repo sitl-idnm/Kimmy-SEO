@@ -18,7 +18,7 @@ const ServicePageTemplate: FC<ServicePageTemplateProps> = ({
       <Clients />
       <Case />
       <Quiz />
-      <FormSecond />
+      <FormSecond anchorId="form" />
       <StandartText
         texts={[
           'KIM Agency — это агентство, которое работает в Москве и специализируется на предоставлении digital-решений и услуг для бизнеса.',

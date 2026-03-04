@@ -262,6 +262,19 @@
     },
     {
       "@type": "WebPage",
+      "@id": "https://kim.agency/services/lidogeneraciya#webpage",
+      "url": "https://kim.agency/services/lidogeneraciya",
+      "name": "Лидогенерация",
+      "description": "Живые лиды без переплаты за клики. Найдём клиентов там, где конкуренты сливают бюджеты на контекст. Гарантируем — ваши данные не уйдут конкурентам.",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
       "@id": "https://kim.agency/services/razrabotka-chat-botov#webpage",
       "url": "https://kim.agency/services/razrabotka-chat-botov",
       "name": "Разработка чат-ботов",

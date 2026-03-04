@@ -24,7 +24,7 @@ const FaqComponent: FC<FaqProps> = ({
       <div className={styles.container}>
         <h2 className={styles.title}>{title}</h2>
         <div className={styles.faqList}>
-          {faqData.map((item: { title: string; content: string }, index: number) => (
+          {faqData.map((item, index: number) => (
             <div
               key={index}
               className={classNames(styles.faqItem, {
@@ -42,6 +42,14 @@ const FaqComponent: FC<FaqProps> = ({
               </button>
               <div className={styles.answer}>
                 {item.content}
+                {item.listItems && item.listItems.length > 0 && (
+                  <ul className={styles.answerList}>
+                    {item.listItems.map((listItem, i) => (
+                      <li key={i} className={styles.answerListItem}>{listItem}</li>
+                    ))}
+                  </ul>
+                )}
+                {item.contentAfter && <p className={styles.answerAfter}>{item.contentAfter}</p>}
               </div>
             </div>
           ))}

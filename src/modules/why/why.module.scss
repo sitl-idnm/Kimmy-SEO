@@ -110,6 +110,19 @@
   }
 }
 
+.cardsColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.actionWrap {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .advantagesList {
   display: grid;
   gap: 24px;

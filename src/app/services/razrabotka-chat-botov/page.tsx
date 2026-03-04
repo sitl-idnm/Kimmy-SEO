@@ -35,10 +35,11 @@ const FaqData = [
 
 export async function generateMetadata(): Promise<Metadata> {
   const serviceData = getServiceData('razrabotka-chat-botov')
-
   return {
-    title: 'Разработка чат-ботов для бизнеса — K.KIM',
-    description: 'Создание чат-ботов для Telegram, WhatsApp, VK. Автоматизация продаж и поддержки. От 10 000 ₽. Закажите разработку бота у K.KIM.',
+    title: serviceData ? `${serviceData.title} — Telegram, WhatsApp, VK | K.KIM` : 'Разработка чат-ботов | K.KIM',
+    description: serviceData?.description
+      ? `${serviceData.description}. От ${serviceData.price}. Закажите разработку бота у K.KIM.`
+      : 'Создание чат-ботов для Telegram, WhatsApp, VK. Автоматизация продаж и поддержки. Закажите консультацию.',
     keywords: ['чат-бот', 'телеграм бот', 'whatsapp бот', 'автоматизация', 'разработка ботов'].filter(Boolean)
   }
 }

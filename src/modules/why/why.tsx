@@ -43,7 +43,8 @@ const WhyComponent: FC<WhyProps> = ({
 	cardsPerRow = 2,
 	title = 'Почему мы?',
 	showTitle = true,
-	titleTextAlign = 'left'
+	titleTextAlign = 'left',
+	action
 }) => {
 	const rootClassName = classNames(styles.root, className, {
 		[styles['root--counter']]: counter
@@ -75,18 +76,21 @@ const WhyComponent: FC<WhyProps> = ({
 							<h2 className={titleClassName}>{title}</h2>
 						</div>
 					)}
-					<div className={advantagesListClassName}>
-						{itemsData.map((item, index) => (
+					<div className={styles.cardsColumn}>
+						<div className={advantagesListClassName}>
+							{itemsData.map((item, index) => (
 
-							<div key={index} className={styles.advantageItem}>
-								<div className={styles.iconWrapper}>
-									{item.icon}
+								<div key={index} className={styles.advantageItem}>
+									<div className={styles.iconWrapper}>
+										{item.icon}
+									</div>
+									<h3 className={styles.advantageTitle}>{item.title}</h3>
+									{item.description && (
+										<p className={styles.advantageDescription}>{item.description}</p>)}
 								</div>
-								<h3 className={styles.advantageTitle}>{item.title}</h3>
-								{item.description && (
-									<p className={styles.advantageDescription}>{item.description}</p>)}
-							</div>
-						))}
+							))}
+						</div>
+						{action != null && <div className={styles.actionWrap}>{action}</div>}
 					</div>
 				</div>
 			</div>

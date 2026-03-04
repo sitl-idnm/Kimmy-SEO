@@ -17,10 +17,11 @@ import { Wrapper } from '@/ui/wrapper'
 
 export async function generateMetadata(): Promise<Metadata> {
   const serviceData = getServiceData('web-design')
-
   return {
-    title: 'Веб-дизайн сайтов — UI/UX и редизайн | K.KIM',
-    description: 'Создание современного дизайна сайтов: UI/UX, прототипирование, адаптивность. Редизайн от 80 000 ₽. Закажите оформление веб-ресурса у K.KIM.',
+    title: serviceData ? `${serviceData.title} — UI/UX и редизайн | K.KIM` : 'Веб-дизайн | K.KIM',
+    description: serviceData?.description
+      ? `${serviceData.description}. От ${serviceData.price}. Закажите оформление веб-ресурса у K.KIM.`
+      : 'Создание современного дизайна сайтов: UI/UX, прототипирование, адаптивность. Закажите консультацию.',
     keywords: ['веб-дизайн', 'ui ux', 'редизайн', 'дизайн сайта', 'адаптивный дизайн'].filter(Boolean)
   }
 }

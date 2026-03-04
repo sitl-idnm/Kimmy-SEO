@@ -21,4 +21,6 @@ export interface WhyProps {
   title?: string
   showTitle?: boolean
   titleTextAlign?: 'left' | 'center' | 'right'
+  /** Опциональный блок под карточками (например кнопка), только на нужных страницах */
+  action?: ReactNode
 }

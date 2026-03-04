@@ -12,4 +12,7 @@ export interface FavourItemProps {
   justifyContent?: 'flex-start' | 'center' | 'flex-end'
   alignItems?: 'flex-start' | 'center' | 'flex-end'
   flexDirection?: 'row' | 'column'
+  /** Сноска внутри карточки (другой фон). Опционально. */
+  footer?: string[]
+  footerTitle?: string
 }

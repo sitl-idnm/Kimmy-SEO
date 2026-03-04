@@ -38,7 +38,9 @@ const NewModalContainer: FC = () => {
       {modalContent === 'дизайн' && <DesignModal />}
       {modalContent === 'разработка' && <DevelopModal />}
       {modalContent === 'поддержка' && <SupportModal />}
-      {modalContent === 'детали' && <DetailsModal />}
+      {(modalContent === 'детали' || modalContent === 'детали-лидогенерация') && (
+        <DetailsModal variant={modalContent === 'детали-лидогенерация' ? 'lidogeneraciya' : undefined} />
+      )}
       {modalContent === 'стоимость' && <CountModal />}
       {/* Сверху старые модалки */}
       {modalContent === 'Начать' && <StartModal />}

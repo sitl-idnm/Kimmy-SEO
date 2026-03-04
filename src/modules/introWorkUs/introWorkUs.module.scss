@@ -113,6 +113,13 @@
 			}
 		}
 
+		&__buttons {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 12px;
+			justify-content: center;
+		}
+
 		&__image {
 			position: relative;
 			z-index: 10;
