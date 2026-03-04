@@ -45,11 +45,13 @@
 
 			@include tablet-small {
 				h2 {
-					font-size: 32px;
+					font-size: 22px;
+					line-height: 1.25;
+					padding: 0 4px;
 				}
 
 				p {
-					font-size: 14px;
+					font-size: 12px;
 					text-align: left;
 				}
 			}
@@ -98,35 +100,39 @@
 			gap: 28px;
 			align-items: center;
 
-			min-width: 745px;
+			min-width: 0;
 			width: 100%;
-			padding: 50px 0 373px;
+			padding: 40px 24px 340px;
+			box-sizing: border-box;
 		}
 
 		&__circle {
 			align-self: center;
 			position: relative;
+			max-width: 100%;
 		}
 
 		.image {
-			width: 500px;
-			height: 500px;
-			top: 700px;
+			width: 420px;
+			height: 420px;
+			top: 420px;
+			left: 50%;
 			right: auto;
+			transform: translateX(-50%);
 			z-index: 10;
 		}
 	}
 
 	@include tablet-small {
-
-
 		border-radius: 20px 20px 0 0;
 
 		.image {
-			width: 312px;
-			height: 312px;
-
-			top: 750px;
+			width: 280px;
+			height: 280px;
+			top: 380px;
+			left: 50%;
+			right: auto;
+			transform: translateX(-50%);
 		}
 
 		& {
@@ -134,20 +140,23 @@
 			gap: 28px;
 			align-items: center;
 
-			padding: 28px 12px 361px;
-			min-width: 336px;
+			padding: 24px 20px 320px;
+			min-width: 0;
 			width: 100%;
 			margin: 0 12px;
+			box-sizing: border-box;
 		}
 
 		&__circle {
 			align-self: center;
 			right: auto;
+			max-width: 100%;
+			padding: 0 4px;
 		}
 
 		&__circle,
 		&__text {
-			max-width: 312px;
+			max-width: 100%;
 		}
 	}
 
@@ -183,6 +192,10 @@
 					label {
 						color: black;
 						font-size: 12px;
+
+						@include tablet-small {
+							font-size: 10px;
+						}
 					}
 				}
 			}

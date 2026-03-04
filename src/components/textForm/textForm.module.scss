@@ -17,15 +17,13 @@
 		margin-bottom: 8px;
 
 		@include tablet-small {
-			font-size: 38px;
+			font-size: 22px;
+			line-height: 1.25;
+			margin-bottom: 6px;
 		}
 
 		@include mobile-large {
-			font-size: 28px;
-		}
-
-		@include tablet-small {
-			margin-bottom: 8px;
+			font-size: 20px;
 		}
 	}
 
@@ -33,7 +31,7 @@
 		@include text;
 
 		@include tablet-small {
-			font-size: 14px;
+			font-size: 11px;
 		}
 	}
 
@@ -55,7 +53,7 @@
 		line-height: 1.4;
 
 		@include tablet-small {
-			font-size: 14px;
+			font-size: 11px;
 			padding: 8px 12px;
 		}
 	}
@@ -65,5 +63,9 @@
 		@include text;
 		font-size: 15px;
 		opacity: 0.95;
+
+		@include tablet-small {
+			font-size: 11px;
+		}
 	}
 }

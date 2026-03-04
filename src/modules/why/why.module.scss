@@ -33,7 +33,7 @@
   }
 
   @include tablet-small {
-    padding: 0 8px 32px;
+    padding: 0 16px 32px;
   }
 }
 
@@ -106,7 +106,8 @@
   }
 
   @include tablet-small {
-    font-size: 28px;
+    font-size: 20px;
+    padding: 0 4px;
   }
 }
 
@@ -210,6 +211,10 @@
   @include tablet {
     font-size: 20px;
   }
+
+  @include tablet-small {
+    font-size: 14px;
+  }
 }
 
 .advantageDescription {
@@ -219,6 +224,10 @@
   line-height: 150%;
   margin: 0;
   color: #161818;
+
+  @include tablet-small {
+    font-size: 12px;
+  }
 }
 
 .root--counter {

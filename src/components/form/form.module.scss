@@ -44,6 +44,10 @@
 			@include mobile-large {
 				font-size: 12px;
 			}
+
+			@include tablet-small {
+				font-size: 10px;
+			}
 		}
 	}
 
@@ -78,13 +82,15 @@
 		transition: 3s;
 
 		@include mobile-large {
-			input {
-				height: 55px;
+			height: 55px;
+			padding: 15.5px 20px;
+			font-size: 14px;
+		}
 
-				padding: 15.5px 20px;
-
-				font-size: 14px;
-			}
+		@include tablet-small {
+			height: 48px;
+			padding: 10px 16px;
+			font-size: 12px;
 		}
 
 		&[type='checkbox'] {
@@ -161,6 +167,10 @@
 			@include mobile-large {
 				font-size: 10px;
 			}
+
+			@include tablet-small {
+				font-size: 9px;
+			}
 		}
 	}
 
@@ -194,6 +204,16 @@
 			@include mobile-large {
 				font-size: 10px;
 			}
+
+			@include tablet-small {
+				font-size: 9px;
+			}
+		}
+
+		@include tablet-small {
+			font-size: 12px;
+			padding: 12px 16px;
+			height: 100px;
 		}
 	}
 
