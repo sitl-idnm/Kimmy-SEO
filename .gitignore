@@ -45,3 +45,6 @@ next-env.d.ts
 .idea/
 
 .agents
+
+public/sitemap.xml
+src/shared/generated/sitemap-image-counts.json
