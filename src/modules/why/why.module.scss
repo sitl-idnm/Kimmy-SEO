@@ -29,11 +29,11 @@
   }
 
   @include tablet {
-    padding: 0 12px 40px;
+    padding: 0 12px 28px;
   }
 
   @include tablet-small {
-    padding: 0 16px 32px;
+    padding: 0 16px 18px;
   }
 }
 
@@ -46,6 +46,10 @@
   @include tablet {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+
+  @include tablet-small {
+    gap: 18px;
   }
 }
 
@@ -122,6 +126,10 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+
+  @include tablet-small {
+    margin-top: 10px;
+  }
 }
 
 .advantagesList {
@@ -148,7 +156,7 @@
   @include tablet-small {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 10px;
   }
 }
 
@@ -173,7 +181,9 @@
   }
 
   @include tablet-small {
-    width: calc((100% - 24px) / 2);
+    width: calc((100% - 10px) / 2);
+    padding: 16px 14px;
+    gap: 10px;
   }
 }
 

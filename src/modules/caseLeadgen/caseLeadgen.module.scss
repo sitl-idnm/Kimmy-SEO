@@ -8,7 +8,7 @@
   padding: 0 12px;
 
   @include tablet-small {
-    margin-bottom: 48px;
+    margin-bottom: 28px;
     padding: 0 8px;
   }
 }
@@ -17,7 +17,7 @@
   margin-bottom: 32px;
 
   @include tablet-small {
-    margin-bottom: 24px;
+    margin-bottom: 14px;
   }
 }
 
@@ -36,8 +36,8 @@
   }
 
   @include tablet-small {
-    font-size: 28px;
-    margin-bottom: 8px;
+    font-size: 22px;
+    margin-bottom: 6px;
     max-width: 100%;
   }
 }
@@ -51,7 +51,7 @@
   margin: 0 0 16px;
 
   @include tablet-small {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
@@ -76,7 +76,7 @@
 
   @include tablet-small {
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
   }
 }
 
@@ -179,6 +179,11 @@
   color: #999;
   font-family: var(--font-inter);
   font-size: 14px;
+
+  @include tablet-small {
+    height: 140px;
+    font-size: 12px;
+  }
 }
 
 .cardImage {
@@ -192,13 +197,17 @@
     height: 100%;
     object-fit: cover;
   }
+
+  @include tablet-small {
+    height: 140px;
+  }
 }
 
 .cardBody {
   padding: 24px;
 
   @include tablet-small {
-    padding: 18px;
+    padding: 12px 14px;
   }
 }
 
@@ -215,8 +224,8 @@
   gap: 10px;
 
   @include tablet-small {
-    font-size: 18px;
-    margin-bottom: 16px;
+    font-size: 15px;
+    margin-bottom: 10px;
   }
 }
 
@@ -239,6 +248,10 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
+
+  @include tablet-small {
+    gap: 8px;
+  }
 }
 
 /* Плашки: красный фон, белый текст */
@@ -253,6 +266,12 @@
   padding: 12px 24px;
   border-radius: 8px;
   margin: 0 0 8px;
+
+  @include tablet-small {
+    font-size: 12px;
+    padding: 8px 16px;
+    margin-bottom: 4px;
+  }
 }
 
 .cardDesc {
@@ -262,10 +281,18 @@
   line-height: 1.5;
   color: #373737;
   margin: 0;
+
+  @include tablet-small {
+    font-size: 12px;
+  }
 }
 
 .actions {
   text-align: center;
+
+  @include tablet-small {
+    margin-top: 4px;
+  }
 }
 
 .ctaButton {
@@ -286,7 +313,7 @@
   }
 
   @include tablet-small {
-    font-size: 16px;
-    padding: 14px 32px;
+    font-size: 14px;
+    padding: 12px 24px;
   }
 }

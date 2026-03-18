@@ -1,6 +1,11 @@
+import type { ReactNode } from 'react'
+
 export interface FavourItemProps {
   className?: string
-  title: string
+  /** Заголовок карточки (строка или JSX, например с <br />) */
+  title: ReactNode
+  /** Имя модалки для открытия по клику (если не задано и title — строка, используется title) */
+  modalName?: string
   text?: string
   linkText: string
   linkColor: string

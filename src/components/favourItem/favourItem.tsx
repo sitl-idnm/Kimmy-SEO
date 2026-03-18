@@ -10,6 +10,7 @@ import classNames from 'classnames'
 
 const FavourItem: FC<FavourItemProps> = ({
   title,
+  modalName,
   linkText,
   linkColor,
   backgroundColor,
@@ -26,8 +27,10 @@ const FavourItem: FC<FavourItemProps> = ({
 }) => {
   const setModalContent = useSetAtom(openModalContent)
 
-  const handleOpenModal = (name: string) => {
-    setModalContent(name)
+  const modalKey = modalName ?? (typeof title === 'string' ? title : '')
+
+  const handleOpenModal = () => {
+    if (modalKey) setModalContent(modalKey)
   }
 
   const contentStyle = {
@@ -41,7 +44,7 @@ const FavourItem: FC<FavourItemProps> = ({
     <li
       className={styles.favour__item}
       style={{ backgroundColor: contentStyle.backgroundColor, justifyContent: contentStyle.justifyContent, alignItems: contentStyle.alignItems, flexDirection: contentStyle.flexDirection }}
-      onClick={() => handleOpenModal(title)}
+      onClick={handleOpenModal}
     >
       <div>
         <h2
@@ -85,7 +88,7 @@ const FavourItem: FC<FavourItemProps> = ({
         width={280}
         height={280}
         quality={100}
-        alt={title}
+        alt={typeof title === 'string' ? title : ''}
         className={styles.favour__image} />}
       <button className={styles.favour__description} style={{ color: linkColor }}>
         {linkText}

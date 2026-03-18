@@ -12,7 +12,7 @@
   }
 
   @include tablet-small {
-    padding: 32px 8px;
+    padding: 20px 8px;
   }
 }
 
@@ -35,6 +35,11 @@
   @include tablet {
     font-size: 32px;
     margin-bottom: 24px;
+  }
+
+  @include tablet-small {
+    font-size: 22px;
+    margin-bottom: 14px;
   }
 }
 
