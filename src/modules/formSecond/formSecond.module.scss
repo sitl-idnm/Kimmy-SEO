@@ -13,6 +13,7 @@
 
 	max-width: 1440px;
 	width: 100%;
+	box-sizing: border-box;
 
 	margin: 0 auto 160px;
 	padding: 80px 105px 108px;
@@ -143,7 +144,7 @@
 			padding: 20px 16px 260px;
 			min-width: 0;
 			width: 100%;
-			margin: 0 12px 32px;
+			margin: 0 auto 32px;
 			box-sizing: border-box;
 		}
 

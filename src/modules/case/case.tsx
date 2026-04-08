@@ -3,6 +3,8 @@
 import { FC, useRef } from 'react'
 import classNames from 'classnames'
 import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { usePathname } from 'next/navigation'
 import Arrow from '@icons/cases__arrow.svg'
 
 import styles from './case.module.scss'
@@ -10,6 +12,8 @@ import { CaseProps } from './case.types'
 import { CaseItem } from '@/components'
 import { useGSAP } from '@gsap/react'
 import Link from 'next/link'
+
+gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 const itemsData = [
   { title: 'Магия вкуса', text: 'Интернет-магазин для пекарни полного цикла', imageSrc: '/images/tablet__magic.png', link: '/cases/magiya-vkusa' },
@@ -21,24 +25,57 @@ const Case: FC<CaseProps> = ({
   className
 }) => {
   const rootClassName = classNames(styles.root, className)
+  const pathname = usePathname()
   const casesRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
 
   useGSAP(() => {
-    if (window.innerWidth > 1200) {
-      gsap.to(casesRef.current, {
-        x: () => -(casesRef.current!.scrollWidth - casesRef.current!.clientWidth),
-        ease: 'none',
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top top',
-          end: () => `+=${casesRef.current!.scrollWidth}`,
-          scrub: 1,
-          pin: containerRef.current,
-        },
-      })
+    const container = containerRef.current
+    const cases = casesRef.current
+
+    if (!container || !cases) {
+      return
     }
-  }, [])
+
+    const mm = gsap.matchMedia()
+
+    mm.add('(min-width: 1201px)', () => {
+      const getScrollDistance = () => Math.max(0, cases.scrollWidth - container.clientWidth)
+
+      if (getScrollDistance() <= 0) {
+        gsap.set(cases, { x: 0 })
+        return
+      }
+
+      const tween = gsap.to(cases, {
+        x: () => -getScrollDistance(),
+        ease: 'none',
+        overwrite: 'auto',
+        scrollTrigger: {
+          trigger: container,
+          start: 'top top',
+          end: () => `+=${getScrollDistance()}`,
+          scrub: 1,
+          pin: container,
+          invalidateOnRefresh: true,
+          anticipatePin: 1
+        }
+      })
+
+      ScrollTrigger.refresh()
+
+      return () => {
+        tween.scrollTrigger?.kill()
+        tween.kill()
+        gsap.set(cases, { x: 0 })
+      }
+    })
+
+    return () => {
+      mm.revert()
+      gsap.set(cases, { clearProps: 'transform' })
+    }
+  }, { scope: containerRef, dependencies: [pathname] })
 
   return (
     <div className={rootClassName} ref={containerRef}>

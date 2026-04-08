@@ -1,5 +1,20 @@
 @use "@styles/func";
-@use "@styles/mixins";
+@use "@styles/mixins" as *;
 @use "@styles/variables";
   
-.root {}
+.root {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto 80px;
+  padding: 0 64px;
+
+  @include tablet {
+    padding: 0 12px;
+    margin-bottom: 56px;
+  }
+
+  @include tablet-small {
+    padding: 0 8px;
+    margin-bottom: 40px;
+  }
+}

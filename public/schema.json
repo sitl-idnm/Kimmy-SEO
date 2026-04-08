@@ -42,6 +42,18 @@
     },
     {
       "@type": "WebPage",
+      "@id": "https://kim.agency/blog#webpage",
+      "url": "https://kim.agency/blog",
+      "name": "Blog",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
       "@id": "https://kim.agency/blogpage#webpage",
       "url": "https://kim.agency/blogpage",
       "name": "Blogpage",
@@ -66,49 +78,10 @@
     },
     {
       "@type": "WebPage",
-      "@id": "https://kim.agency/blogs/first-post#webpage",
-      "url": "https://kim.agency/blogs/first-post",
-      "name": "Идеальный одностраничный сайт – какой он?",
-      "description": "Описание первого поста",
-      "isPartOf": {
-        "@id": "https://kim.agency/#website"
-      },
-      "about": {
-        "@id": "https://kim.agency/#organization"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://kim.agency/blogs/fourth-post#webpage",
-      "url": "https://kim.agency/blogs/fourth-post",
-      "name": "Четвертый пост",
-      "description": "Описание четвертого поста",
-      "isPartOf": {
-        "@id": "https://kim.agency/#website"
-      },
-      "about": {
-        "@id": "https://kim.agency/#organization"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://kim.agency/blogs/second-post#webpage",
-      "url": "https://kim.agency/blogs/second-post",
-      "name": "Агентство, студия или фрилансеры – у кого лучше заказать разработку сайта",
-      "description": "Описание второго поста",
-      "isPartOf": {
-        "@id": "https://kim.agency/#website"
-      },
-      "about": {
-        "@id": "https://kim.agency/#organization"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://kim.agency/blogs/third-post#webpage",
-      "url": "https://kim.agency/blogs/third-post",
-      "name": "Из чего складывается стоимость разработки веб-ресурса",
-      "description": "Описание третьего поста",
+      "@id": "https://kim.agency/blogs/seo-i-kontekstnaya-reklama#webpage",
+      "url": "https://kim.agency/blogs/seo-i-kontekstnaya-reklama",
+      "name": "SEO и контекстная реклама, что лучше для продвижения - маркетинговое агентство K KIM",
+      "description": "✅ SEO и контекстная реклама — что лучше для продвижения сайта и привлечения клиентов? Продвижение агентством: аудит, оптимизация сайта, Яндекс Директ, стратегии, сроки, бюджет, стоимость, заявки и продажи. Digital-агентство К КИМ. Оказываем техподдержку, ведение, сопровождение и развитие интернет ресурса.",
       "isPartOf": {
         "@id": "https://kim.agency/#website"
       },
@@ -226,6 +199,18 @@
     },
     {
       "@type": "WebPage",
+      "@id": "https://kim.agency/lidogeneraciya#webpage",
+      "url": "https://kim.agency/lidogeneraciya",
+      "name": "Lidogeneraciya",
+      "isPartOf": {
+        "@id": "https://kim.agency/#website"
+      },
+      "about": {
+        "@id": "https://kim.agency/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
       "@id": "https://kim.agency/privacy-policy#webpage",
       "url": "https://kim.agency/privacy-policy",
       "name": "Privacy Policy",
@@ -278,7 +263,7 @@
       "@id": "https://kim.agency/services/razrabotka-chat-botov#webpage",
       "url": "https://kim.agency/services/razrabotka-chat-botov",
       "name": "Разработка чат-ботов",
-      "description": "Комплексное продвижение вашего сайта в поисковых системах",
+      "description": "Разрабатываем чат-ботов под задачи бизнеса: автоматизируем обращения, поддерживаем клиентов и помогаем увеличивать заявки через сайт и мессенджеры.",
       "isPartOf": {
         "@id": "https://kim.agency/#website"
       },
@@ -364,61 +349,13 @@
     },
     {
       "@type": "BlogPosting",
-      "@id": "https://kim.agency/blogs/first-post#blogposting",
+      "@id": "https://kim.agency/blogs/seo-i-kontekstnaya-reklama#blogposting",
       "mainEntityOfPage": {
-        "@id": "https://kim.agency/blogs/first-post#webpage"
+        "@id": "https://kim.agency/blogs/seo-i-kontekstnaya-reklama#webpage"
       },
-      "headline": "Идеальный одностраничный сайт – какой он?",
-      "description": "Описание первого поста",
-      "datePublished": "2023-01-01",
-      "author": {
-        "@id": "https://kim.agency/#organization"
-      },
-      "publisher": {
-        "@id": "https://kim.agency/#organization"
-      }
-    },
-    {
-      "@type": "BlogPosting",
-      "@id": "https://kim.agency/blogs/second-post#blogposting",
-      "mainEntityOfPage": {
-        "@id": "https://kim.agency/blogs/second-post#webpage"
-      },
-      "headline": "Агентство, студия или фрилансеры – у кого лучше заказать разработку сайта",
-      "description": "Описание второго поста",
-      "datePublished": "2023-01-05",
-      "author": {
-        "@id": "https://kim.agency/#organization"
-      },
-      "publisher": {
-        "@id": "https://kim.agency/#organization"
-      }
-    },
-    {
-      "@type": "BlogPosting",
-      "@id": "https://kim.agency/blogs/third-post#blogposting",
-      "mainEntityOfPage": {
-        "@id": "https://kim.agency/blogs/third-post#webpage"
-      },
-      "headline": "Из чего складывается стоимость разработки веб-ресурса",
-      "description": "Описание третьего поста",
-      "datePublished": "2023-01-06",
-      "author": {
-        "@id": "https://kim.agency/#organization"
-      },
-      "publisher": {
-        "@id": "https://kim.agency/#organization"
-      }
-    },
-    {
-      "@type": "BlogPosting",
-      "@id": "https://kim.agency/blogs/fourth-post#blogposting",
-      "mainEntityOfPage": {
-        "@id": "https://kim.agency/blogs/fourth-post#webpage"
-      },
-      "headline": "Четвертый пост",
-      "description": "Описание четвертого поста",
-      "datePublished": "2023-01-04",
+      "headline": "SEO и контекстная реклама, что лучше для продвижения - маркетинговое агентство K KIM",
+      "description": "✅ SEO и контекстная реклама — что лучше для продвижения сайта и привлечения клиентов? Продвижение агентством: аудит, оптимизация сайта, Яндекс Директ, стратегии, сроки, бюджет, стоимость, заявки и продажи. Digital-агентство К КИМ. Оказываем техподдержку, ведение, сопровождение и развитие интернет ресурса.",
+      "datePublished": "2026-03-18",
       "author": {
         "@id": "https://kim.agency/#organization"
       },

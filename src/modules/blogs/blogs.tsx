@@ -12,14 +12,15 @@ const Blogs: FC<BlogsProps> = ({
 
   const { blogs } = blogsData as BlogsData
 
-  const blogsList = count ? blogs.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, count) : blogs
+  const blogsList = [...blogs].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  const renderedBlogs = count ? blogsList.slice(0, count) : blogsList
 
   return (
     <div className={styles.blogList}>
-      {blogsList.map((blog: BlogData) => (
+      {renderedBlogs.map((blog: BlogData) => (
         <div key={blog.id} className={styles.blogItem}>
           <Link
-            href={`/blogs/${blog.slug}`}
+            href={`/blog/${blog.slug}`}
             className={styles.blogLink}
           >
             <h2 className={styles.blogTitle}>{blog.title}</h2>
@@ -27,7 +28,10 @@ const Blogs: FC<BlogsProps> = ({
               !count && <p className={styles.blogDescription}>{blog.description}</p>
             }
             {blog.author && <p className={styles.blogAuthor}>Автор: {blog.author}</p>}
-            <p className={styles.blogDate}>{blog.date}</p>
+            <div className={styles.blogFooter}>
+              <p className={styles.blogDate}>{blog.date}</p>
+              <span className={styles.blogMore}>Подробнее</span>
+            </div>
           </Link>
         </div>
       ))}

@@ -1,5 +1,4 @@
 import { getServiceData } from '@/shared/dataServices'
-import { LidogeneraciyaPageProps } from './page.types'
 import type { Metadata } from 'next'
 import { LidogeneraciyaPageView } from '@/views/lidogeneraciyaPage'
 
@@ -14,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export default function LidogeneraciyaPage(_props: LidogeneraciyaPageProps) {
+export default function LidogeneraciyaPage() {
   const serviceData = getServiceData('lidogeneraciya')
 
   if (!serviceData) {

@@ -16,12 +16,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
   }
   return {
-    title: `${post.title} | Блог K.KIM`,
+    title: post.title,
     description: post.description || `Статья: ${post.title}. Блог агентства интернет-маркетинга K.KIM.`
   }
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars -- params required by Next.js route
 export default async function BlogPostPage({ params }: Props) {
-  return <BlogPage />
+  const { blog: slug } = await params
+  return <BlogPage blogSlug={slug} />
 }
