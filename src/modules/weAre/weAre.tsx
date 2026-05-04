@@ -9,8 +9,12 @@ const WeAre: FC<WeAreProps> = ({
   className,
   title = 'Чем мы можем вам помочь?',
   showText = true,
+  compactImage = false,
 }) => {
   const rootClassName = classNames(styles.root, className)
+  const memberClassName = classNames(styles.member, {
+    [styles.member_compact]: compactImage,
+  })
 
   return (
     <div className={rootClassName}>
@@ -26,7 +30,7 @@ const WeAre: FC<WeAreProps> = ({
           )}
         </div>
         <div className={styles.team}>
-          <div className={styles.member}>
+          <div className={memberClassName}>
             <Image
               src="/images/konstantin.png"
               alt="Константин Ким"

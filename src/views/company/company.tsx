@@ -51,7 +51,7 @@ const Company: FC<CompanyProps> = ({
           buttonText="Записаться на консультацию"
           buttonPosition="center"
         />
-        <WeAre />
+        <WeAre compactImage={true} />
         <Services
           hasCost={false}
           showDescription={false}

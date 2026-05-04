@@ -37,6 +37,7 @@ const ContactsPage: FC<ContactsPageProps> = ({
       <WeAre
         title="Контакты основателей агентства"
         showText={false}
+        compactImage={true}
       />
       <StandartText
         title="Как мы работаем?"

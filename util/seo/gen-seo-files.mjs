@@ -3,9 +3,7 @@ import fs from 'fs'
 import path from 'path'
 
 function getBaseUrl() {
-  const envUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL
-  if (envUrl) return String(envUrl).replace(/\/$/, '')
-  return 'https://kim.agency'
+  return 'https://kim-agency.ru'
 }
 
 function ensureDirSync(dirPath) {
@@ -259,19 +257,15 @@ function main() {
 
   const { cases: caseCounts = {} } = readImageCounts(root)
 
-  const sitemapXml = buildSitemapXml({ baseUrl, routes: allRoutes, caseImageCounts: caseCounts })
   const schemaJson = buildSchemaJson({ baseUrl, routes: allRoutes, blogs, services, cases })
 
   const publicDir = path.join(root, 'public')
   ensureDirSync(publicDir)
 
-  const sitemapOut = path.join(publicDir, 'sitemap.xml')
   const schemaOut = path.join(publicDir, 'schema.json')
 
-  fs.writeFileSync(sitemapOut, sitemapXml)
   fs.writeFileSync(schemaOut, JSON.stringify(schemaJson, null, 2))
 
-  console.log(`[seo] Wrote ${path.relative(root, sitemapOut)} (${allRoutes.length} urls)`)
   console.log(`[seo] Wrote ${path.relative(root, schemaOut)} (@graph: ${schemaJson['@graph'].length})`)
 }
 

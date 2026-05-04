@@ -3,364 +3,364 @@
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://kim.agency/#organization",
+      "@id": "https://kim-agency.ru/#organization",
       "name": "KIM Agency",
-      "url": "https://kim.agency"
+      "url": "https://kim-agency.ru"
     },
     {
       "@type": "WebSite",
-      "@id": "https://kim.agency/#website",
-      "url": "https://kim.agency",
+      "@id": "https://kim-agency.ru/#website",
+      "url": "https://kim-agency.ru",
       "name": "KIM Agency",
       "publisher": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://kim.agency#webpage",
-      "url": "https://kim.agency",
+      "@id": "https://kim-agency.ru#webpage",
+      "url": "https://kim-agency.ru",
       "name": "Главная",
       "isPartOf": {
-        "@id": "https://kim.agency/#website"
+        "@id": "https://kim-agency.ru/#website"
       },
       "about": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://kim.agency/approve#webpage",
-      "url": "https://kim.agency/approve",
+      "@id": "https://kim-agency.ru/approve#webpage",
+      "url": "https://kim-agency.ru/approve",
       "name": "Approve",
       "isPartOf": {
-        "@id": "https://kim.agency/#website"
+        "@id": "https://kim-agency.ru/#website"
       },
       "about": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://kim.agency/blog#webpage",
-      "url": "https://kim.agency/blog",
+      "@id": "https://kim-agency.ru/blog#webpage",
+      "url": "https://kim-agency.ru/blog",
       "name": "Blog",
       "isPartOf": {
-        "@id": "https://kim.agency/#website"
+        "@id": "https://kim-agency.ru/#website"
       },
       "about": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://kim.agency/blogpage#webpage",
-      "url": "https://kim.agency/blogpage",
+      "@id": "https://kim-agency.ru/blogpage#webpage",
+      "url": "https://kim-agency.ru/blogpage",
       "name": "Blogpage",
       "isPartOf": {
-        "@id": "https://kim.agency/#website"
+        "@id": "https://kim-agency.ru/#website"
       },
       "about": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://kim.agency/blogs#webpage",
-      "url": "https://kim.agency/blogs",
+      "@id": "https://kim-agency.ru/blogs#webpage",
+      "url": "https://kim-agency.ru/blogs",
       "name": "Blogs",
       "isPartOf": {
-        "@id": "https://kim.agency/#website"
+        "@id": "https://kim-agency.ru/#website"
       },
       "about": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://kim.agency/blogs/seo-i-kontekstnaya-reklama#webpage",
-      "url": "https://kim.agency/blogs/seo-i-kontekstnaya-reklama",
+      "@id": "https://kim-agency.ru/blogs/seo-i-kontekstnaya-reklama#webpage",
+      "url": "https://kim-agency.ru/blogs/seo-i-kontekstnaya-reklama",
       "name": "SEO и контекстная реклама, что лучше для продвижения - маркетинговое агентство K KIM",
       "description": "✅ SEO и контекстная реклама — что лучше для продвижения сайта и привлечения клиентов? Продвижение агентством: аудит, оптимизация сайта, Яндекс Директ, стратегии, сроки, бюджет, стоимость, заявки и продажи. Digital-агентство К КИМ. Оказываем техподдержку, ведение, сопровождение и развитие интернет ресурса.",
       "isPartOf": {
-        "@id": "https://kim.agency/#website"
+        "@id": "https://kim-agency.ru/#website"
       },
       "about": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://kim.agency/cases#webpage",
-      "url": "https://kim.agency/cases",
+      "@id": "https://kim-agency.ru/cases#webpage",
+      "url": "https://kim-agency.ru/cases",
       "name": "Cases",
       "isPartOf": {
-        "@id": "https://kim.agency/#website"
+        "@id": "https://kim-agency.ru/#website"
       },
       "about": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://kim.agency/cases/best-wave#webpage",
-      "url": "https://kim.agency/cases/best-wave",
+      "@id": "https://kim-agency.ru/cases/best-wave#webpage",
+      "url": "https://kim-agency.ru/cases/best-wave",
       "name": "Кейс: Best Wave",
       "isPartOf": {
-        "@id": "https://kim.agency/#website"
+        "@id": "https://kim-agency.ru/#website"
       },
       "about": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://kim.agency/cases/clientpulse#webpage",
-      "url": "https://kim.agency/cases/clientpulse",
+      "@id": "https://kim-agency.ru/cases/clientpulse#webpage",
+      "url": "https://kim-agency.ru/cases/clientpulse",
       "name": "Кейс: Clientpulse",
       "isPartOf": {
-        "@id": "https://kim.agency/#website"
+        "@id": "https://kim-agency.ru/#website"
       },
       "about": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://kim.agency/cases/gloid#webpage",
-      "url": "https://kim.agency/cases/gloid",
+      "@id": "https://kim-agency.ru/cases/gloid#webpage",
+      "url": "https://kim-agency.ru/cases/gloid",
       "name": "Кейс: Gloid",
       "isPartOf": {
-        "@id": "https://kim.agency/#website"
+        "@id": "https://kim-agency.ru/#website"
       },
       "about": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://kim.agency/cases/magiya-vkusa#webpage",
-      "url": "https://kim.agency/cases/magiya-vkusa",
+      "@id": "https://kim-agency.ru/cases/magiya-vkusa#webpage",
+      "url": "https://kim-agency.ru/cases/magiya-vkusa",
       "name": "Кейс: Magiya Vkusa",
       "isPartOf": {
-        "@id": "https://kim.agency/#website"
+        "@id": "https://kim-agency.ru/#website"
       },
       "about": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://kim.agency/cases/rovnaya-spina#webpage",
-      "url": "https://kim.agency/cases/rovnaya-spina",
+      "@id": "https://kim-agency.ru/cases/rovnaya-spina#webpage",
+      "url": "https://kim-agency.ru/cases/rovnaya-spina",
       "name": "Кейс: Rovnaya Spina",
       "isPartOf": {
-        "@id": "https://kim.agency/#website"
+        "@id": "https://kim-agency.ru/#website"
       },
       "about": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://kim.agency/cases/sweetcorp#webpage",
-      "url": "https://kim.agency/cases/sweetcorp",
+      "@id": "https://kim-agency.ru/cases/sweetcorp#webpage",
+      "url": "https://kim-agency.ru/cases/sweetcorp",
       "name": "Кейс: Sweetcorp",
       "isPartOf": {
-        "@id": "https://kim.agency/#website"
+        "@id": "https://kim-agency.ru/#website"
       },
       "about": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://kim.agency/company#webpage",
-      "url": "https://kim.agency/company",
+      "@id": "https://kim-agency.ru/company#webpage",
+      "url": "https://kim-agency.ru/company",
       "name": "Company",
       "isPartOf": {
-        "@id": "https://kim.agency/#website"
+        "@id": "https://kim-agency.ru/#website"
       },
       "about": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://kim.agency/contacts#webpage",
-      "url": "https://kim.agency/contacts",
+      "@id": "https://kim-agency.ru/contacts#webpage",
+      "url": "https://kim-agency.ru/contacts",
       "name": "Contacts",
       "isPartOf": {
-        "@id": "https://kim.agency/#website"
+        "@id": "https://kim-agency.ru/#website"
       },
       "about": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://kim.agency/lidogeneraciya#webpage",
-      "url": "https://kim.agency/lidogeneraciya",
+      "@id": "https://kim-agency.ru/lidogeneraciya#webpage",
+      "url": "https://kim-agency.ru/lidogeneraciya",
       "name": "Lidogeneraciya",
       "isPartOf": {
-        "@id": "https://kim.agency/#website"
+        "@id": "https://kim-agency.ru/#website"
       },
       "about": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://kim.agency/privacy-policy#webpage",
-      "url": "https://kim.agency/privacy-policy",
+      "@id": "https://kim-agency.ru/privacy-policy#webpage",
+      "url": "https://kim-agency.ru/privacy-policy",
       "name": "Privacy Policy",
       "isPartOf": {
-        "@id": "https://kim.agency/#website"
+        "@id": "https://kim-agency.ru/#website"
       },
       "about": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://kim.agency/reviews#webpage",
-      "url": "https://kim.agency/reviews",
+      "@id": "https://kim-agency.ru/reviews#webpage",
+      "url": "https://kim-agency.ru/reviews",
       "name": "Reviews",
       "isPartOf": {
-        "@id": "https://kim.agency/#website"
+        "@id": "https://kim-agency.ru/#website"
       },
       "about": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://kim.agency/services#webpage",
-      "url": "https://kim.agency/services",
+      "@id": "https://kim-agency.ru/services#webpage",
+      "url": "https://kim-agency.ru/services",
       "name": "Services",
       "isPartOf": {
-        "@id": "https://kim.agency/#website"
+        "@id": "https://kim-agency.ru/#website"
       },
       "about": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://kim.agency/services/lidogeneraciya#webpage",
-      "url": "https://kim.agency/services/lidogeneraciya",
+      "@id": "https://kim-agency.ru/services/lidogeneraciya#webpage",
+      "url": "https://kim-agency.ru/services/lidogeneraciya",
       "name": "Лидогенерация",
       "description": "Живые лиды без переплаты за клики. Найдём клиентов там, где конкуренты сливают бюджеты на контекст. Гарантируем — ваши данные не уйдут конкурентам.",
       "isPartOf": {
-        "@id": "https://kim.agency/#website"
+        "@id": "https://kim-agency.ru/#website"
       },
       "about": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://kim.agency/services/razrabotka-chat-botov#webpage",
-      "url": "https://kim.agency/services/razrabotka-chat-botov",
+      "@id": "https://kim-agency.ru/services/razrabotka-chat-botov#webpage",
+      "url": "https://kim-agency.ru/services/razrabotka-chat-botov",
       "name": "Разработка чат-ботов",
       "description": "Разрабатываем чат-ботов под задачи бизнеса: автоматизируем обращения, поддерживаем клиентов и помогаем увеличивать заявки через сайт и мессенджеры.",
       "isPartOf": {
-        "@id": "https://kim.agency/#website"
+        "@id": "https://kim-agency.ru/#website"
       },
       "about": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://kim.agency/services/seo#webpage",
-      "url": "https://kim.agency/services/seo",
+      "@id": "https://kim-agency.ru/services/seo#webpage",
+      "url": "https://kim-agency.ru/services/seo",
       "name": "SEO оптимизация",
       "description": "Комплексное продвижение вашего сайта в поисковых системах",
       "isPartOf": {
-        "@id": "https://kim.agency/#website"
+        "@id": "https://kim-agency.ru/#website"
       },
       "about": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://kim.agency/services/serm#webpage",
-      "url": "https://kim.agency/services/serm",
+      "@id": "https://kim-agency.ru/services/serm#webpage",
+      "url": "https://kim-agency.ru/services/serm",
       "name": "SERM",
       "description": "Управление репутацией в поисковых системах",
       "isPartOf": {
-        "@id": "https://kim.agency/#website"
+        "@id": "https://kim-agency.ru/#website"
       },
       "about": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://kim.agency/services/smm#webpage",
-      "url": "https://kim.agency/services/smm",
+      "@id": "https://kim-agency.ru/services/smm#webpage",
+      "url": "https://kim-agency.ru/services/smm",
       "name": "SMM продвижение",
       "description": "Продвижение вашего бренда в социальных сетях",
       "isPartOf": {
-        "@id": "https://kim.agency/#website"
+        "@id": "https://kim-agency.ru/#website"
       },
       "about": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://kim.agency/services/web-design#webpage",
-      "url": "https://kim.agency/services/web-design",
+      "@id": "https://kim-agency.ru/services/web-design#webpage",
+      "url": "https://kim-agency.ru/services/web-design",
       "name": "Веб-дизайн",
       "description": "Создание современного и удобного дизайна для вашего сайта",
       "isPartOf": {
-        "@id": "https://kim.agency/#website"
+        "@id": "https://kim-agency.ru/#website"
       },
       "about": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://kim.agency/vacancies#webpage",
-      "url": "https://kim.agency/vacancies",
+      "@id": "https://kim-agency.ru/vacancies#webpage",
+      "url": "https://kim-agency.ru/vacancies",
       "name": "Vacancies",
       "isPartOf": {
-        "@id": "https://kim.agency/#website"
+        "@id": "https://kim-agency.ru/#website"
       },
       "about": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://kim.agency/work#webpage",
-      "url": "https://kim.agency/work",
+      "@id": "https://kim-agency.ru/work#webpage",
+      "url": "https://kim-agency.ru/work",
       "name": "Work",
       "isPartOf": {
-        "@id": "https://kim.agency/#website"
+        "@id": "https://kim-agency.ru/#website"
       },
       "about": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     },
     {
       "@type": "BlogPosting",
-      "@id": "https://kim.agency/blogs/seo-i-kontekstnaya-reklama#blogposting",
+      "@id": "https://kim-agency.ru/blogs/seo-i-kontekstnaya-reklama#blogposting",
       "mainEntityOfPage": {
-        "@id": "https://kim.agency/blogs/seo-i-kontekstnaya-reklama#webpage"
+        "@id": "https://kim-agency.ru/blogs/seo-i-kontekstnaya-reklama#webpage"
       },
       "headline": "SEO и контекстная реклама, что лучше для продвижения - маркетинговое агентство K KIM",
       "description": "✅ SEO и контекстная реклама — что лучше для продвижения сайта и привлечения клиентов? Продвижение агентством: аудит, оптимизация сайта, Яндекс Директ, стратегии, сроки, бюджет, стоимость, заявки и продажи. Digital-агентство К КИМ. Оказываем техподдержку, ведение, сопровождение и развитие интернет ресурса.",
       "datePublished": "2026-03-18",
       "author": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       },
       "publisher": {
-        "@id": "https://kim.agency/#organization"
+        "@id": "https://kim-agency.ru/#organization"
       }
     }
   ]

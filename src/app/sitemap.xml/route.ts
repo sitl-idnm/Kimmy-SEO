@@ -4,9 +4,7 @@ import fs from 'fs'
 export const revalidate = 86400 // regenerate once per day
 
 function getBaseUrl(): string {
-	const envUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL
-	if (envUrl) return envUrl.replace(/\/$/, '')
-	return 'https://kim.agency'
+	return 'https://kim-agency.ru'
 }
 
 function readBlogSlugs(): string[] {
