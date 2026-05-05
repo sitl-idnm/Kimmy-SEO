@@ -8,5 +8,11 @@ export const metadata: Metadata = {
 }
 
 export default function KalkulyatoryPage() {
-  return <CalculatorsPageView />
+  return (
+    <CalculatorsPageView
+      showCardKeyword={false}
+      showCardInputs={false}
+      buttonMode="link"
+    />
+  )
 }

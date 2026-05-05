@@ -42,6 +42,7 @@ const IntroWorkUs: FC<IntroWorkUsProps> = ({
 }) => {
   const rootClassName = classNames(styles.root, className)
   const titleClass = classNames(styles.box__title, titleClassName)
+  const hasText = text.trim().length > 0 || highlightedText.trim().length > 0
 
   return (
     <div className={rootClassName}>
@@ -55,10 +56,12 @@ const IntroWorkUs: FC<IntroWorkUsProps> = ({
           ]}
         />
         <h1 className={titleClass}>{title}</h1>
-        <p className={styles.box__text}>
-          {text}{' '}
-          <span className={styles.box__text__white}>{highlightedText}</span>
-        </p>
+        {hasText && (
+          <p className={styles.box__text}>
+            {text}{' '}
+            <span className={styles.box__text__white}>{highlightedText}</span>
+          </p>
+        )}
         {buttons != null ? (
           buttons
         ) : (

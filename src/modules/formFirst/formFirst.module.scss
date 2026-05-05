@@ -4,7 +4,6 @@
 
 .root {
 	display: flex;
-	overflow-x: hidden;
 }
 
 
@@ -63,8 +62,9 @@
 
 	@include tablet-small {
 		.image {
-			width: 320px;
-			height: 320px;
+			width: 224px;
+			height: auto;
+			max-width: 100%;
 		}
 
 		& {
@@ -85,6 +85,7 @@
 		&__circle {
 			align-self: center;
 			right: auto;
+			margin-top: 16px;
 		}
 	}
 

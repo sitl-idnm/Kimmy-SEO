@@ -51,6 +51,17 @@
 		}
 	}
 
+	&_wrapper_checkbox {
+		flex-direction: row;
+		align-items: center;
+
+		label {
+			display: inline-flex;
+			align-items: center;
+			margin: 0;
+		}
+	}
+
 	.placeholder {
 		position: absolute;
 		display: inline-block;

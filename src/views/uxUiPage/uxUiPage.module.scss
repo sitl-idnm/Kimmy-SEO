@@ -3,15 +3,6 @@
 .root {
   max-width: 1312px;
   margin: 0 auto;
-
-  @include tablet {
-    padding: 0 16px;
-    box-sizing: border-box;
-  }
-
-  @include tablet-small {
-    padding: 0 12px;
-  }
 }
 
 .introBlock {
@@ -23,6 +14,7 @@
 
   :global([class*='box__text']) {
     margin-bottom: 2px;
+    text-align: center;
   }
 }
 
@@ -114,6 +106,22 @@
 
 .formBlock {
   margin-top: 8px;
+
+  :global([class*='form']) {
+    @include tablet {
+      min-width: 0;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+.orderFormBlock {
+  @include tablet-small {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
 }
 
 .afterOrderFormText {
@@ -132,6 +140,64 @@
 
   :global([class*='services__description']) {
     display: none;
+  }
+}
+
+.faqBlock {
+  @include tablet-small {
+    :global([class*='root']) {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+}
+
+.finalFormBlock {
+  margin-bottom: 44px;
+
+  @include tablet-small {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+}
+
+.caseBlock {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.workIncludesCards {
+  @include tablet-small {
+    :global([class*='container']) {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+
+    :global([class*='advantageTitle']) {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+}
+
+.benefitsCards {
+  @include tablet-small {
+    :global([class*='container']) {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+
+    :global([class*='titleWrapper']) {
+      justify-content: flex-start;
+    }
+
+    :global([class*='title']) {
+      text-align: left;
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 }
 
@@ -197,13 +263,45 @@
   }
 
   .alsoServicesWrap {
-    margin: 10px 0 24px;
+    margin: 10px 8px 24px;
+
+    :global([class*='container']) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    :global([class*='root']) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    :global([class*='service']) {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    :global([class*='service__content__description']) {
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
   }
 
   .pricing,
   .tech {
-    padding: 18px 12px;
+    padding: 18px 0;
     border-radius: 18px;
+  }
+
+  .pricing {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+  .tech {
+    margin-left: 8px;
+    margin-right: 8px;
   }
 
   .pricingBadgeValue {

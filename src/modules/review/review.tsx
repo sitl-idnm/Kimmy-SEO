@@ -63,11 +63,16 @@ const Review: FC<ReviewProps> = ({
     if (!scrollContainerRef.current) return
 
     const container = scrollContainerRef.current
-    const scrollAmount = 556 // Ширина карточки + отступ
-    const currentScroll = container.scrollLeft
-    const newScroll = direction === 'left'
-      ? currentScroll - scrollAmount
-      : currentScroll + scrollAmount
+    const firstCard = container.firstElementChild as HTMLElement | null
+    if (!firstCard) return
+
+    const gap = Number.parseFloat(window.getComputedStyle(container).columnGap || window.getComputedStyle(container).gap || '0')
+    const cardStep = firstCard.getBoundingClientRect().width + gap
+    const currentIndex = Math.round(container.scrollLeft / cardStep)
+    const nextIndex = direction === 'left'
+      ? Math.max(0, currentIndex - 1)
+      : currentIndex + 1
+    const newScroll = nextIndex * cardStep
 
     container.scrollTo({
       left: newScroll,

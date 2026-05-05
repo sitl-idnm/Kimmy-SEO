@@ -135,6 +135,7 @@ export const UxUiPageView: FC = () => {
         />
 
         <Why
+          className={styles.workIncludesCards}
           direction="column"
           titleJustify="start"
           titleAlign="start"
@@ -152,6 +153,13 @@ export const UxUiPageView: FC = () => {
 
         <StandartText
           marginBottom
+          texts={[
+            'Такой подход помогает не заказывать переделку после запуска и заранее видеть слабые места.'
+          ]}
+        />
+
+        <StandartText
+          marginBottom
           title="Как идет разработка"
           texts={[
             normalizeText('Сначала фиксируем цели бизнеса и\\u00A0метрики, затем собираем структуру, прототип, визуальный стиль и\\u00A0правила для команды. В\\u00A0проекте участвуют дизайнер, стратег и\\u00A0специалисты по\\u00A0digital-аналитике, поэтому решения опираются на\\u00A0опыт реальных запусков. Мы не\\u00A0рисуем UI ради красоты и\\u00A0не собираем UX из\\u00A0догадок: нам важно, чтобы интерфейс был понятным, масштабируемым и\\u00A0удобным в\\u00A0работе дальше.')
@@ -159,6 +167,7 @@ export const UxUiPageView: FC = () => {
         />
 
         <Why
+          className={styles.benefitsCards}
           direction="row"
           titleJustify="center"
           titleAlign="center"
@@ -219,7 +228,7 @@ export const UxUiPageView: FC = () => {
 
         <div id="order-form">
           <FormFirst
-            className={styles.formBlock}
+            className={classNames(styles.formBlock, styles.orderFormBlock)}
             title="Заказать UX/UI дизайн"
             paragraph=""
             submitValue="Отправить заявку"
@@ -237,7 +246,9 @@ export const UxUiPageView: FC = () => {
           ]}
         />
 
-        <Case />
+        <section className={styles.caseBlock}>
+          <Case />
+        </section>
 
         <Clients title="Нам доверяют" />
 
@@ -275,10 +286,10 @@ export const UxUiPageView: FC = () => {
           />
         </section>
 
-        <Faq faqData={faqData} title="FAQ" />
+        <Faq className={styles.faqBlock} faqData={faqData} title="FAQ" />
 
         <FormFirst
-          className={styles.formBlock}
+          className={classNames(styles.formBlock, styles.finalFormBlock)}
           title="Обсудить проект"
           paragraph={normalizeText('Если нужен интерфейс, который продает, объясняет и\\u00A0удерживает внимание, оставьте заявку. Мы разберем задачу и\\u00A0покажем, как превратить идею в\\u00A0понятный цифровой продукт.')}
           submitValue="Обсудить проект"

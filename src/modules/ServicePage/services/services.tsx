@@ -103,7 +103,7 @@ const Services: FC<ServicesProps> = ({
         key={service.slug}
         href={`/services/${service.slug}`}
         className={serviceClassName}
-        style={!hasCost ? { height: '273px' } : {}}
+        style={!hasCost && !showSubtitle ? { height: '273px' } : {}}
       >
         <div className={styles.service__content}>
           <h3 className={styles.service__content__title}>{service.title}</h3>

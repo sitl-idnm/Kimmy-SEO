@@ -150,10 +150,29 @@ const calcConfigs: CalculatorConfig[] = [
 
 const normalizeText = (value: string) => value.replaceAll('\\u00A0', '\u00A0')
 
-export const CalculatorsPageView: FC = () => {
+type CalculatorsPageViewProps = {
+  showCardKeyword?: boolean
+  showCardInputs?: boolean
+  buttonMode?: 'calculate' | 'link'
+  singleCalculatorId?: string
+  showExtraSections?: boolean
+}
+
+export const getCalculatorConfigById = (id: string) => calcConfigs.find((c) => c.id === id)
+
+export const CalculatorsPageView: FC<CalculatorsPageViewProps> = ({
+  showCardKeyword = true,
+  showCardInputs = true,
+  buttonMode = 'calculate',
+  singleCalculatorId,
+  showExtraSections = true
+}) => {
   const rootClassName = classNames(styles.root)
   const [inputs, setInputs] = useState<Record<string, Record<string, string>>>({})
   const [toasts, setToasts] = useState<Record<string, { type: 'success' | 'error'; text: string } | undefined>>({})
+  const cardsToRender = singleCalculatorId
+    ? calcConfigs.filter((config) => config.id === singleCalculatorId)
+    : calcConfigs
 
   const handleInputChange = (calcId: string, fieldKey: string, value: string) => {
     setInputs((prev) => ({
@@ -218,47 +237,53 @@ export const CalculatorsPageView: FC = () => {
         className={styles.introBlock}
         titleClassName={styles.introTitleSmall}
         title="Калькуляторы маркетингового агентства K.KIM"
-        text={normalizeText('Калькуляторы помогают быстро проверить ключевые метрики рекламных кампаний: конверсию, окупаемость, стоимость действия и\\u00A0прибыльность каналов.')}
+        text=""
         highlightedText=""
-        buttons={(
-          <div className={styles.introButtonsWrap}>
-            <Button
-              tag="a"
-              href="#calculators-grid"
-              maxWidth="320px"
-              className={styles.introHeroButton}
-            >
-              Калькулятор конверсии сайта
-            </Button>
-          </div>
-        )}
+        buttons={<></>}
       />
 
       <section id="calculators-grid" className={styles.calculatorsSection}>
         <div className={styles.calculatorsGrid}>
-          {calcConfigs.map((config) => (
-            <article key={config.id} className={classNames(styles.card, styles[`card_${config.tone}`])}>
+          {cardsToRender.map((config) => (
+            <article
+              key={config.id}
+              className={classNames(
+                styles.card,
+                styles[`card_${config.tone}`],
+                !showCardInputs && styles.card_compact
+              )}
+            >
               <h2 className={styles.cardTitle}>{normalizeText(config.title)}</h2>
-              <p className={styles.cardKeyword}>{normalizeText(config.keyword)}</p>
+              {showCardKeyword && <p className={styles.cardKeyword}>{normalizeText(config.keyword)}</p>}
               <p className={styles.cardFormula}><strong>Формула:</strong> {normalizeText(config.formula)}</p>
               <p className={styles.cardDescription}>{normalizeText(config.description)}</p>
 
-              <div className={styles.fieldsWrap}>
-                {config.fields.map((field) => (
-                  <label key={field.key} className={styles.field}>
-                    <span>{normalizeText(field.label)}</span>
-                    <input
-                      type="number"
-                      step="any"
-                      value={inputs[config.id]?.[field.key] || ''}
-                      onChange={(e) => handleInputChange(config.id, field.key, e.target.value)}
-                    />
-                  </label>
-                ))}
-              </div>
+              {showCardInputs && (
+                <div className={styles.fieldsWrap}>
+                  {config.fields.map((field) => (
+                    <label key={field.key} className={styles.field}>
+                      <span>{normalizeText(field.label)}</span>
+                      <input
+                        type="number"
+                        step="any"
+                        value={inputs[config.id]?.[field.key] || ''}
+                        onChange={(e) => handleInputChange(config.id, field.key, e.target.value)}
+                      />
+                    </label>
+                  ))}
+                </div>
+              )}
 
               <div className={styles.actionSlot}>
-                {!toasts[config.id] ? (
+                {buttonMode === 'link' ? (
+                  <Button
+                    tag="a"
+                    href={`/kalkulyatory/${config.id}`}
+                    className={styles.calcButton}
+                  >
+                    Рассчитать
+                  </Button>
+                ) : !toasts[config.id] ? (
                   <Button
                     tag="button"
                     className={styles.calcButton}
@@ -290,44 +315,48 @@ export const CalculatorsPageView: FC = () => {
         </div>
       </section>
 
-      <section className={styles.popularArticles}>
-        <h2 className={styles.sectionTitle}>Популярные статьи</h2>
-        <p className={styles.sectionLead}>
-          {normalizeText('Актуальные и\\u00A0информативные статьи, которые помогут вам разобраться в\\u00A0тонкостях современного маркетинга.')}
-        </p>
-        <div className={styles.blogsWrap}>
-          <Blogs count={3} />
-        </div>
-      </section>
+      {showExtraSections && (
+        <>
+          <section className={styles.popularArticles}>
+            <h2 className={styles.sectionTitle}>Популярные статьи</h2>
+            <p className={styles.sectionLead}>
+              {normalizeText('Актуальные и\\u00A0информативные статьи, которые помогут вам разобраться в\\u00A0тонкостях современного маркетинга.')}
+            </p>
+            <div className={styles.blogsWrap}>
+              <Blogs count={3} />
+            </div>
+          </section>
 
-      <section className={styles.popularServices}>
-        <div className={styles.servicesWrap}>
-          <Services
-            title="Популярные услуги"
-            hasCost
-            showDescription={false}
-            showSubtitle
-            descriptionText=""
+          <section className={styles.popularServices}>
+            <div className={styles.servicesWrap}>
+              <Services
+                title="Популярные услуги"
+                hasCost
+                showDescription={false}
+                showSubtitle
+                descriptionText=""
+              />
+            </div>
+          </section>
+
+          <StandartText
+            marginBottom
+            texts={[
+              normalizeText('Продажа товаров онлайн требует тщательной подготовки и\\u00A0эффективных инструментов. Калькуляторы нашего агентства помогают рассчитать аспекты рекламных кампаний, улучшая коэффициент конверсии, раскрутку, продвижение и\\u00A0увеличивая прибыль.'),
+              normalizeText('Для расчета достаточно ввести данные, и\\u00A0калькулятор вычислит показатель эффективности с\\u00A0учетом стоимости и\\u00A0цены. Оставьте заявку на\\u00A0консультацию, чтобы узнать, как эффективно продавать свои товары и\\u00A0услуги. Наш менеджер свяжется с\\u00A0вами, чтобы предложить индивидуальное решение.')
+            ]}
           />
-        </div>
-      </section>
 
-      <StandartText
-        marginBottom
-        texts={[
-          normalizeText('Продажа товаров онлайн требует тщательной подготовки и\\u00A0эффективных инструментов. Калькуляторы нашего агентства помогают рассчитать аспекты рекламных кампаний, улучшая коэффициент конверсии, раскрутку, продвижение и\\u00A0увеличивая прибыль.'),
-          normalizeText('Для расчета достаточно ввести данные, и\\u00A0калькулятор вычислит показатель эффективности с\\u00A0учетом стоимости и\\u00A0цены. Оставьте заявку на\\u00A0консультацию, чтобы узнать, как эффективно продавать свои товары и\\u00A0услуги. Наш менеджер свяжется с\\u00A0вами, чтобы предложить индивидуальное решение.')
-        ]}
-      />
-
-      <FormFirst
-        className={styles.formBlock}
-        title="Обсудить проект"
-        paragraph="Оставьте контакт и комментарий — подскажем, какие метрики важно отслеживать в вашем проекте."
-        submitValue="Отправить"
-        project
-        projectPlaceholder="Комментарий (укажите, какие именно аспекты вас интересуют)"
-      />
+          <FormFirst
+            className={styles.formBlock}
+            title="Обсудить проект"
+            paragraph="Оставьте контакт и комментарий — подскажем, какие метрики важно отслеживать в вашем проекте."
+            submitValue="Отправить"
+            project
+            projectPlaceholder="Комментарий (укажите, какие именно аспекты вас интересуют)"
+          />
+        </>
+      )}
     </main>
   )
 }

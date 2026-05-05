@@ -51,17 +51,13 @@
 .blogTitle {
 	margin: 0;
 	font-family: var(--font-inter);
-	font-size: 32px;
+	font-size: 28px;
 	font-weight: 500;
-	line-height: 1.2;
+	line-height: 120%;
 	color: #121212;
 
-	@include tablet {
-		font-size: 26px;
-	}
-
 	@media (max-width: 768px) {
-		font-size: 22px;
+		font-size: 20px;
 	}
 }
 
