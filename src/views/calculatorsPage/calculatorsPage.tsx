@@ -148,6 +148,8 @@ const calcConfigs: CalculatorConfig[] = [
   }
 ]
 
+const normalizeText = (value: string) => value.replaceAll('\\u00A0', '\u00A0')
+
 export const CalculatorsPageView: FC = () => {
   const rootClassName = classNames(styles.root)
   const [inputs, setInputs] = useState<Record<string, Record<string, string>>>({})
@@ -216,7 +218,7 @@ export const CalculatorsPageView: FC = () => {
         className={styles.introBlock}
         titleClassName={styles.introTitleSmall}
         title="Калькуляторы маркетингового агентства K.KIM"
-        text="Калькуляторы помогают быстро проверить ключевые метрики рекламных кампаний: конверсию, окупаемость, стоимость действия и\u00A0прибыльность каналов."
+        text={normalizeText('Калькуляторы помогают быстро проверить ключевые метрики рекламных кампаний: конверсию, окупаемость, стоимость действия и\\u00A0прибыльность каналов.')}
         highlightedText=""
         buttons={(
           <div className={styles.introButtonsWrap}>
@@ -236,15 +238,15 @@ export const CalculatorsPageView: FC = () => {
         <div className={styles.calculatorsGrid}>
           {calcConfigs.map((config) => (
             <article key={config.id} className={classNames(styles.card, styles[`card_${config.tone}`])}>
-              <h2 className={styles.cardTitle}>{config.title}</h2>
-              <p className={styles.cardKeyword}>{config.keyword}</p>
-              <p className={styles.cardFormula}><strong>Формула:</strong> {config.formula}</p>
-              <p className={styles.cardDescription}>{config.description}</p>
+              <h2 className={styles.cardTitle}>{normalizeText(config.title)}</h2>
+              <p className={styles.cardKeyword}>{normalizeText(config.keyword)}</p>
+              <p className={styles.cardFormula}><strong>Формула:</strong> {normalizeText(config.formula)}</p>
+              <p className={styles.cardDescription}>{normalizeText(config.description)}</p>
 
               <div className={styles.fieldsWrap}>
                 {config.fields.map((field) => (
                   <label key={field.key} className={styles.field}>
-                    <span>{field.label}</span>
+                    <span>{normalizeText(field.label)}</span>
                     <input
                       type="number"
                       step="any"
@@ -291,7 +293,7 @@ export const CalculatorsPageView: FC = () => {
       <section className={styles.popularArticles}>
         <h2 className={styles.sectionTitle}>Популярные статьи</h2>
         <p className={styles.sectionLead}>
-          Актуальные и\u00A0информативные статьи, которые помогут вам разобраться в\u00A0тонкостях современного маркетинга.
+          {normalizeText('Актуальные и\\u00A0информативные статьи, которые помогут вам разобраться в\\u00A0тонкостях современного маркетинга.')}
         </p>
         <div className={styles.blogsWrap}>
           <Blogs count={3} />
@@ -313,8 +315,8 @@ export const CalculatorsPageView: FC = () => {
       <StandartText
         marginBottom
         texts={[
-          'Продажа товаров онлайн требует тщательной подготовки и\u00A0эффективных инструментов. Калькуляторы нашего агентства помогают рассчитать аспекты рекламных кампаний, улучшая коэффициент конверсии, раскрутку, продвижение и\u00A0увеличивая прибыль.',
-          'Для расчета достаточно ввести данные, и\u00A0калькулятор вычислит показатель эффективности с\u00A0учетом стоимости и\u00A0цены. Оставьте заявку на\u00A0консультацию, чтобы узнать, как эффективно продавать свои товары и\u00A0услуги. Наш менеджер свяжется с\u00A0вами, чтобы предложить индивидуальное решение.'
+          normalizeText('Продажа товаров онлайн требует тщательной подготовки и\\u00A0эффективных инструментов. Калькуляторы нашего агентства помогают рассчитать аспекты рекламных кампаний, улучшая коэффициент конверсии, раскрутку, продвижение и\\u00A0увеличивая прибыль.'),
+          normalizeText('Для расчета достаточно ввести данные, и\\u00A0калькулятор вычислит показатель эффективности с\\u00A0учетом стоимости и\\u00A0цены. Оставьте заявку на\\u00A0консультацию, чтобы узнать, как эффективно продавать свои товары и\\u00A0услуги. Наш менеджер свяжется с\\u00A0вами, чтобы предложить индивидуальное решение.')
         ]}
       />
 
