@@ -7,6 +7,7 @@ import styles from './services.module.scss'
 import { ServicesProps } from './services.types'
 import { getAllServices, ServiceData } from '@/shared/dataServices'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const defaultDescription = '* Наше агентство работает в формате почасовой оплаты труда. Стоимость проекта будет зависеть от количества фактически отработанных часов специалистами агентства.'
 
@@ -18,11 +19,13 @@ const Services: FC<ServicesProps> = ({
   descriptionText = defaultDescription,
   categoryId,
   isTab = false,
-  title = 'Услуги'
+  title = 'Услуги',
+  excludeCurrentPage = false
 }) => {
   const [isMobile, setIsMobile] = useState<boolean>(false)
   const [showAll, setShowAll] = useState<boolean>(false)
   const [openTabId, setOpenTabId] = useState<string | null>(null)
+  const pathname = usePathname()
 
   useEffect(() => {
     const checkResolution = () => {
@@ -38,9 +41,19 @@ const Services: FC<ServicesProps> = ({
   }, [])
 
   const services: ServiceData[] = getAllServices()
-  const filteredServices = categoryId
+  const pathParts = pathname.split('/').filter(Boolean)
+  const currentSlug =
+    pathParts[0] === 'services' && pathParts[1]
+      ? pathParts[1]
+      : pathParts[0] || ''
+
+  const filteredByCategory = categoryId
     ? services.filter(service => service.categoryId === categoryId)
     : services
+
+  const filteredServices = excludeCurrentPage
+    ? filteredByCategory.filter((service) => service.slug !== currentSlug)
+    : filteredByCategory
 
   const visibleServices = isMobile && !showAll ? filteredServices.slice(0, 6) : filteredServices
 

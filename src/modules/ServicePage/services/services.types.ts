@@ -7,4 +7,5 @@ export interface ServicesProps {
   categoryId?: 'marketing' | 'design' | 'traffic' | 'development'
   isTab?: boolean
   title?: string
+  excludeCurrentPage?: boolean
 }

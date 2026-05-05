@@ -120,6 +120,21 @@
   margin-top: 28px !important;
 }
 
+.alsoServicesWrap {
+  margin: 12px 0 36px;
+
+  :global([class*='container']) {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 0;
+    gap: 24px;
+  }
+
+  :global([class*='services__description']) {
+    display: none;
+  }
+}
+
 .tech {
   margin-top: 24px;
   margin-bottom: 40px;
@@ -179,6 +194,10 @@
 @include tablet-small {
   .afterOrderFormText {
     margin-top: 20px !important;
+  }
+
+  .alsoServicesWrap {
+    margin: 10px 0 24px;
   }
 
   .pricing,
