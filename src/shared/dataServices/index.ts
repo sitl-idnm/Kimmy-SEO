@@ -5,6 +5,7 @@ import { webdesignData } from '@/app/services/web-design/data'
 import { smmData } from '@/app/services/smm/data'
 import { razrabotkaChatBotovPageData } from '@/app/services/razrabotka-chat-botov/data'
 import { lidogeneraciyaData } from '@/app/services/lidogeneraciya/data'
+import { uxUiData } from '@/app/services/ux-ui/data'
 
 export type { ServiceData }
 
@@ -16,6 +17,7 @@ export const servicesData: Record<string, ServiceData> = {
 	'serm': sermData,
 	'razrabotka-chat-botov': razrabotkaChatBotovPageData,
 	'lidogeneraciya': lidogeneraciyaData,
+	'ux-ui': uxUiData,
 }
 
 // Функция для получения данных конкретной услуги

@@ -22,6 +22,9 @@
 .telegram {
   width: 39px;
   height: 39px;
+  display: block;
+  flex: 0 0 auto;
+  overflow: visible;
 
   @include tablet-small {
     width: 28px;
@@ -60,6 +63,28 @@
   &__list {
     display: flex;
     gap: 8px;
+  }
+
+  &__item,
+  .inforamtion__item {
+    display: flex;
+    flex: 0 0 auto;
+    overflow: visible;
+  }
+
+  .infromation__item__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 39px;
+    height: 39px;
+    overflow: visible;
+    flex: 0 0 auto;
+
+    @include tablet-small {
+      width: 28px;
+      height: 29px;
+    }
   }
 
   &__text {

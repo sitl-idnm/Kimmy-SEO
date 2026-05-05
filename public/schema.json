@@ -312,10 +312,35 @@
     },
     {
       "@type": "WebPage",
+      "@id": "https://kim-agency.ru/services/ux-ui#webpage",
+      "url": "https://kim-agency.ru/services/ux-ui",
+      "name": "UI/UX дизайн",
+      "description": "Проектируем интерфейсы, которые помогают пользователям быстрее принимать решения и повышают конверсию бизнеса.",
+      "isPartOf": {
+        "@id": "https://kim-agency.ru/#website"
+      },
+      "about": {
+        "@id": "https://kim-agency.ru/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
       "@id": "https://kim-agency.ru/services/web-design#webpage",
       "url": "https://kim-agency.ru/services/web-design",
       "name": "Веб-дизайн",
       "description": "Создание современного и удобного дизайна для вашего сайта",
+      "isPartOf": {
+        "@id": "https://kim-agency.ru/#website"
+      },
+      "about": {
+        "@id": "https://kim-agency.ru/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim-agency.ru/ux-ui#webpage",
+      "url": "https://kim-agency.ru/ux-ui",
+      "name": "Ux Ui",
       "isPartOf": {
         "@id": "https://kim-agency.ru/#website"
       },
