@@ -199,6 +199,18 @@
     },
     {
       "@type": "WebPage",
+      "@id": "https://kim-agency.ru/kalkulyatory#webpage",
+      "url": "https://kim-agency.ru/kalkulyatory",
+      "name": "Kalkulyatory",
+      "isPartOf": {
+        "@id": "https://kim-agency.ru/#website"
+      },
+      "about": {
+        "@id": "https://kim-agency.ru/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
       "@id": "https://kim-agency.ru/lidogeneraciya#webpage",
       "url": "https://kim-agency.ru/lidogeneraciya",
       "name": "Lidogeneraciya",
