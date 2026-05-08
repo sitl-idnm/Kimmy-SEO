@@ -12,6 +12,9 @@ import { Button } from '@/ui/index';
 import { Navigation } from '@/components';
 import { openModalContent } from '@/shared/atoms/openModal';
 import { useSetAtom } from 'jotai';
+import PhoneIcon from '@icons/phone-custom.svg';
+import VkIcon from '@icons/vk.svg';
+import TelegramIcon from '@icons/telegram.svg';
 
 const Header: FC<HeaderProps> = ({ className }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,7 +33,7 @@ const Header: FC<HeaderProps> = ({ className }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 767);
+      setIsMobile(window.innerWidth <= 1024);
     };
 
     // Инициализация при монтировании
@@ -89,6 +92,57 @@ const Header: FC<HeaderProps> = ({ className }) => {
     }
   }, [isMenuOpen]);
 
+  useEffect(() => {
+    if (!isMobile) {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.width = '';
+      return;
+    }
+
+    if (isMenuOpen) {
+      const scrollY = window.scrollY;
+      document.body.dataset.scrollLockY = String(scrollY);
+      document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+      document.body.style.width = '100%';
+    } else {
+      const savedScrollY = Number(document.body.dataset.scrollLockY || '0');
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.width = '';
+      delete document.body.dataset.scrollLockY;
+      window.scrollTo(0, savedScrollY);
+    }
+
+    return () => {
+      const savedScrollY = Number(document.body.dataset.scrollLockY || '0');
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.width = '';
+      delete document.body.dataset.scrollLockY;
+      if (savedScrollY) {
+        window.scrollTo(0, savedScrollY);
+      }
+    };
+  }, [isMenuOpen, isMobile]);
+
   const handleBurgerClick = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -116,16 +170,65 @@ const Header: FC<HeaderProps> = ({ className }) => {
   return (
     <header className={headerClassName}>
       <Wrapper className={styles.wrapper}>
-        <div className={styles.wrapper__container}>
-
-          <div className={styles.logo}>
-            <Logo />
+        <div className={styles.desktopHeader}>
+          <div className={styles.topRowFull}>
+            <div className={styles.topRow}>
+              <div className={styles.socials}>
+                <a href="tel:+79152306549" aria-label="Позвонить" className={styles.socials__item}>
+                  <PhoneIcon />
+                </a>
+                <a href="https://vk.com/kkimagency" target="_blank" rel="noreferrer" aria-label="ВКонтакте" className={styles.socials__item}>
+                  <VkIcon />
+                </a>
+                <a href="https://t.me/kimagency" target="_blank" rel="noreferrer" aria-label="Telegram" className={styles.socials__item}>
+                  <TelegramIcon />
+                </a>
+              </div>
+              <div className={styles.topActions}>
+                <button type="button" className={styles.cityButton}>Москва</button>
+                <Button
+                  tag='button'
+                  className={styles.workButton}
+                  onClick={() => openWindows('детали')}
+                  maxWidth='250px'
+                >
+                  Начать работу
+                </Button>
+              </div>
+            </div>
           </div>
 
-          <div className={styles.desktop__navigation}>
+          <div className={styles.middleRow}>
+            <div className={styles.brand}>
+              <Logo />
+              <p className={styles.brand__text}>Агентство комплексного интернет-маркетинга</p>
+            </div>
+            <div className={styles.contacts}>
+              <div className={styles.contacts__address}>
+                <p>Москва</p>
+                <p>Локомотивный проезд, д.&nbsp;11/10</p>
+              </div>
+              <div className={styles.contacts__time}>
+                <p>Пн-Пт</p>
+                <p>09:00-21:00</p>
+              </div>
+              <div className={styles.contacts__phones}>
+                <a href="tel:+79152306549">+7 (915) 230-65-49</a>
+                <a href="tel:+74954766162">+7 (495) 476-61-62</a>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.bottomRow}>
             <Navigation />
           </div>
+        </div>
 
+        <div className={styles.mobileBar}>
+          <div className={styles.mobileBar__brand}>
+            <Logo />
+            <p className={styles.mobileBar__text}>Агентство комплексного интернет-маркетинга</p>
+          </div>
           <div className={styles.buttons__wrapper}>
             {!isMobile && (
               <Button
@@ -150,8 +253,51 @@ const Header: FC<HeaderProps> = ({ className }) => {
           </div>
         </div>
 
+        <div className={styles.mobileActions}>
+          <button type="button" className={styles.cityButton}>Москва</button>
+          <Button
+            tag='button'
+            className={styles.workButtonMobile}
+            onClick={() => openWindows('детали')}
+            maxWidth='100%'
+          >
+            Начать работу
+          </Button>
+        </div>
+
         <div ref={menuRef} className={styles.mobilemenu}>
+          <div className={styles.mobilemenu__header}>
+            <div className={styles.mobilemenu__brand}>
+              <Logo />
+              <p className={styles.mobilemenu__text}>Агентство комплексного интернет-маркетинга</p>
+            </div>
+          </div>
           <Navigation />
+          <div className={styles.mobileContacts}>
+            <div className={styles.mobileContacts__address}>
+              <p>Москва</p>
+              <p>Локомотивный проезд, д.&nbsp;11/10</p>
+            </div>
+            <div className={styles.mobileContacts__time}>
+              <p>Пн-Пт</p>
+              <p>09:00-21:00</p>
+            </div>
+            <div className={styles.mobileContacts__phones}>
+              <a href="tel:+79152306549">+7 (915) 230-65-49</a>
+              <a href="tel:+74954766162">+7 (495) 476-61-62</a>
+            </div>
+            <div className={styles.mobileContacts__socials}>
+              <a href="tel:+79152306549" aria-label="Позвонить" className={styles.socials__item}>
+                <PhoneIcon />
+              </a>
+              <a href="https://vk.com/kkimagency" target="_blank" rel="noreferrer" aria-label="ВКонтакте" className={styles.socials__item}>
+                <VkIcon />
+              </a>
+              <a href="https://t.me/kimagency" target="_blank" rel="noreferrer" aria-label="Telegram" className={styles.socials__item}>
+                <TelegramIcon />
+              </a>
+            </div>
+          </div>
         </div>
       </Wrapper>
     </header>

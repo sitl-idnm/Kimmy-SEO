@@ -2,11 +2,22 @@
 @use '@styles/mixins';
 
 .root {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  width: 100.22px;
+  height: 31.31px;
   line-height: 0;
 
   svg {
-    width: func.rem(110);
-    height: func.rem(24);
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none;
+    flex-shrink: 0;
+
+    @include mixins.tablet {
+      width: 100% !important;
+      height: 100% !important;
+    }
   }
 }

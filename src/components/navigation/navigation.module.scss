@@ -4,6 +4,7 @@
 
 .root {
   display: flex;
+  width: 100%;
 }
 
 .navigation {
@@ -11,31 +12,68 @@
 
 	&__list {
 		display: flex;
-		gap: 16px;
+		align-items: center;
+		justify-content: space-between;
 		width: 100%;
-		font-size: 16px;
 		font-weight: 500;
+		gap: 16px;
 
 		@include tablet {
 			flex-direction: column;
+			align-items: stretch;
+			justify-content: flex-start;
+			gap: 12px;
 		}
 
 		li {
-			padding: 8px 8px;
+			padding: 0;
 			transition: all 0.3s ease;
 			border-radius: 4px;
-			border: 1px solid transparent;
+		}
+	}
 
-			&:hover {
-				border: 1px solid var(--color-red-accent);
-				transition: all 0.3s ease;
-			}
+	&__item {
+		font-size: 16px;
+		line-height: 24px;
+		color: var(--color-black);
+		white-space: nowrap;
+		display: inline-flex;
+		align-items: center;
+
+		@include tablet {
+			font-size: 16px;
+			line-height: 24px;
+			min-height: 24px;
+			white-space: normal;
+		}
+
+		&_muted {
+			color: #cdcdcd;
+		}
+	}
+
+	&__servicesTrigger {
+		gap: 8px;
+
+		&::after {
+			content: '';
+			width: 6px;
+			height: 6px;
+			border-right: 1.5px solid currentcolor;
+			border-bottom: 1.5px solid currentcolor;
+			transform: rotate(45deg) translateY(-1px);
 		}
 	}
 
 	// Пункт «Услуги» с выпадающим списком (как бургер-меню по стилю)
 	&__servicesWrap {
 		position: relative;
+
+		@include tablet {
+			min-height: 24px;
+			display: flex;
+			align-items: center;
+		}
 	}
 
 	&__dropdown {
@@ -82,15 +120,11 @@
 		padding: 0;
 		display: flex;
 		flex-direction: column;
-		gap: 4px;
+		gap: 6px;
 
 		li {
 			border: none;
 			padding: 0;
-
-			&:hover {
-				border: none;
-			}
 		}
 	}
 
@@ -108,6 +142,18 @@
 		&:hover {
 			border-color: var(--color-red-accent);
 			background: rgba(203, 23, 44, 0.06);
+		}
+
+		@include tablet {
+			padding: 0;
+			border: 0;
+			border-radius: 0;
+			background: transparent;
+			font-size: 16px;
+			line-height: 24px;
+			min-height: 24px;
+			display: inline-flex;
+			align-items: center;
 		}
 	}
 }
