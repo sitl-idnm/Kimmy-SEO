@@ -1,10 +1,10 @@
 'use client'
+import { sendLeadMessage } from '@/shared/api/sendLead'
 import { FC, useState } from 'react'
 import classNames from 'classnames'
 
 import styles from './caseForm.module.scss'
 import { CaseFormProps } from './caseForm.types'
-import axios from 'axios'
 import {
   formatPhoneDisplay,
   isPhoneValid,
@@ -99,15 +99,10 @@ const CaseForm: FC<CaseFormProps> = ({
       setSuccessMessage('Ошибка отправки заявки. HTML теги не разрешены.')
       return
     }
-    const token = '7862004029:AAFZ807gLMhUIzqjfh4DB62muUmzWv9JfrY'
-    const chatId = '-4654232429'
-    const message = `Новая заявка:\nИмя: ${data.name}\nТелефон: ${data.phone}${data.mail ? `\nПочта: ${data.mail}` : ''}${data.project ? `\nРасскажите про свой проект: ${data.project}` : ''}`
+		const message = `Новая заявка:\nИмя: ${data.name}\nТелефон: ${data.phone}${data.mail ? `\nПочта: ${data.mail}` : ''}${data.project ? `\nРасскажите про свой проект: ${data.project}` : ''}`
 
     try {
-      await axios.post(`https://api.telegram.org/bot${token}/sendMessage`, {
-        chat_id: chatId,
-        text: message,
-      })
+      await sendLeadMessage(message)
       setSuccessMessage('Форма успешно отправлена!');
     } catch (error) {
       console.error('Ошибка при отправке:', error)

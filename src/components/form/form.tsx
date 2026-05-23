@@ -1,7 +1,7 @@
 'use client'
+import { sendLeadMessage } from '@/shared/api/sendLead'
 import { FC, useState } from 'react'
 import classNames from 'classnames'
-import axios from 'axios'
 import Link from 'next/link'
 
 import styles from './form.module.scss'
@@ -120,11 +120,7 @@ const Form: FC<FormProps> = ({
         return
       }
     }
-
-    const token = '7862004029:AAFZ807gLMhUIzqjfh4DB62muUmzWv9JfrY'
-    const chatId = '-4654232429'
-
-    const quizResults = quizData ? `\n\nРезультаты квиза:\n${formatQuizData(quizData)}` : ''
+		const quizResults = quizData ? `\n\nРезультаты квиза:\n${formatQuizData(quizData)}` : ''
 
     const message = `🎯 *Пришла новая заявка с SEO-сайта KIM!*
 
@@ -135,10 +131,7 @@ const Form: FC<FormProps> = ({
 ${data.project ? `💡 *О проекте:*\n${data.project}\n` : ''}${quizResults ? `\n📋 *Результаты опроса:*${quizResults}` : ''}`
 
     try {
-      await axios.post(`https://api.telegram.org/bot${token}/sendMessage`, {
-        chat_id: chatId,
-        text: message,
-      })
+      await sendLeadMessage(message, { parse_mode: 'Markdown' })
       setSuccessMessage('Форма успешно отправлена!')
     } catch (error) {
       console.error('Ошибка при отправке:', error)

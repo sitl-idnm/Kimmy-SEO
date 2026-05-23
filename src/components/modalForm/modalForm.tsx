@@ -1,11 +1,11 @@
 'use client'
+import { sendLeadMessage } from '@/shared/api/sendLead'
 
 import { FC, useState } from 'react'
 import classNames from 'classnames'
 
 import styles from './modalForm.module.scss'
 import { ModalFormProps } from './modalForm.types'
-import axios from 'axios'
 import {
   formatPhoneDisplay,
   isPhoneValid,
@@ -111,15 +111,10 @@ const ModalForm: FC<ModalFormProps> = ({ className, details, count, start, detai
 				return
 			}
 		}
-		const token = '7862004029:AAFZ807gLMhUIzqjfh4DB62muUmzWv9JfrY'
-		const chatId = '-4654232429'
 		const message = `Новая заявка:\nИмя: ${data.nameModal}\nТелефон: ${data.phoneModal}${data.mailModal ? `\nПочта: ${data.mailModal}` : ''}${data.commentModal ? `\nРасскажите про свой проект: ${data.commentModal}` : ''}\nПредпочтительный способ связи: ${selectedContactMethod}`
 
 		try {
-			await axios.post(`https://api.telegram.org/bot${token}/sendMessage`, {
-				chat_id: chatId,
-				text: message,
-			})
+			await sendLeadMessage(message)
 			setSuccessMessage('Форма успешно отправлена!');
 		} catch (error) {
 			console.error('Error sending message to Telegram:', error)
