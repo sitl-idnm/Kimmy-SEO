@@ -1,7 +1,15 @@
+import path from 'path'
+import { fileURLToPath } from 'url'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const stylesPath = path.join(__dirname, 'src/shared/styles')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // output: 'standalone',
   reactStrictMode: true,
+  sassOptions: {
+    includePaths: [stylesPath],
+  },
   async headers() {
     return [
       {
@@ -21,6 +29,8 @@ const nextConfig = {
     ]
   },
   webpack(config) {
+    config.resolve.alias['@styles'] = stylesPath
+
     const fileLoaderRule = config.module.rules.find((rule) =>
       rule.test?.test?.('.svg'),
     )
