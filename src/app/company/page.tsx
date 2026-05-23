@@ -1,4 +1,4 @@
-import Company from '@/views/company/company'
+import Company from '@views/company'
 import type { Metadata } from 'next'
 
 

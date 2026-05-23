@@ -1,4 +1,4 @@
-import BlogPage from '@/views/blogsPage/blogPage/blogPage'
+import BlogPage from '@views/blogsPage/blogPage'
 import type { Metadata } from 'next'
 import blogsData from '@/shared/dataBlogs/blogs.json'
 

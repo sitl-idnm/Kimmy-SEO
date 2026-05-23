@@ -1,4 +1,4 @@
-import ContactsPage from '@/views/contactsPage/contactsPage'
+import ContactsPage from '@views/contactsPage'
 import type { Metadata } from 'next'
 
 

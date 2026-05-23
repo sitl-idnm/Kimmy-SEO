@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { CalculatorsPageView, getCalculatorConfigById } from '@/views/calculatorsPage/calculatorsPage'
+import { CalculatorsPageView, getCalculatorConfigById } from '@views/calculatorsPage'
 
 type CalculatorPageProps = {
   params: Promise<{ calculator: string }>

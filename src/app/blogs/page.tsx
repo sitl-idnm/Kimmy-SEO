@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import BlogPage from '@/views/blogsPage/blogPage'
+import BlogPage from '@views/blogsPage/blogPage'
 
 export const metadata: Metadata = {
   title: 'Блог о маркетинге — K.KIM Agency',

@@ -1,4 +1,4 @@
-import Reviews from '@/views/reviews/reviews'
+import Reviews from '@views/reviews'
 import type { Metadata } from 'next'
 
 

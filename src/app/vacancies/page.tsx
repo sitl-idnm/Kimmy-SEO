@@ -1,4 +1,4 @@
-import Vacancies from '@/views/vacancies/vacancies'
+import Vacancies from '@views/vacancies'
 import type { Metadata } from 'next'
 
 
