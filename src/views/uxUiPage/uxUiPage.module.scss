@@ -99,10 +99,20 @@
 }
 
 .pricingBadge {
+  width: 100%;
+  max-width: 50%;
   background: #fff;
   border: 1px solid #e7e8ea;
   border-radius: 14px;
   padding: 14px 16px;
+
+  @include tablet {
+    max-width: 70%;
+  }
+
+  @include tablet-small {
+    max-width: 100%;
+  }
 }
 
 .pricingBadgeLabel {
@@ -187,6 +197,10 @@
 
 .workIncludesCards {
   margin-bottom: spacing.$section-gap-desktop;
+
+  :global([class*='container']) {
+    padding-bottom: 0 !important;
+  }
 
   :global([class*='advantageItem']) {
     padding: 20px !important;
