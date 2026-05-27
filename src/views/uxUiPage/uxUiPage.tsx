@@ -45,7 +45,7 @@ export const UxUiPageView: FC = () => {
 
   return (
     <div itemScope itemType="https://schema.org/WebPage">
-      <meta itemProp="name" content="UI & UX дизайн от K KIM" />
+      <meta itemProp="name" content="UI & UX дизайн от K.KIM" />
       <meta itemProp="url" content={PAGE_URL} />
 
       <nav
@@ -100,7 +100,7 @@ export const UxUiPageView: FC = () => {
       <main className={rootClassName}>
         <IntroWorkUs
           className={styles.introBlock}
-          title="UI & UX дизайн от K KIM"
+          title="UI & UX дизайн от K.KIM"
           text={normalizeText('Создаем интерфейсы, в\\u00A0которых удобно принимать решение, оставлять заявку, покупать и\\u00A0возвращаться снова. Для бизнеса это рабочий инструмент: он снижает потери на\\u00A0пути пользователя, делает продукт понятнее и\\u00A0помогает расти конверсии. Если вам важно усилить пользовательский опыт и\\u00A0удобное взаимодействие, такая услуга решает задачу системно.')}
           highlightedText=""
           titleClassName={styles.introTitleSmall}
@@ -119,6 +119,7 @@ export const UxUiPageView: FC = () => {
         />
 
         <StandartText
+          className={styles.sectionTextBlock}
           marginBottom
           title="Что дает бизнесу сильный интерфейс"
           texts={[
@@ -127,6 +128,7 @@ export const UxUiPageView: FC = () => {
         />
 
         <StandartText
+          className={styles.sectionTextBlock}
           marginBottom
           title="Что входит в работу"
           texts={[
@@ -152,6 +154,7 @@ export const UxUiPageView: FC = () => {
         />
 
         <StandartText
+          className={styles.sectionTextBlock}
           marginBottom
           texts={[
             'Такой подход помогает не заказывать переделку после запуска и заранее видеть слабые места.'
@@ -159,6 +162,7 @@ export const UxUiPageView: FC = () => {
         />
 
         <StandartText
+          className={styles.sectionTextBlock}
           marginBottom
           title="Как идет разработка"
           texts={[
@@ -238,11 +242,11 @@ export const UxUiPageView: FC = () => {
         </div>
 
         <StandartText
-          className={styles.afterOrderFormText}
+          className={classNames(styles.sectionTextBlock, styles.afterOrderFormText)}
           marginBottom
-          title="Почему с K KIM удобнее работать"
+          title="Почему с K.KIM удобнее работать"
           texts={[
-            normalizeText('K KIM работает с\\u00A0клиентами в\\u00A0Москве и\\u00A0других регионах и\\u00A0помогает бизнесу смотреть на\\u00A0интерфейс как на\\u00A0часть продаж, маркетинга и\\u00A0роста. Команда экспертов реализовала более 150 проектов, поэтому мы умеем соединять эстетику, логику и\\u00A0коммерческую задачу. Клиент получает инструмент, с\\u00A0которым проще продавать, тестировать гипотезы и\\u00A0масштабировать продукт без хаоса. Это экономит время, снижает риск ошибок и\\u00A0позволяет не\\u00A0заказывать новую систему с\\u00A0нуля через несколько месяцев.')
+            normalizeText('K.KIM работает с\\u00A0клиентами в\\u00A0Москве и\\u00A0других регионах и\\u00A0помогает бизнесу смотреть на\\u00A0интерфейс как на\\u00A0часть продаж, маркетинга и\\u00A0роста. Команда экспертов реализовала более 150 проектов, поэтому мы умеем соединять эстетику, логику и\\u00A0коммерческую задачу. Клиент получает инструмент, с\\u00A0которым проще продавать, тестировать гипотезы и\\u00A0масштабировать продукт без хаоса. Это экономит время, снижает риск ошибок и\\u00A0позволяет не\\u00A0заказывать новую систему с\\u00A0нуля через несколько месяцев.')
           ]}
         />
 

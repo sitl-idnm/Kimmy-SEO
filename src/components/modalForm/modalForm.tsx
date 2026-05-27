@@ -239,7 +239,7 @@ const ModalForm: FC<ModalFormProps> = ({ className, details, count, start, detai
 						<div className={styles.form_wrapper}>
 							<input type="checkbox" required />
 							<label>
-								Согласен на обработку <Link href='/privacy-policy' target='_blank' style={{ color: '#CB172C'}}>персональных данных</Link>
+								Согласен на обработку{' '}<Link href='/privacy-policy' target='_blank' style={{ color: '#CB172C'}}>персональных данных</Link>
 							</label>
 						</div>
 						<div className={styles.form_wrapper}>

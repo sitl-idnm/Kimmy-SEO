@@ -208,7 +208,7 @@ ${data.project ? `💡 *О проекте:*\n${data.project}\n` : ''}${quizResul
         <div className={classNames(styles.form_wrapper, styles.form_wrapper_checkbox)}>
           <input type="checkbox" required />
           <label style={work ? { color: 'black' } : undefined}>
-            Согласен на обработку <Link href='/privacy-policy' target='_blank' style={work ? { color: '#CB172C' } : undefined}>персональных данных</Link>
+            Согласен на обработку{' '}<Link href='/privacy-policy' target='_blank' style={work ? { color: '#CB172C' } : undefined}>персональных данных</Link>
           </label>
         </div>
         {mail === true && (

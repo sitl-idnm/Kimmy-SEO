@@ -1,4 +1,5 @@
 @use '@styles/mixins' as *;
+@use '@styles/spacing-system' as spacing;
 
 .root {
   max-width: 1312px;
@@ -6,7 +7,7 @@
 }
 
 .introBlock {
-  margin-bottom: 50px !important;
+  margin-bottom: spacing.$section-gap-desktop !important;
 
   :global([class*='box']) {
     gap: 10px;
@@ -36,6 +37,23 @@
   }
 }
 
+
+.sectionTextBlock {
+  margin-bottom: spacing.$section-gap-desktop !important;
+
+  :global([class*='title']) {
+    margin: 0 0 spacing.$text-gap-desktop;
+  }
+
+  :global([class*='text']) {
+    margin: 0;
+  }
+
+  :global([class*='text'] + [class*='text']) {
+    margin-top: 16px;
+  }
+}
+
 .introTitleSmall {
   max-width: 1100px;
   text-align: center;
@@ -55,8 +73,8 @@
 }
 
 .pricing {
-  margin-top: 24px;
-  margin-bottom: 32px;
+  margin-top: 0;
+  margin-bottom: spacing.$section-gap-desktop;
   background: #f7f7f8;
   border-radius: 24px;
   padding: 28px 24px;
@@ -105,7 +123,8 @@
 }
 
 .formBlock {
-  margin-top: 8px;
+  margin-top: 0;
+  margin-bottom: spacing.$section-gap-desktop;
 
   :global([class*='form']) {
     @include tablet {
@@ -125,11 +144,11 @@
 }
 
 .afterOrderFormText {
-  margin-top: 28px !important;
+  margin-top: 0 !important;
 }
 
 .alsoServicesWrap {
-  margin: 12px 0 36px;
+  margin: 0 0 spacing.$section-gap-desktop;
 
   :global([class*='container']) {
     padding-left: 0;
@@ -167,6 +186,13 @@
 }
 
 .workIncludesCards {
+  margin-bottom: spacing.$section-gap-desktop;
+
+  :global([class*='advantageItem']) {
+    padding: 20px !important;
+    gap: 16px !important;
+  }
+
   @include tablet-small {
     :global([class*='container']) {
       padding-left: 8px;
@@ -183,6 +209,13 @@
 }
 
 .benefitsCards {
+  margin-bottom: spacing.$section-gap-desktop;
+
+  :global([class*='advantageItem']) {
+    padding: 20px !important;
+    gap: 16px !important;
+  }
+
   @include tablet-small {
     :global([class*='container']) {
       padding-left: 8px;
@@ -202,8 +235,8 @@
 }
 
 .tech {
-  margin-top: 24px;
-  margin-bottom: 40px;
+  margin-top: 0;
+  margin-bottom: spacing.$section-gap-desktop;
   background: #f7f7f8;
   border-radius: 24px;
   padding: 28px 24px;
@@ -258,8 +291,26 @@
 }
 
 @include tablet-small {
+  .sectionTextBlock {
+    margin-bottom: spacing.$section-gap-mobile !important;
+
+    :global([class*='title']) {
+      margin-bottom: spacing.$text-gap-mobile;
+    }
+  }
+
+  .introBlock,
+  .formBlock,
+  .workIncludesCards,
+  .benefitsCards,
+  .pricing,
+  .tech,
+  .alsoServicesWrap {
+    margin-bottom: spacing.$section-gap-mobile;
+  }
+
   .afterOrderFormText {
-    margin-top: 20px !important;
+    margin-top: 0 !important;
   }
 
   .alsoServicesWrap {
@@ -290,7 +341,7 @@
 
   .pricing,
   .tech {
-    padding: 18px 0;
+    padding: 18px 12px;
     border-radius: 18px;
   }
 
