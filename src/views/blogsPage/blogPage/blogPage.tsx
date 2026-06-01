@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import classNames from 'classnames'
 
+import { RazrabotkaInteraktivnogoSaitaArticle } from '../articles/razrabotka-interaktivnogo-saita'
 import styles from './blogPage.module.scss'
 import { BlogPageProps } from './blogPage.types'
 import { FormFirst } from '@/modules/formFirst'
@@ -352,6 +353,7 @@ const BlogPage: FC<BlogPageProps> = ({ className, blogSlug }) => {
 
   const renderContent = () => {
     if (blogSlug === 'seo-i-kontekstnaya-reklama') return seoKontekstArticle
+    if (blogSlug === 'razrabotka-interaktivnogo-saita') return <RazrabotkaInteraktivnogoSaitaArticle />
 
     return (
       <>

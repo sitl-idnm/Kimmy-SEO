@@ -29,11 +29,17 @@
   }
 
   @include tablet {
-    padding: 0 12px 28px;
+    padding-top: 0;
+    padding-bottom: 28px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 
   @include tablet-small {
-    padding: 0 16px 18px;
+    padding-top: 0;
+    padding-bottom: 18px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 }
 

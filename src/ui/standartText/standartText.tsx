@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 import classNames from 'classnames'
 import styles from './standartText.module.scss'
 import { StandartTextProps } from './standartText.types'
@@ -14,21 +14,44 @@ const StandardText: FC<StandartTextProps> = ({
   className,
   title = '',
   texts = defaultTexts,
-  marginBottom
+  footerTexts,
+  listTitle,
+  listItems,
+  marginBottom,
+  marginTop
 }) => {
   const rootClassName = classNames(styles.root, className, {
-    [styles['root--margin']]: marginBottom
+    [styles['root--margin']]: marginBottom,
+    [styles['root--margin-top']]: marginTop
   })
+
+  const renderParagraph = (text: string | ReactNode, key: string | number) => (
+    <p key={key} className={styles.text}>
+      {text}
+    </p>
+  )
 
   return (
     <div className={rootClassName}>
       <div className={styles.container}>
         {title && <h2 className={styles.title}>{title}</h2>}
-        {texts.map((text, index) => (
-          <p key={index} className={styles.text}>
-            {text}
-          </p>
-        ))}
+        {texts.map((text, index) => renderParagraph(text, index))}
+
+        {listItems && listItems.length > 0 && (
+          <div className={styles.listSection}>
+            <div className={styles.divider} aria-hidden />
+            {listTitle && <p className={styles.listTitle}>{listTitle}</p>}
+            <ul className={styles.list}>
+              {listItems.map((item) => (
+                <li key={item} className={styles.listItem}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {footerTexts?.map((text, index) => renderParagraph(text, `footer-${index}`))}
       </div>
     </div>
   )

@@ -14,6 +14,7 @@ import { Review } from '@/modules/review'
 import { Faq } from '@/modules/faq'
 import { Button } from '@/ui'
 import { Heading } from '@/ui'
+import { ServicePricing } from '@/modules/servicePricing'
 import Services from '@/modules/ServicePage/services/services'
 import styles from './uxUiPage.module.scss'
 
@@ -217,18 +218,11 @@ export const UxUiPageView: FC = () => {
           ]}
         />
 
-        <section className={styles.pricing}>
-          <Heading size="md" className={styles.pricingMainTitle}>Цена и стоимость UI/UX</Heading>
-          <p className={styles.pricingText}>
-            {normalizeText('Цена зависит от\\u00A0объема экранов, глубины аналитики, наличия готового контента и\\u00A0сложности продукта.')}
-          </p>
-          <div className={styles.pricingRow}>
-            <div className={styles.pricingBadge}>
-              <p className={styles.pricingBadgeLabel}>Минимальная цена</p>
-              <p className={styles.pricingBadgeValue}>от 40 000 ₽</p>
-            </div>
-          </div>
-        </section>
+        <ServicePricing
+          title="Цена и стоимость UI/UX"
+          text={normalizeText('Цена зависит от\\u00A0объема экранов, глубины аналитики, наличия готового контента и\\u00A0сложности продукта.')}
+          badges={[{ label: 'Минимальная цена', value: 'от 40 000 ₽' }]}
+        />
 
         <div id="order-form">
           <FormFirst

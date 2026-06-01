@@ -42,14 +42,6 @@
   }
 }
 
-.marginTop {
-  margin-top: 50px !important;
-
-  @include tablet-small {
-    margin-top: 28px !important;
-  }
-}
-
 .buttonSecondaryBlock {
   background: #FAFAFA !important;
   color: #16181B !important;

@@ -7,17 +7,19 @@
   margin: 0 auto;
 
   @include tablet {
-    padding: 0 16px;
+    padding: 0 8px;
     box-sizing: border-box;
-  }
 
-  @include tablet-small {
-    padding: 0 12px;
-  }
-}
+    :global([class*='standartText_root']) {
+      padding-left: 0;
+      padding-right: 0;
+    }
 
-.marginTop {
-  margin-top: 50px !important;
+    :global([class*='why_root']) :global([class*='container']) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
 }
 
 .introBlock {

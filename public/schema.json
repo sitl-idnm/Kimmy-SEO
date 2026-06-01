@@ -80,7 +80,7 @@
       "@type": "WebPage",
       "@id": "https://kim-agency.ru/blogs/seo-i-kontekstnaya-reklama#webpage",
       "url": "https://kim-agency.ru/blogs/seo-i-kontekstnaya-reklama",
-      "name": "SEO и контекстная реклама, что лучше для продвижения - маркетинговое агентство K KIM",
+      "name": "SEO и контекстная реклама, что лучше для продвижения - маркетинговое агентство K.KIM",
       "description": "✅ SEO и контекстная реклама — что лучше для продвижения сайта и привлечения клиентов? Продвижение агентством: аудит, оптимизация сайта, Яндекс Директ, стратегии, сроки, бюджет, стоимость, заявки и продажи. Digital-агентство К КИМ. Оказываем техподдержку, ведение, сопровождение и развитие интернет ресурса.",
       "isPartOf": {
         "@id": "https://kim-agency.ru/#website"
@@ -259,6 +259,45 @@
     },
     {
       "@type": "WebPage",
+      "@id": "https://kim-agency.ru/services/audit-internet-marketinga#webpage",
+      "url": "https://kim-agency.ru/services/audit-internet-marketinga",
+      "name": "Аудит интернет-маркетинга",
+      "description": "Комплексный аудит каналов продвижения, сайта, аналитики и воронки продаж",
+      "isPartOf": {
+        "@id": "https://kim-agency.ru/#website"
+      },
+      "about": {
+        "@id": "https://kim-agency.ru/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim-agency.ru/services/firmenniy-stil#webpage",
+      "url": "https://kim-agency.ru/services/firmenniy-stil",
+      "name": "Фирменный стиль и брендбук",
+      "description": "Разработка фирменного стиля и брендбука: логотип, цвета, типографика, носители и правила применения",
+      "isPartOf": {
+        "@id": "https://kim-agency.ru/#website"
+      },
+      "about": {
+        "@id": "https://kim-agency.ru/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim-agency.ru/services/kontekstnaya-reklama#webpage",
+      "url": "https://kim-agency.ru/services/kontekstnaya-reklama",
+      "name": "Настройка контекстной рекламы",
+      "description": "Настройка контекстной рекламы помогает получать заявки в момент, когда человек уже ищет товар или услугу.",
+      "isPartOf": {
+        "@id": "https://kim-agency.ru/#website"
+      },
+      "about": {
+        "@id": "https://kim-agency.ru/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
       "@id": "https://kim-agency.ru/services/lidogeneraciya#webpage",
       "url": "https://kim-agency.ru/services/lidogeneraciya",
       "name": "Лидогенерация",
@@ -276,6 +315,19 @@
       "url": "https://kim-agency.ru/services/razrabotka-chat-botov",
       "name": "Разработка чат-ботов",
       "description": "Разрабатываем чат-ботов под задачи бизнеса: автоматизируем обращения, поддерживаем клиентов и помогаем увеличивать заявки через сайт и мессенджеры.",
+      "isPartOf": {
+        "@id": "https://kim-agency.ru/#website"
+      },
+      "about": {
+        "@id": "https://kim-agency.ru/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim-agency.ru/services/razrabotka-mobilnogo-prilozheniya#webpage",
+      "url": "https://kim-agency.ru/services/razrabotka-mobilnogo-prilozheniya",
+      "name": "Разработка мобильного приложения",
+      "description": "KIM Agency помогает бизнесу сделать удобное приложение без разработки с нуля. Если нужно создать мобильное приложение для сайта, мы оцениваем задачи, аудиторию, интеграции и подбираем формат: нативная разработка, PWA или конструктор.",
       "isPartOf": {
         "@id": "https://kim-agency.ru/#website"
       },
@@ -315,6 +367,32 @@
       "url": "https://kim-agency.ru/services/smm",
       "name": "SMM продвижение",
       "description": "Продвижение вашего бренда в социальных сетях",
+      "isPartOf": {
+        "@id": "https://kim-agency.ru/#website"
+      },
+      "about": {
+        "@id": "https://kim-agency.ru/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim-agency.ru/services/sozdanie-saytov#webpage",
+      "url": "https://kim-agency.ru/services/sozdanie-saytov",
+      "name": "Разработка сайтов",
+      "description": "Создание современных веб-решений для бизнеса: от аналитики и проектирования до запуска и SEO-подготовки",
+      "isPartOf": {
+        "@id": "https://kim-agency.ru/#website"
+      },
+      "about": {
+        "@id": "https://kim-agency.ru/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kim-agency.ru/services/tekhpodderzhka#webpage",
+      "url": "https://kim-agency.ru/services/tekhpodderzhka",
+      "name": "Услуги технической поддержки",
+      "description": "Услуги технической поддержки сайта нужны тогда, когда проект уже запущен, но его работа требует постоянного контроля. Для бизнеса это не второстепенная задача, а часть стабильной digital-инфраструктуры.",
       "isPartOf": {
         "@id": "https://kim-agency.ru/#website"
       },
@@ -390,7 +468,7 @@
       "mainEntityOfPage": {
         "@id": "https://kim-agency.ru/blogs/seo-i-kontekstnaya-reklama#webpage"
       },
-      "headline": "SEO и контекстная реклама, что лучше для продвижения - маркетинговое агентство K KIM",
+      "headline": "SEO и контекстная реклама, что лучше для продвижения - маркетинговое агентство K.KIM",
       "description": "✅ SEO и контекстная реклама — что лучше для продвижения сайта и привлечения клиентов? Продвижение агентством: аудит, оптимизация сайта, Яндекс Директ, стратегии, сроки, бюджет, стоимость, заявки и продажи. Digital-агентство К КИМ. Оказываем техподдержку, ведение, сопровождение и развитие интернет ресурса.",
       "datePublished": "2026-03-18",
       "author": {

@@ -6,6 +6,12 @@ import { smmData } from '@/app/services/smm/data'
 import { razrabotkaChatBotovPageData } from '@/app/services/razrabotka-chat-botov/data'
 import { lidogeneraciyaData } from '@/app/services/lidogeneraciya/data'
 import { uxUiData } from '@/app/services/ux-ui/data'
+import { auditInternetMarketingData } from '@/app/services/audit-internet-marketinga/data'
+import { kontekstnayaReklamaData } from '@/app/services/kontekstnaya-reklama/data'
+import { tekhpodderzhkaData } from '@/app/services/tekhpodderzhka/data'
+import { razrabotkaMobilnogoPrilozheniyaData } from '@/app/services/razrabotka-mobilnogo-prilozheniya/data'
+import { sozdanieSaytovData } from '@/app/services/sozdanie-saytov/data'
+import { firmenniyStilData } from '@/app/services/firmenniy-stil/data'
 
 export type { ServiceData }
 
@@ -18,6 +24,12 @@ export const servicesData: Record<string, ServiceData> = {
 	'razrabotka-chat-botov': razrabotkaChatBotovPageData,
 	'lidogeneraciya': lidogeneraciyaData,
 	'ux-ui': uxUiData,
+	'audit-internet-marketinga': auditInternetMarketingData,
+	'kontekstnaya-reklama': kontekstnayaReklamaData,
+	'tekhpodderzhka': tekhpodderzhkaData,
+	'razrabotka-mobilnogo-prilozheniya': razrabotkaMobilnogoPrilozheniyaData,
+	'sozdanie-saytov': sozdanieSaytovData,
+	'firmenniy-stil': firmenniyStilData,
 }
 
 // Функция для получения данных конкретной услуги

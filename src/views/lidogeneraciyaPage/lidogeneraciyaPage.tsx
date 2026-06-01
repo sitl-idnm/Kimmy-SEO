@@ -51,7 +51,7 @@ export const LidogeneraciyaPageView: FC = () => {
 
         <StandartText
           marginBottom
-          className={styles.marginTop}
+          marginTop
           title={'Кому подходит экосистема\u00A0лидогенерации'}
           texts={[
             'Агентство K.KIM предлагает комплексные решения для\u00A0B2B и B2C.'
@@ -148,7 +148,7 @@ export const LidogeneraciyaPageView: FC = () => {
 
         <StandartText
           marginBottom
-          className={styles.marginTop}
+          marginTop
           title={'Как работает лидогенерация с\u00A0K.KIM'}
           texts={[
             'Большинство компаний делают что-то одно: продают базы, звонят по списку или настраивают контекст. Наше основное отличие — мы выстраиваем многоуровневую экосистему, которая включает:',

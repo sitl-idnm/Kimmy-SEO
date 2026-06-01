@@ -7,12 +7,15 @@ import { BlogsData, BlogData } from '@/shared/types/blogs'
 import Link from 'next/link'
 
 const Blogs: FC<BlogsProps> = ({
-  count
+  count,
+  excludeSlug
 }) => {
 
   const { blogs } = blogsData as BlogsData
 
-  const blogsList = [...blogs].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  const blogsList = [...blogs]
+    .filter((blog) => blog.slug !== excludeSlug)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
   const renderedBlogs = count ? blogsList.slice(0, count) : blogsList
 
   return (
@@ -20,7 +23,7 @@ const Blogs: FC<BlogsProps> = ({
       {renderedBlogs.map((blog: BlogData) => (
         <div key={blog.id} className={styles.blogItem}>
           <Link
-            href={`/blog/${blog.slug}`}
+            href={`/blogs/${blog.slug}`}
             className={styles.blogLink}
           >
             <h2 className={styles.blogTitle}>{blog.title}</h2>
